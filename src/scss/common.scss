@@ -1,0 +1,52 @@
+// Заголовки, общие БЄМ блоки и проче...
+._bgi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+input,
+textarea {
+  &::placeholder {
+    color: #A0AEC0;
+  }
+}
+
+.menu {
+  position: fixed;
+  width: rem(265);
+  padding: rem(21);
+  @media (min-width:$tablet){
+    top: rem(30);
+    left: rem(20);
+    height: calc(100vh - rem(80));
+  }
+
+  &__logo {
+  }
+
+  &__icon {
+  }
+
+  &__close {
+  }
+
+  &__body {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+
+    &_active {
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Мероприятия"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<div class="header__menu menu">
+				<div class="menu__logo">
+					<img src="@img/logo.svg" alt="image">
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<div class="menu__close"></div>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link menu__link_active">
+								<i class="_icon_menu_home"></i><span>Главная</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_home"></i><span>Профиль</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<main class="page page_events">
+				<div class="page__container">
+					@@include('html/_header.htm',{})
+					<section class="events"></section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
