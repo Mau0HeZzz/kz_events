@@ -1,0 +1,275 @@
+.translators {
+
+  &__container {
+    @include adaptiveValue("padding", 29, 15);
+  }
+
+  &__body {
+    display: grid;
+    gap: rem(40);
+    &:not(:last-child) {margin-bottom: rem(30);}
+    @media (min-width:$pc){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__create {
+  }
+
+  &__actives {
+  }
+
+  &__table {
+  }
+}
+.create-translators {
+  display: flex;
+  flex-wrap: wrap;
+  @include adaptiveValue("gap", 32, 15);
+  align-items: end;
+  @media (min-width:$pc){
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+    align-items: start;
+    @media (max-width:$mobile){
+      flex: 1 1 auto;
+    }
+  }
+
+  &__label {
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  &__input {
+    @extend .item-addevents__input;
+
+    &_big {
+      @include adaptiveValue("width", 377, 280, 1920, 767, 2);
+      @media (max-width:$mobile){
+        width: 100%;
+      }
+    }
+  }
+
+  &__submit {
+    margin-bottom: rem(5.5);
+  }
+}
+.actives-translators {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("gap", 40, 24);
+
+  &__languages {
+  }
+
+  &__session {
+  }
+
+  &__record {
+  }
+}
+.languages-translators {
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(5);}
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(15);
+    &:not(:last-child) {margin-bottom: rem(24);}
+  }
+
+  &__item {
+    padding: 0.9375rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #E2E8F0;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    gap: rem(15);
+    @media (max-width:$mobile){
+      flex: 1 1 auto;
+      justify-content: space-between;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    color: #2F80ED;
+  }
+
+  &__del {
+    color: #FF0000;
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        color: $gray;
+      }
+    }
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: rem(8);
+  }
+
+  &__input {
+    @extend .item-addevents__input;
+    @media (min-width:$mobile){
+      width: auto;
+    }
+    transition: box-shadow 0.3s ease 0s;
+    &._form-error {
+      box-shadow: inset 0 0 7px 0 #ba181b;
+    }
+  }
+
+  &__button {
+    font-weight: 500;
+    color: $blueLight;
+    padding-left: rem(10);
+  }
+}
+.session-translators {
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(5);}
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    @media (max-width:$tablet){
+      flex-wrap: wrap;
+    }
+  }
+
+  &__select {
+    flex: 0 1 rem(125);
+    .select__value {
+      white-space: nowrap;
+      overflow: hidden;
+      color: #2F80ED;
+      font-weight: 700;
+      @media (min-width:$mobile){
+        max-width: rem(120);
+      }
+    }
+  }
+
+  &__span {
+    font-weight: 500;
+  }
+
+  &_button {
+    align-self: end;
+  }
+}
+.record-translators {
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(10);}
+  }
+
+  &__body {
+    figcaption {
+      font-weight: 500;
+      font-size: rem(18);
+      &:not(:last-child) {margin-bottom: rem(10);}
+    }
+  }
+}
+.table-translators {
+  * {
+    text-align: left;
+  }
+
+  &__link {
+    font-weight: 700;
+    transition: color 0.3s ease 0s;
+    color: #2F80ED;
+    @media (any-hover: hover){
+      &:hover{
+        color: $grayBlue;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.head-translators {
+  &:not(:last-child) {margin-bottom: rem(25);}
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  &__row {
+    font-size: rem(18);
+    line-height: 1.4;
+    color: #2D3748;
+  }
+
+  &__thin {
+  }
+
+  &__bold {
+    font-weight: 700;
+  }
+}
+.status-translators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(30);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    @media (any-hover: hover){
+      &:hover{
+        color: $blue;
+        .status-translators__label {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    flex: 0 0 rem(70);
+    width: rem(70);
+    height: rem(70);
+    border-radius: 50%;
+    display: flex;
+    justify-content:center;align-items: center;
+
+    &_on {
+      background-color: #56CCF2;
+    }
+
+    &_off {
+      background-color: #EB5757;
+    }
+  }
+
+  &__label {
+    transition: all 0.3s ease 0s;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.7;
+  }
+}

@@ -1,0 +1,46 @@
+<div id="addStreamsPopup" aria-hidden="true" class="popup addStreamsPopup">
+	<div class="popup__wrapper addStreamsPopup__wrapper">
+		<div class="popup__content addStreamsPopup__content">
+			<button data-close type="button" class="popup__close addStreamsPopup__close">
+				<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17.0018 17.0003L24.4294 24.4279M9.57422 24.4279L17.0018 17.0003L9.57422 24.4279ZM24.4294 9.57275L17.0004 17.0003L24.4294 9.57275ZM17.0004 17.0003L9.57422 9.57275L17.0004 17.0003Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+			<div class="popup__text addStreamsPopup__text">
+				<div class="addStreamsPopup__head">
+					<div class="addStreamsPopup__title">Редактирование потока</div>
+				</div>
+				<form action="#" data-ajax method="post" class="addStreamsPopup__body">
+					<div class="addStreamsPopup__row">
+						<div class="addStreamsPopup__item">
+							<div class="addStreamsPopup__subtitle">Название потока</div>
+							<input type="text" data-required placeholder="Название потока" class="addStreamsPopup__input">
+						</div>
+					</div>
+					<div class="addStreamsPopup__row addStreamsPopup__row_options">
+						<div class="addStreamsPopup__item">
+							<div class="addStreamsPopup__subtitle">Очередность</div>
+							<select name="form[]" class="addStreamsPopup__priority">
+								<option value="1" selected>1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+							</select>
+						</div>
+						<div class="addStreamsPopup__item">
+							<div class="addStreamsPopup__subtitle">Показывать участникам?</div>
+							<select name="form[]" class="addStreamsPopup__show">
+								<option value="Да" selected>Да</option>
+								<option value="Нет">Нет</option>
+							</select>
+						</div>
+					</div>
+					<button type="submit" class="addStreamsPopup__submit _button">Сохранить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

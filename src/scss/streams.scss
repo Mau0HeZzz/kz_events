@@ -1,0 +1,479 @@
+.streams {
+  border-radius: rem(20) 0 0 rem(20);
+
+  &__container {
+    display: flex;
+    padding: 0;
+    @media (max-width:$mobile){
+      flex-direction: column;
+    }
+  }
+
+  &__main {
+  }
+
+  &__body {
+  }
+
+  &__calendar {
+    flex: 0 0 rem(300);
+    background-color: #000;
+    @media (max-width:$mobile){
+      display: flex;
+      justify-content:center;align-items: center;
+    }
+  }
+}
+.main-streams {
+  flex: 1 1 auto;
+  @media (min-width:$mobile){
+    padding: rem(24) rem(90) rem(24) rem(24);
+  }
+  @media (max-width:$mobile){
+    padding: rem(24);
+  }
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(16);}
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: rem(18);
+    &:not(:last-child) {margin-bottom: rem(24);}
+  }
+
+  &__controls {
+  }
+
+  &__body {
+    height: rem(600);
+    overflow: auto;
+    .simplebar-content {
+      width: rem(1100);
+      display: flex;
+    }
+  }
+
+  &__timeline {
+    flex: 0 0 rem(36);
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: rem(52);
+    padding: rem(100) rem(12) 0;
+  }
+  &__time {
+    font-size: rem(12);
+    font-weight: 500;
+    color: #71717A;
+    line-height: 0;
+  }
+
+  &__column {
+  }
+}
+.controls-streams {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__buttons {
+    display: flex;
+    gap: rem(1);
+  }
+
+  &__prev {
+    background: #F4F4F5;
+    border-radius: 6px 0px 0px 6px;
+    flex: 0 0 rem(28);
+    height: rem(28);
+    transition: all 0.3s ease 0s;
+    display: flex;
+    justify-content:center;align-items: center;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $grayMenu;
+      }
+    }
+  }
+
+  &__double {
+    padding: 0 rem(16);
+    text-align: center;
+    background: #F4F4F5;
+    color: #18181B;
+    transition: all 0.3s ease 0s;
+    font-size: rem(12);
+    white-space: nowrap;
+    display: flex;
+    justify-content:center;align-items: center;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $grayMenu;
+      }
+    }
+  }
+
+  &__next {
+    background: #F4F4F5;
+    border-radius: 0px 6px 6px 0px;
+    flex: 0 0 rem(28);
+    height: rem(28);
+    transition: all 0.3s ease 0s;
+    display: flex;
+    justify-content:center;align-items: center;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $grayMenu;
+      }
+    }
+  }
+
+  &__date {
+    font-size: rem(14);
+    color: #fff;
+    background: #3182CE;
+    border-radius: 8px;
+    display: flex;
+    justify-content:center;align-items: center;
+    font-weight: 500;
+    padding: rem(4) rem(16);
+  }
+}
+.column-streams {
+  flex: 0 0 rem(145);
+  border-left: rem(1) solid #E0E0E0;
+  &:last-child {
+    border-right: rem(1) solid #E0E0E0;
+  }
+  @media (any-hover: hover){
+    &:hover{
+      background-color: #EFF6FF;
+    }
+  }
+  .tui-full-calendar-dayname-layout,
+  .tui-view-8,
+  .tui-full-calendar-timegrid-left {
+    display: none;
+  }
+  .tui-full-calendar-timegrid-right {
+    margin: 0 !important;
+  }
+  .tui-full-calendar-timegrid-container {
+    overflow: visible;
+  }
+  .tui-full-calendar-vlayout-container {
+    height: auto !important;
+    &>div:first-child {
+      display: none;
+    }
+  }
+
+  &__head {
+  }
+
+  &__link {
+    font-size: rem(16);
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    font-weight: 500;
+    justify-content:center;align-items: center;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      opacity: 0;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+
+  &__body {
+    border-top: rem(1) solid #E0E0E0;
+  }
+}
+
+.head-columnStreams {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(4);
+  min-height: rem(100);
+  padding: rem(8);
+
+  &__name {
+    color: $gray;
+    font-weight: 700;
+    font-size: rem(10);
+    line-height: 1.2;
+  }
+
+  &__actions {
+    display: flex;
+    gap: rem(10);
+    font-size: rem(19);
+    white-space: nowrap;
+  }
+
+  &__title {
+  }
+
+  &__link {
+    color: #CBD5E0;
+    transition: all 0.3s ease 0s;
+
+    &_edit {
+      @media (any-hover: hover){
+        &:hover{
+          color: $green;
+        }
+      }
+    }
+
+    &_del {
+      @media (any-hover: hover){
+        &:hover{
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.addStreamsPopup {
+
+  &__wrapper {
+  }
+
+  &__content {
+    border-radius: 0;
+    padding: rem(18);
+    position: relative;
+    max-width: rem(780);
+    @include adaptiveValue("padding-left", 40, 15, 1920, 767, 1);
+    background-color: #fff;
+  }
+
+  &__close {
+    display: block;
+    margin-left: auto;
+  }
+
+  &__text {
+  }
+
+  &__head {
+    &:not(:last-child) {margin-bottom: rem(35);}
+  }
+
+  &__title {
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__body {
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(12);
+    &:not(:last-child) {margin-bottom: rem(24);}
+    &_options {
+      max-width: rem(413);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+    flex: 1 1 auto;
+    .select__value {
+      color: $mainColor;
+    }
+  }
+
+  &__subtitle {
+  }
+
+  &__input {
+    border: rem(1) solid #E2E8F0;
+    border-radius: rem(8);
+    padding: rem(15);
+  }
+
+  &__submit {
+    color: #fff;
+    background-color: $blue;
+    border: rem(1) solid $blue;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: #fff;
+        color: $blue;
+      }
+    }
+    @media (min-width:$mobile){
+      position: absolute;
+      right: percent(40,780);
+      bottom: percent(40,331);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+
+.schedule {
+
+  &__row {
+    display: flex;
+    gap: rem(4);
+    width: 100%;
+    &:not(:last-child) {margin-bottom: rem(4);}
+    padding-right: rem(6);
+  }
+
+  &__time {
+    font-weight: 400;
+  }
+
+  &__link {
+    transition: all 0.3s ease 0s;
+    color: $gray;
+
+    &_edit {
+      @media (any-hover: hover){
+        &:hover{
+          color: $green;
+        }
+      }
+    }
+
+    &_del {
+      @media (any-hover: hover){
+        &:hover{
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &__title {
+  }
+
+  &__actions {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+    justify-content: end;
+    font-size: rem(12);
+    position: absolute;
+    right: rem(6);
+    bottom: rem(3);
+  }
+}
+
+//========================================================================================================================================================
+
+.addBroadcastPopup {
+
+  &__title {
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(14);
+  }
+
+  &__row {
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+    position: relative;
+    .select__value {
+      color: $mainColor;
+    }
+  }
+
+  &__subtitle {
+    padding-left: rem(5);
+  }
+
+  &__inputs {
+    &_time {
+      display: flex;
+      align-items: center;
+      gap: rem(11);
+      input {
+        flex: 0 0 rem(76);
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+
+    &_file {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  &__file {
+    border: rem(1) solid #E2E8F0;
+    border-radius: rem(8);
+    padding: rem(15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #A0AEC0;
+  }
+
+  &__preview {
+  }
+
+  &__message {
+    @extend .addBroadcastPopup__item;
+  }
+
+  &__textarea {
+    min-height: rem(113);
+
+    &_list {
+    }
+  }
+  
+  &__submit {
+    background-color: $blue;
+    border: rem(1) solid $blue;
+    flex: 1 1 auto;
+    align-self: end;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: #fff;
+        color: $blue;
+      }
+    }
+  }
+}

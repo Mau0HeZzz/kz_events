@@ -70,6 +70,12 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
-		"simplebar": "latest"
+		"@fullcalendar/core": "^5.11.0",
+		"@fullcalendar/daygrid": "^5.11.0",
+		"@fullcalendar/list": "^5.11.0",
+		"@fullcalendar/timegrid": "^5.11.0",
+		"fullcalendar": "^5.11.0",
+		"simplebar": "latest",
+		"tui-calendar": "^1.15.3"
 	}
 }

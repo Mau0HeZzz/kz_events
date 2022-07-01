@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Создать опрос</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220701140340">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<picture><source srcset="img/bgi.webp" type="image/webp"><img src="img/bgi.png" class="_bgi" alt="image"></picture>
+		<div class="menu__close"></div>
+		<div class="wrapper__menu">
+			<div class="menu">
+				<a href="#" class="menu__logo">
+					<svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF" />
+					</svg>
+					<span>Новое мероприятие</span>
+				</a>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_register"></i><span>Регистрация</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_streams"></i><span>Потоки</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_partners"></i><span>Партнеры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_participants"></i><span>Участники</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link menu__link_active">
+								<i class="_icon_menu_polls"></i><span>Опросы</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_statistic"></i><span>Статистика</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="page page_polls">
+			<div class="page__container">
+				<header class="header">
+					<div class="header__container">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<div class="header__breadcumps breadcumps-header">
+							<ul class="breadcumps-header__list">
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Создать мероприятие</a></li>
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Опрос</a></li>
+							</ul>
+							<h1 class="breadcumps-header__title">Создать опрос</h1>
+						</div>
+						<div class="header__actions actions-header">
+							<div data-da=".menu__body, 767, 0" class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+							<a data-da=".menu__body, 480, 0" href="#" class="actions-header__user">
+								<i class="_icon_menu_profile"></i><span class="actions-header__name">Хасен Джакенов</span>
+							</a>
+						</div>
+					</div>
+				</header>
+				<form action="#" data-ajax method="post" class="addevents">
+					<div class="addevents__container">
+						<div class="addevents__column addevents__column_main">
+							<div class="addevents__row">
+								<div class="addevents__item item-addevents">
+									<div class="item-addevents__title">Название опроса</div>
+									<div class="item-addevents__inputs">
+										<input type="text" placeholder="Введите название" class="item-addevents__input item-addevents__input_speakername">
+									</div>
+								</div>
+							</div>
+							<div class="addevents__row">
+								<div class="addevents__item item-addevents">
+									<div class="item-addevents__title">Выберите статус</div>
+									<div class="item-addevents__inputs">
+										<select name="form[]" data-scroll class="item-addevents__select">
+											<option value="1" selected>Скрытый</option>
+											<option value="2">Активный</option>
+											<option value="3">Завершен</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="addevents__row">
+								<div class="addevents__item item-addevents">
+									<div class="item-addevents__title">Дата/время начала и окончания мероприятия</div>
+									<div class="item-addevents__inputs">
+										<input type="text" data-inputmask="'mask': '99:99'" placeholder="19:00" class="item-addevents__input item-addevents__input_time">
+										<svg class="item-addevents__datetime" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.05239 0.36644L9.75654 8.38905C10.0812 8.72676 10.0812 9.27236 9.75654 9.61095L2.05239 17.6336C1.58378 18.1221 0.821355 18.1221 0.351914 17.6336C-0.116694 17.145 -0.116694 16.352 0.351914 15.8634L6.94239 8.99956L0.351914 2.13745C-0.116694 1.64799 -0.116694 0.855024 0.351914 0.36644C0.821355 -0.122145 1.58378 -0.122145 2.05239 0.36644Z" fill="#CBD5E0" />
+										</svg>
+										<input type="text" data-inputmask="'mask': '99:99'" placeholder="22:00" class="item-addevents__input item-addevents__input_time">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="addevents__column">
+							<div class="addevents__row">
+								<div class="addevents__item item-addevents">
+									<div class="item-addevents__title">Выберите спикера</div>
+									<div class="item-addevents__inputs">
+										<select name="form[]" data-scroll class="item-addevents__select">
+											<option value="1" selected>Алумов Аят</option>
+											<option value="2">Алкей Аманжолов</option>
+											<option value="3">Самиров Хамит</option>
+											<option value="4">Алкей Аманжолов</option>
+											<option value="5">Кадырбеков Саят</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="addevents__row">
+								<div class="addevents__item item-addevents">
+									<div class="item-addevents__title">Выберите поток</div>
+									<div class="item-addevents__inputs">
+										<select name="form[]" data-scroll class="item-addevents__select">
+											<option value="1" selected>Глобализация в рамках реализации потенциала</option>
+											<option value="2">Название вто рого потока</option>
+											<option value="3">Стэм образование для школ Казахстана</option>
+											<option value="4">Что если сделать СТЭМ доступным для всех?</option>
+											<option value="5">Это будет очень длинное название потока, котор...</option>
+											<option value="10">Глобализация в рамках реализации потенциала</option>
+											<option value="20">Название вто рого потока</option>
+											<option value="30">Стэм образование для школ Казахстана</option>
+											<option value="40">Что если сделать СТЭМ доступным для всех?</option>
+											<option value="50">Это будет очень длинное название потока, котор...</option>
+											<option value="11">Глобализация в рамках реализации потенциала</option>
+											<option value="21">Название вто рого потока</option>
+											<option value="31">Стэм образование для школ Казахстана</option>
+											<option value="41">Что если сделать СТЭМ доступным для всех?</option>
+											<option value="51">Это будет очень длинное название потока, котор...</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div class="register-event__fields fields-event fields-event_polls">
+						<div class="fields-event__head">
+							<div class="fields-event__title">Настройка полей опроса</div>
+						</div>
+						<div class="fields-event__body">
+							<div class="fields-event__row row-event">
+								<input type="hidden" value="1" data-index="1" hidden>
+								<div data-event-inputs class="row-event__item">
+									<div class="row-event__head">
+										<div class="row-event__name">ПОЛЕ <span>1</span></div>
+										<div class="row-event__actions">
+											<button data-actions="double" class="row-event__button">Дублировать</button>
+											<button data-actions="del" class="row-event__button">Удалить</button>
+											<button data-actions="up" class="row-event__button">Вверх</button>
+											<button data-actions="down" class="row-event__button">Вниз</button>
+										</div>
+									</div>
+									<div class="row-event__body">
+										<div class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Тип поля</div>
+												<select name="form[]" data-scroll data-events-types data-required class="row-event__select">
+													<option data-type="email" value="1">Email</option>
+													<option data-type="phone" value="9">Телефон</option>
+													<option data-type="text" value="2">Текст</option>
+													<option data-type="file" value="3">Файл</option>
+													<option data-type="select" value="4" selected>Выпадающий список</option>
+													<option data-type="checkbox" value="5">Галочка</option>
+													<option data-type="date" value="6">Дата</option>
+													<option data-type="number" value="7">Число</option>
+													<option data-type="password" value="8">Пароль</option>
+													<option data-type="checkboxList" value="10">Список чекбоксов</option>
+													<option data-type="rating" value="11">Оценка из звезд</option>
+												</select>
+											</div>
+										</div>
+										<div class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Заголовок поля</div>
+												<input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+											</div>
+										</div>
+										<div data-event-tippyel class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Подсказка значения поля</div>
+												<input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+											</div>
+										</div>
+										<div data-event-checkboxes class="row-event__line">
+											<div class="row-event__subitem">
+												<input data-events-required checked type="checkbox" id="row-event__checkbox_1" class="row-event__checkbox">
+												<label for="row-event__checkbox_1" class="row-event__label">Обязательно для заполнения</label>
+											</div>
+											<div class="row-event__subitem">
+												<input data-event-multiple type="checkbox" id="row-event__checkbox_2" class="row-event__checkbox">
+												<label for="row-event__checkbox_2" class="row-event__label">Множественный выбор</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div data-event-output class="row-event__item">
+									<div class="row-event__line">
+										<div class="row-event__subitem">
+											<div class="row-event__subtitle">Насколько Вам понравилось мероприятие?</div>
+											<div class="rating rating_set">
+												<div class="rating__value">3.6</div>
+												<div class="rating__body" data-content="★★★★★">
+													<div class="rating__active" data-content="★★★★★"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="fields-event__row row-event">
+								<input type="hidden" value="1" data-index="1" hidden>
+								<div data-event-inputs class="row-event__item">
+									<div class="row-event__head">
+										<div class="row-event__name">ПОЛЕ <span>1</span></div>
+										<div class="row-event__actions">
+											<button data-actions="double" class="row-event__button">Дублировать</button>
+											<button data-actions="del" class="row-event__button">Удалить</button>
+											<button data-actions="up" class="row-event__button">Вверх</button>
+											<button data-actions="down" class="row-event__button">Вниз</button>
+										</div>
+									</div>
+									<div class="row-event__body">
+										<div class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Тип поля</div>
+												<select name="form[]" data-scroll data-events-types data-required class="row-event__select">
+													<option data-type="email" value="1">Email</option>
+													<option data-type="phone" value="9">Телефон</option>
+													<option data-type="text" value="2">Текст</option>
+													<option data-type="file" value="3">Файл</option>
+													<option data-type="select" value="4">Выпадающий список</option>
+													<option data-type="checkbox" value="5">Галочка</option>
+													<option data-type="date" value="6">Дата</option>
+													<option data-type="number" value="7">Число</option>
+													<option data-type="password" value="8">Пароль</option>
+													<option data-type="checkboxList" value="10" selected>Список чекбоксов</option>
+													<option data-type="rating" value="11">Оценка из звезд</option>
+												</select>
+											</div>
+										</div>
+										<div class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Заголовок поля</div>
+												<input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+											</div>
+										</div>
+										<div data-event-tippyel class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Подсказка значения поля</div>
+												<input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+											</div>
+										</div>
+										<div data-event-checkboxes class="row-event__line">
+											<div class="row-event__subitem">
+												<input data-events-required checked type="checkbox" id="row-event__checkbox_1" class="row-event__checkbox">
+												<label for="row-event__checkbox_1" class="row-event__label">Обязательно для заполнения</label>
+											</div>
+											<div class="row-event__subitem">
+												<input data-event-multiple type="checkbox" id="row-event__checkbox_2" class="row-event__checkbox">
+												<label for="row-event__checkbox_2" class="row-event__label">Множественный выбор</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div data-event-output class="row-event__item">
+									<div class="row-event__line">
+										<div class="row-event__subitem">
+											<div class="row-event__subtitle">Насколько Вам понравилось мероприятие?</div>
+											<div class="rating rating_set">
+												<div class="rating__value">3.6</div>
+												<div class="rating__body" data-content="★★★★★">
+													<div class="rating__active" data-content="★★★★★"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="fields-event__row row-event">
+								<input type="hidden" value="1" data-index="1" hidden>
+								<div data-event-inputs class="row-event__item">
+									<div class="row-event__head">
+										<div class="row-event__name">ПОЛЕ <span>1</span></div>
+										<div class="row-event__actions">
+											<button data-actions="double" class="row-event__button">Дублировать</button>
+											<button data-actions="del" class="row-event__button">Удалить</button>
+											<button data-actions="up" class="row-event__button">Вверх</button>
+											<button data-actions="down" class="row-event__button">Вниз</button>
+										</div>
+									</div>
+									<div class="row-event__body">
+										<div class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Тип поля</div>
+												<select name="form[]" data-scroll data-events-types data-required class="row-event__select">
+													<option data-type="email" value="1">Email</option>
+													<option data-type="phone" value="9">Телефон</option>
+													<option data-type="text" value="2">Текст</option>
+													<option data-type="file" value="3">Файл</option>
+													<option data-type="select" value="4">Выпадающий список</option>
+													<option data-type="checkbox" value="5">Галочка</option>
+													<option data-type="date" value="6">Дата</option>
+													<option data-type="number" value="7">Число</option>
+													<option data-type="password" value="8">Пароль</option>
+													<option data-type="checkboxList" value="10">Список чекбоксов</option>
+													<option data-type="rating" value="11" selected>Оценка из звезд</option>
+												</select>
+											</div>
+										</div>
+										<div class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Заголовок поля</div>
+												<input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+											</div>
+										</div>
+										<div data-event-tippyel class="row-event__line">
+											<div class="row-event__subitem">
+												<div class="row-event__subtitle">Подсказка значения поля</div>
+												<input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+											</div>
+										</div>
+										<div data-event-checkboxes class="row-event__line">
+											<div class="row-event__subitem">
+												<input data-events-required checked type="checkbox" id="row-event__checkbox_1" class="row-event__checkbox">
+												<label for="row-event__checkbox_1" class="row-event__label">Обязательно для заполнения</label>
+											</div>
+											<div class="row-event__subitem">
+												<input data-event-multiple type="checkbox" id="row-event__checkbox_2" class="row-event__checkbox">
+												<label for="row-event__checkbox_2" class="row-event__label">Множественный выбор</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div data-event-output class="row-event__item">
+									<div class="row-event__line">
+										<div class="row-event__subitem">
+											<div class="row-event__subtitle">Насколько Вам понравилось мероприятие?</div>
+											<div class="rating rating_set">
+												<div class="rating__value">3.6</div>
+												<div class="rating__body" data-content="★★★★★">
+													<div class="rating__active" data-content="★★★★★"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="fields-event__add">ДОБАВИТЬ ПОЛЕ</button>
+						<div class="fields-event__btns">
+							<button type="submit" class="fields-event__blue _button">СОХРАНИТЬ</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<span>@ 2021, BEST EVENT LLC</span>
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js?_v=20220701140340"></script>
+	<script src="js/app.min.js?_v=20220701140340"></script>
+</body>
+
+</html>

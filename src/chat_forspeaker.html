@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ru" class="sidebar-open">
+	@@include('html/_head.htm',{
+	"title":"Чат с участниками мероприятия"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<div class="menu__close"></div>
+			<div class="wrapper__menu">
+				<div class="menu">
+					<a href="#" class="menu__logo">
+            <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF"/>
+            </svg>
+            <span>Новое мероприятие</span>
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_register"></i><span>Регистрация</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_streams"></i><span>Потоки</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_partners"></i><span>Партнеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_participants"></i><span>Участники</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link_active">
+									<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_polls"></i><span>Опросы</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_statistic"></i><span>Статистика</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<main class="page page_chat">
+				<div class="page__container">
+					@@include('html/_header.htm',{
+						"one": "Главная",
+						"two": "Чат",
+						"title": "Чат с участниками мероприятия"
+					})
+          <section class="chat">
+            <div class="chat__container">
+              <div data-tabs class="chat__tabs tabs-chat">
+								<div data-spollers="1280" class="tabs-chat__head">
+									<div class="spollers__item">
+										<button type="button" data-spoller class="tabs-chat__title tabs-chat__title_main">Выбор потока</button>
+										<div class="spollers__body">
+											<nav data-tabs-titles class="tabs-chat__navigation">
+												<button type="button" class="tabs-chat__title title-tabsChat">
+													<div class="title-tabsChat__name">Глобализация в рамках реализации потенциала</div>
+													<div class="title-tabsChat__info">
+														<div class="title-tabsChat__time">19:48</div>
+														<div class="title-tabsChat__unread">1</div>
+													</div>
+												</button>
+												<button type="button" class="tabs-chat__title title-tabsChat _tab-active">
+													<div class="title-tabsChat__name">Стэм образование для школ Казахстана</div>
+													<div class="title-tabsChat__info">
+														<div class="title-tabsChat__time">18:16</div>
+													</div>
+												</button>
+												<button type="button" class="tabs-chat__title title-tabsChat">
+													<div class="title-tabsChat__name">Что если сделать СТЭМ доступным для всех?</div>
+													<div class="title-tabsChat__info">
+														<div class="title-tabsChat__time">Вт</div>
+													</div>
+												</button>
+												<button type="button" class="tabs-chat__title title-tabsChat">
+													<div class="title-tabsChat__name">Глобализация в рамках реализации потенциала</div>
+													<div class="title-tabsChat__info">
+														<div class="title-tabsChat__time">20:21</div>
+														<div class="title-tabsChat__unread">34</div>
+													</div>
+												</button>
+											</nav>
+										</div>
+									</div>
+								</div>
+                <div data-tabs-body class="tabs-chat__content">
+                  <div class="tabs-chat__body body-chat">
+										<div class="sidebar-chat__close"></div>
+                    <div class="body-chat__sidebar sidebar-chat sidebar-chat_active">
+                      <div class="sidebar-chat__head">
+                        <div data-spollers data-one-spoller class="sidebar-chat__spollers spollers-chat">
+                          <div class="spollers__item spollers-chat__item">
+                            <a href="#" type="button"class="spollers__title spollers-chat__title spollers-chat__title_active">
+															<span>Организатор мероприятия</span>
+														</a>
+                          </div>
+                          <div class="spollers__item spollers-chat__item">
+                            <a href="#" class="spollers__title spollers-chat__title">
+															<span>Тех. поддержка</span>
+														</a>
+                          </div>
+                          <div class="spollers__item spollers-chat__item">
+                            <button type="button" data-spoller data-spoller-close class="spollers__title spollers-chat__title">
+															<span>Вопрос спикеру</span>
+														</button>
+                            <div class="spollers__body spollers-chat__body">
+                              <a href="#" class="spollers-chat__link">Алумов Аят (34)</a>
+															<a href="#" class="spollers-chat__link">Каримов Саяхат (3)</a>
+															<a href="#" class="spollers-chat__link spollers-chat__link_active">Кажибалдин Абдулкарим</a>
+															<a href="#" class="spollers-chat__link">Салипов Манас</a>
+															<a href="#" class="spollers-chat__link">Укардинов Нарынберди</a>
+															<a href="#" class="spollers-chat__link">Джон Сапамади</a>
+														</div>
+                          </div>
+                        </div>
+                      </div>
+											<div class="sidebar-chat__search">
+												<div class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+											</div>
+											<div data-simplebar class="sidebar-chat__body">
+                        <div class="sidebar-chat__forspeaker">
+                          Вопросы спикеру <br>
+                          Кажибалдин Абдукарим
+                        </div>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar"></div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Хузин Руслан</div>
+														<div class="person-chat__lastmessage">Здравствуйте! Можно ли...</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">19:48</div>
+														<div class="title-tabsChat__unread">1</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_1.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Амира Саколова</div>
+														<div class="person-chat__lastmessage">Хотела бы уточнить это</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">18:30</div>
+														<div class="title-tabsChat__unread">2</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat person-chat_active">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_2.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Хасен Джакенов</div>
+														<div class="person-chat__lastmessage">Нет, совершенно не так</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">18:16</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_3.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Алтынбек Калемов</div>
+														<div class="person-chat__lastmessage">Шикарное мероприятие! 🎉 🚀  </div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">18:02</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_4.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Касымов Асымхан</div>
+														<div class="person-chat__lastmessage">Нет, не думаю что успею</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">17:42</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_5.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Кастаков Марит</div>
+														<div class="person-chat__lastmessage">Серьезно?</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">17:08</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_6.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Абулкасымов Бахияр</div>
+														<div class="person-chat__lastmessage">Мне казалось что по-другому</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">Tue</div>
+													</div>
+												</a>
+											</div>
+                    </div>
+										<div class="body-chat__main main-chat">
+											<div class="main-chat__head">
+												<div class="main-chat__sideopen"><span></span></div>
+												<div class="main-chat__avatar">
+													<img src="@img/chat/avatar_2.png" alt="image">
+												</div>
+												<div class="main-chat__person">
+													<div class="main-chat__name">Хасен Джакенов -> спикеру Кажибалдин Абдукарим</div>
+													<div class="main-chat__role">участник</div>
+												</div>
+												<div class="main-chat__actions actions-chat">
+													<div data-spollers class="actions-chat__spollers">
+														<div class="actions-chat__item">
+															<button type="button" data-spoller data-spoller-close class="actions-chat__title">
+																<svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M2 4C1.46957 4 0.96086 3.78929 0.585787 3.41421C0.210714 3.03914 0 2.53043 0 2C0 1.46957 0.210714 0.960859 0.585787 0.585786C0.96086 0.210714 1.46957 0 2 0C2.53043 0 3.03914 0.210714 3.41421 0.585786C3.78929 0.960859 4 1.46957 4 2C4 2.53043 3.78929 3.03914 3.41421 3.41421C3.03914 3.78929 2.53043 4 2 4ZM2 10C1.46957 10 0.96086 9.78929 0.585787 9.41421C0.210714 9.03914 0 8.53043 0 8C0 7.46957 0.210714 6.96086 0.585787 6.58579C0.96086 6.21071 1.46957 6 2 6C2.53043 6 3.03914 6.21071 3.41421 6.58579C3.78929 6.96086 4 7.46957 4 8C4 8.53043 3.78929 9.03914 3.41421 9.41421C3.03914 9.78929 2.53043 10 2 10ZM0 14C0 14.5304 0.210714 15.0391 0.585787 15.4142C0.96086 15.7893 1.46957 16 2 16C2.53043 16 3.03914 15.7893 3.41421 15.4142C3.78929 15.0391 4 14.5304 4 14C4 13.4696 3.78929 12.9609 3.41421 12.5858C3.03914 12.2107 2.53043 12 2 12C1.46957 12 0.96086 12.2107 0.585787 12.5858C0.210714 12.9609 0 13.4696 0 14Z" fill="#707991"/>
+																</svg>
+															</button>
+															<div class="actions-chat__body">
+																<a href="#" class="actions-chat__link">Забанить в этом потоке</a>
+																<a href="#" class="actions-chat__link">Забанить во всех чатах</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="main-chat__body">
+												<div class="main-chat__bg">
+													<img src="@img/chat/bg_print.png" alt="image">
+												</div>
+												<div data-simplebar class="main-chat__messages messages-chat">
+													<div class="messages-chat__body">
+														<div  class="messages-chat__date">Сегодня</div>
+														<div  class="messages-chat__message messages-chat__message_send">
+															<div class="messages-chat__text">Как Вы считаете, стоит ли внедрять STEAM 
+в школы Казахстана?</div>
+															<div class="messages-chat__time">18:12</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Думаю да, если это не повредит</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Самое важное научить учителей</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+													</div>
+												</div>
+												<form action="#" data-ajax method="post" class="main-chat__form form-chat">
+													<div class="form-chat__smiles smiles-chat">
+														<div data-spollers class="smiles-chat__spollers">
+															<div class="smiles-chat__item">
+																<button type="button" data-spoller data-spoller-close class="smiles-chat__title">
+																	<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M11 -0.000976562C16.524 -0.000976562 21.002 4.47702 21.002 10.001C21.002 15.524 16.524 20.002 11 20.002C5.47605 20.002 0.998047 15.524 0.998047 10.001C0.998047 4.47702 5.47605 -0.000976562 11 -0.000976562ZM11 1.49902C9.87586 1.48683 8.76041 1.69772 7.71827 2.1195C6.67612 2.54127 5.72798 3.16554 4.92871 3.95619C4.12944 4.74684 3.49492 5.68816 3.06187 6.72566C2.62882 7.76317 2.40584 8.87627 2.40584 10.0005C2.40584 11.1248 2.62882 12.2379 3.06187 13.2754C3.49492 14.3129 4.12944 15.2542 4.92871 16.0449C5.72798 16.8355 6.67612 17.4598 7.71827 17.8816C8.76041 18.3033 9.87586 18.5142 11 18.502C13.2321 18.4678 15.3611 17.5571 16.9274 15.9666C18.4937 14.376 19.3717 12.2333 19.3717 10.001C19.3717 7.76874 18.4937 5.626 16.9274 4.03548C15.3611 2.44496 13.2321 1.53426 11 1.50002V1.49902ZM7.46205 12.784C7.8828 13.32 8.42 13.7533 9.03298 14.0509C9.64595 14.3486 10.3186 14.5028 11 14.502C11.6806 14.5028 12.3525 14.3489 12.9649 14.052C13.5772 13.755 14.1142 13.3228 14.535 12.788C14.6584 12.6319 14.8386 12.5312 15.0362 12.5081C15.2338 12.4849 15.4325 12.5412 15.5885 12.6645C15.7446 12.7878 15.8453 12.9681 15.8685 13.1657C15.8916 13.3633 15.8354 13.5619 15.712 13.718C15.1508 14.4306 14.435 15.0064 13.6188 15.4021C12.8026 15.7977 11.9071 16.0029 11 16.002C10.0918 16.0028 9.19528 15.797 8.37826 15.4003C7.56124 15.0035 6.84512 14.4262 6.28405 13.712C6.16624 13.5554 6.11444 13.3588 6.13972 13.1645C6.16501 12.9701 6.26538 12.7934 6.41934 12.6721C6.5733 12.5508 6.76863 12.4946 6.96351 12.5155C7.15839 12.5364 7.33734 12.6328 7.46205 12.784ZM8.00005 6.75002C8.16711 6.7453 8.33342 6.77412 8.48915 6.83479C8.64488 6.89545 8.78686 6.98673 8.90669 7.10323C9.02653 7.21972 9.12179 7.35907 9.18684 7.51302C9.25188 7.66697 9.2854 7.8324 9.2854 7.99952C9.2854 8.16665 9.25188 8.33208 9.18684 8.48603C9.12179 8.63998 9.02653 8.77932 8.90669 8.89582C8.78686 9.01231 8.64488 9.10359 8.48915 9.16426C8.33342 9.22493 8.16711 9.25375 8.00005 9.24902C7.67478 9.23982 7.36592 9.10414 7.1391 8.87082C6.91229 8.6375 6.7854 8.32492 6.7854 7.99952C6.7854 7.67413 6.91229 7.36155 7.1391 7.12823C7.36592 6.89491 7.67478 6.75923 8.00005 6.75002ZM14 6.75002C14.1671 6.7453 14.3334 6.77412 14.4891 6.83479C14.6449 6.89545 14.7869 6.98673 14.9067 7.10323C15.0265 7.21972 15.1218 7.35907 15.1868 7.51302C15.2519 7.66697 15.2854 7.8324 15.2854 7.99952C15.2854 8.16665 15.2519 8.33208 15.1868 8.48603C15.1218 8.63998 15.0265 8.77932 14.9067 8.89582C14.7869 9.01231 14.6449 9.10359 14.4891 9.16426C14.3334 9.22493 14.1671 9.25375 14 9.24902C13.6748 9.23982 13.3659 9.10414 13.1391 8.87082C12.9123 8.6375 12.7854 8.32492 12.7854 7.99952C12.7854 7.67413 12.9123 7.36155 13.1391 7.12823C13.3659 6.89491 13.6748 6.75923 14 6.75002Z" fill="#707991"/>
+																	</svg>
+																</button>
+																<div class="smiles-chat__body">
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-chat__body">
+														<input type="text" name="" id="" placeholder="Введите сообщение" data-required class="form-chat__input">
+													</div>
+													<div class="form-chat__file">
+														<input type="file" name="" id="form-chat__file">
+														<label for="form-chat__file" class="form-chat__filelabel">
+															<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M16.0924 10.5745L9.91237 16.7645C9.10218 17.4845 8.04751 17.8678 6.96409 17.8359C5.88067 17.804 4.85037 17.3594 4.08394 16.5929C3.31751 15.8265 2.87288 14.7962 2.84098 13.7128C2.80909 12.6294 3.19235 11.5747 3.91237 10.7645L11.9124 2.76451C12.39 2.31081 13.0236 2.05784 13.6824 2.05784C14.3411 2.05784 14.9747 2.31081 15.4524 2.76451C15.9177 3.2361 16.1786 3.87198 16.1786 4.53451C16.1786 5.19704 15.9177 5.83292 15.4524 6.30451L8.55237 13.1945C8.48408 13.268 8.40198 13.3274 8.31074 13.3692C8.21951 13.411 8.12094 13.4345 8.02065 13.4382C7.92036 13.4419 7.82033 13.4258 7.72625 13.3909C7.63218 13.3559 7.54591 13.3028 7.47237 13.2345C7.39883 13.1662 7.33946 13.0841 7.29765 12.9929C7.25584 12.9017 7.23241 12.8031 7.22869 12.7028C7.22498 12.6025 7.24105 12.5025 7.276 12.4084C7.31095 12.3143 7.36408 12.228 7.43237 12.1545L12.5624 7.03451C12.7507 6.84621 12.8565 6.59081 12.8565 6.32451C12.8565 6.05821 12.7507 5.80281 12.5624 5.61451C12.3741 5.42621 12.1187 5.32042 11.8524 5.32042C11.5861 5.32042 11.3307 5.42621 11.1424 5.61451L6.01237 10.7545C5.75567 11.0092 5.55193 11.3122 5.4129 11.646C5.27386 11.9799 5.20228 12.3379 5.20228 12.6995C5.20228 13.0611 5.27386 13.4192 5.4129 13.753C5.55193 14.0868 5.75567 14.3898 6.01237 14.6445C6.53674 15.144 7.23317 15.4226 7.95737 15.4226C8.68156 15.4226 9.37799 15.144 9.90237 14.6445L16.7924 7.74451C17.5872 6.89146 18.02 5.76318 17.9994 4.59737C17.9788 3.43157 17.5066 2.31926 16.6821 1.49478C15.8576 0.6703 14.7453 0.198028 13.5795 0.177459C12.4137 0.15689 11.2854 0.589629 10.4324 1.38451L2.43237 9.38451C1.35357 10.5793 0.777395 12.1444 0.8239 13.7535C0.870405 15.3626 1.536 16.8917 2.68201 18.0223C3.82801 19.1528 5.36604 19.7976 6.97565 19.8222C8.58526 19.8468 10.1423 19.2494 11.3224 18.1545L17.5124 11.9745C17.6056 11.8813 17.6796 11.7706 17.73 11.6488C17.7805 11.5269 17.8065 11.3964 17.8065 11.2645C17.8065 11.1326 17.7805 11.0021 17.73 10.8803C17.6796 10.7584 17.6056 10.6477 17.5124 10.5545C17.4191 10.4613 17.3084 10.3873 17.1866 10.3368C17.0648 10.2864 16.9342 10.2604 16.8024 10.2604C16.6705 10.2604 16.5399 10.2864 16.4181 10.3368C16.2963 10.3873 16.1856 10.4613 16.0924 10.5545V10.5745Z" fill="#8A898E"/>
+															</svg>
+														</label>
+													</div>
+													<button type="submit" class="form-chat__button">
+														<img src="@img/icons/send.svg" alt="image">
+													</button>
+												</form>
+											</div>
+										</div>
+                  </div>
+                  <div class="tabs-chat__body body-chat">
+										<div class="sidebar-chat__close"></div>
+                    <div class="body-chat__sidebar sidebar-chat sidebar-chat_active">
+                      <div class="sidebar-chat__head">
+                        <div data-spollers data-one-spoller class="sidebar-chat__spollers spollers-chat">
+                          <div class="spollers__item spollers-chat__item">
+                            <a href="#" type="button"class="spollers__title spollers-chat__title spollers-chat__title_active">
+															<span>Организатор мероприятия</span>
+														</a>
+                          </div>
+                          <div class="spollers__item spollers-chat__item">
+                            <a href="#" class="spollers__title spollers-chat__title">
+															<span>Тех. поддержка</span>
+														</a>
+                          </div>
+                          <div class="spollers__item spollers-chat__item">
+                            <button type="button" data-spoller data-spoller-close class="spollers__title spollers-chat__title">
+															<span>Вопрос спикеру</span>
+														</button>
+                            <div class="spollers__body spollers-chat__body">
+                              <a href="#" class="spollers-chat__link">Алумов Аят (34)</a>
+															<a href="#" class="spollers-chat__link">Каримов Саяхат (3)</a>
+															<a href="#" class="spollers-chat__link spollers-chat__link_active">Кажибалдин Абдулкарим</a>
+															<a href="#" class="spollers-chat__link">Салипов Манас</a>
+															<a href="#" class="spollers-chat__link">Укардинов Нарынберди</a>
+															<a href="#" class="spollers-chat__link">Джон Сапамади</a>
+														</div>
+                          </div>
+                        </div>
+                      </div>
+											<div class="sidebar-chat__search">
+												<div class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+											</div>
+											<div data-simplebar class="sidebar-chat__body">
+                        <div class="sidebar-chat__forspeaker">
+                          Вопросы спикеру <br>
+                          Кажибалдин Абдукарим
+                        </div>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar"></div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Хузин Руслан</div>
+														<div class="person-chat__lastmessage">Здравствуйте! Можно ли...</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">19:48</div>
+														<div class="title-tabsChat__unread">1</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_1.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Амира Саколова</div>
+														<div class="person-chat__lastmessage">Хотела бы уточнить это</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">18:30</div>
+														<div class="title-tabsChat__unread">2</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat person-chat_active">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_2.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Хасен Джакенов</div>
+														<div class="person-chat__lastmessage">Нет, совершенно не так</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">18:16</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_3.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Алтынбек Калемов</div>
+														<div class="person-chat__lastmessage">Шикарное мероприятие! 🎉 🚀  </div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">18:02</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_4.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Касымов Асымхан</div>
+														<div class="person-chat__lastmessage">Нет, не думаю что успею</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">17:42</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_5.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Кастаков Марит</div>
+														<div class="person-chat__lastmessage">Серьезно?</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">17:08</div>
+													</div>
+												</a>
+												<a href="#" class="sidebar-chat__person person-chat">
+													<div class="person-chat__avatar">
+														<img src="@img/chat/avatar_6.png" alt="image">
+													</div>
+													<div class="person-chat__body">
+														<div class="person-chat__name">Абулкасымов Бахияр</div>
+														<div class="person-chat__lastmessage">Мне казалось что по-другому</div>
+													</div>
+													<div class="person-chat__info">
+														<div class="title-tabsChat__time">Tue</div>
+													</div>
+												</a>
+											</div>
+                    </div>
+										<div class="body-chat__main main-chat">
+											<div class="main-chat__head">
+												<div class="main-chat__sideopen"><span></span></div>
+												<div class="main-chat__avatar">
+													<img src="@img/chat/avatar_2.png" alt="image">
+												</div>
+												<div class="main-chat__person">
+													<div class="main-chat__name">Хасен Джакенов -> спикеру Кажибалдин Абдукарим</div>
+													<div class="main-chat__role">участник</div>
+												</div>
+												<div class="main-chat__actions actions-chat">
+													<div data-spollers class="actions-chat__spollers">
+														<div class="actions-chat__item">
+															<button type="button" data-spoller data-spoller-close class="actions-chat__title">
+																<svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M2 4C1.46957 4 0.96086 3.78929 0.585787 3.41421C0.210714 3.03914 0 2.53043 0 2C0 1.46957 0.210714 0.960859 0.585787 0.585786C0.96086 0.210714 1.46957 0 2 0C2.53043 0 3.03914 0.210714 3.41421 0.585786C3.78929 0.960859 4 1.46957 4 2C4 2.53043 3.78929 3.03914 3.41421 3.41421C3.03914 3.78929 2.53043 4 2 4ZM2 10C1.46957 10 0.96086 9.78929 0.585787 9.41421C0.210714 9.03914 0 8.53043 0 8C0 7.46957 0.210714 6.96086 0.585787 6.58579C0.96086 6.21071 1.46957 6 2 6C2.53043 6 3.03914 6.21071 3.41421 6.58579C3.78929 6.96086 4 7.46957 4 8C4 8.53043 3.78929 9.03914 3.41421 9.41421C3.03914 9.78929 2.53043 10 2 10ZM0 14C0 14.5304 0.210714 15.0391 0.585787 15.4142C0.96086 15.7893 1.46957 16 2 16C2.53043 16 3.03914 15.7893 3.41421 15.4142C3.78929 15.0391 4 14.5304 4 14C4 13.4696 3.78929 12.9609 3.41421 12.5858C3.03914 12.2107 2.53043 12 2 12C1.46957 12 0.96086 12.2107 0.585787 12.5858C0.210714 12.9609 0 13.4696 0 14Z" fill="#707991"/>
+																</svg>
+															</button>
+															<div class="actions-chat__body">
+																<a href="#" class="actions-chat__link">Забанить в этом потоке</a>
+																<a href="#" class="actions-chat__link">Забанить во всех чатах</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="main-chat__body">
+												<div class="main-chat__bg">
+													<img src="@img/chat/bg_print.png" alt="image">
+												</div>
+												<div data-simplebar class="main-chat__messages messages-chat">
+													<div class="messages-chat__body">
+														<div  class="messages-chat__date">Сегодня</div>
+														<div  class="messages-chat__message messages-chat__message_send">
+															<div class="messages-chat__text">Как Вы считаете, стоит ли внедрять STEAM 
+в школы Казахстана?</div>
+															<div class="messages-chat__time">18:12</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Думаю да, если это не повредит</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Самое важное научить учителей</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_send">
+															<div class="messages-chat__text">Как Вы считаете, стоит ли внедрять STEAM 
+в школы Казахстана?</div>
+															<div class="messages-chat__time">18:12</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Думаю да, если это не повредит</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Самое важное научить учителей</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_send">
+															<div class="messages-chat__text">Как Вы считаете, стоит ли внедрять STEAM 
+в школы Казахстана?</div>
+															<div class="messages-chat__time">18:12</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Думаю да, если это не повредит</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Самое важное научить учителей</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_send">
+															<div class="messages-chat__text">Как Вы считаете, стоит ли внедрять STEAM 
+в школы Казахстана?</div>
+															<div class="messages-chat__time">18:12</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Думаю да, если это не повредит</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+														<div  class="messages-chat__message messages-chat__message_incoming">
+															<div class="messages-chat__text">Самое важное научить учителей</div>
+															<div class="messages-chat__time">18:16</div>
+														</div>
+													</div>
+												</div>
+												<form action="#" data-ajax method="post" class="main-chat__form form-chat">
+													<div class="form-chat__smiles smiles-chat">
+														<div data-spollers class="smiles-chat__spollers">
+															<div class="smiles-chat__item">
+																<button type="button" data-spoller data-spoller-close class="smiles-chat__title">
+																	<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M11 -0.000976562C16.524 -0.000976562 21.002 4.47702 21.002 10.001C21.002 15.524 16.524 20.002 11 20.002C5.47605 20.002 0.998047 15.524 0.998047 10.001C0.998047 4.47702 5.47605 -0.000976562 11 -0.000976562ZM11 1.49902C9.87586 1.48683 8.76041 1.69772 7.71827 2.1195C6.67612 2.54127 5.72798 3.16554 4.92871 3.95619C4.12944 4.74684 3.49492 5.68816 3.06187 6.72566C2.62882 7.76317 2.40584 8.87627 2.40584 10.0005C2.40584 11.1248 2.62882 12.2379 3.06187 13.2754C3.49492 14.3129 4.12944 15.2542 4.92871 16.0449C5.72798 16.8355 6.67612 17.4598 7.71827 17.8816C8.76041 18.3033 9.87586 18.5142 11 18.502C13.2321 18.4678 15.3611 17.5571 16.9274 15.9666C18.4937 14.376 19.3717 12.2333 19.3717 10.001C19.3717 7.76874 18.4937 5.626 16.9274 4.03548C15.3611 2.44496 13.2321 1.53426 11 1.50002V1.49902ZM7.46205 12.784C7.8828 13.32 8.42 13.7533 9.03298 14.0509C9.64595 14.3486 10.3186 14.5028 11 14.502C11.6806 14.5028 12.3525 14.3489 12.9649 14.052C13.5772 13.755 14.1142 13.3228 14.535 12.788C14.6584 12.6319 14.8386 12.5312 15.0362 12.5081C15.2338 12.4849 15.4325 12.5412 15.5885 12.6645C15.7446 12.7878 15.8453 12.9681 15.8685 13.1657C15.8916 13.3633 15.8354 13.5619 15.712 13.718C15.1508 14.4306 14.435 15.0064 13.6188 15.4021C12.8026 15.7977 11.9071 16.0029 11 16.002C10.0918 16.0028 9.19528 15.797 8.37826 15.4003C7.56124 15.0035 6.84512 14.4262 6.28405 13.712C6.16624 13.5554 6.11444 13.3588 6.13972 13.1645C6.16501 12.9701 6.26538 12.7934 6.41934 12.6721C6.5733 12.5508 6.76863 12.4946 6.96351 12.5155C7.15839 12.5364 7.33734 12.6328 7.46205 12.784ZM8.00005 6.75002C8.16711 6.7453 8.33342 6.77412 8.48915 6.83479C8.64488 6.89545 8.78686 6.98673 8.90669 7.10323C9.02653 7.21972 9.12179 7.35907 9.18684 7.51302C9.25188 7.66697 9.2854 7.8324 9.2854 7.99952C9.2854 8.16665 9.25188 8.33208 9.18684 8.48603C9.12179 8.63998 9.02653 8.77932 8.90669 8.89582C8.78686 9.01231 8.64488 9.10359 8.48915 9.16426C8.33342 9.22493 8.16711 9.25375 8.00005 9.24902C7.67478 9.23982 7.36592 9.10414 7.1391 8.87082C6.91229 8.6375 6.7854 8.32492 6.7854 7.99952C6.7854 7.67413 6.91229 7.36155 7.1391 7.12823C7.36592 6.89491 7.67478 6.75923 8.00005 6.75002ZM14 6.75002C14.1671 6.7453 14.3334 6.77412 14.4891 6.83479C14.6449 6.89545 14.7869 6.98673 14.9067 7.10323C15.0265 7.21972 15.1218 7.35907 15.1868 7.51302C15.2519 7.66697 15.2854 7.8324 15.2854 7.99952C15.2854 8.16665 15.2519 8.33208 15.1868 8.48603C15.1218 8.63998 15.0265 8.77932 14.9067 8.89582C14.7869 9.01231 14.6449 9.10359 14.4891 9.16426C14.3334 9.22493 14.1671 9.25375 14 9.24902C13.6748 9.23982 13.3659 9.10414 13.1391 8.87082C12.9123 8.6375 12.7854 8.32492 12.7854 7.99952C12.7854 7.67413 12.9123 7.36155 13.1391 7.12823C13.3659 6.89491 13.6748 6.75923 14 6.75002Z" fill="#707991"/>
+																	</svg>
+																</button>
+																<div class="smiles-chat__body">
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																	<span class="smiles-chat__smile">🎉</span><span class="smiles-chat__smile">🚀</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-chat__body">
+														<input type="text" name="" id="" placeholder="Введите сообщение" data-required class="form-chat__input">
+													</div>
+													<div class="form-chat__file">
+														<input type="file" name="" id="form-chat__file">
+														<label for="form-chat__file" class="form-chat__filelabel">
+															<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M16.0924 10.5745L9.91237 16.7645C9.10218 17.4845 8.04751 17.8678 6.96409 17.8359C5.88067 17.804 4.85037 17.3594 4.08394 16.5929C3.31751 15.8265 2.87288 14.7962 2.84098 13.7128C2.80909 12.6294 3.19235 11.5747 3.91237 10.7645L11.9124 2.76451C12.39 2.31081 13.0236 2.05784 13.6824 2.05784C14.3411 2.05784 14.9747 2.31081 15.4524 2.76451C15.9177 3.2361 16.1786 3.87198 16.1786 4.53451C16.1786 5.19704 15.9177 5.83292 15.4524 6.30451L8.55237 13.1945C8.48408 13.268 8.40198 13.3274 8.31074 13.3692C8.21951 13.411 8.12094 13.4345 8.02065 13.4382C7.92036 13.4419 7.82033 13.4258 7.72625 13.3909C7.63218 13.3559 7.54591 13.3028 7.47237 13.2345C7.39883 13.1662 7.33946 13.0841 7.29765 12.9929C7.25584 12.9017 7.23241 12.8031 7.22869 12.7028C7.22498 12.6025 7.24105 12.5025 7.276 12.4084C7.31095 12.3143 7.36408 12.228 7.43237 12.1545L12.5624 7.03451C12.7507 6.84621 12.8565 6.59081 12.8565 6.32451C12.8565 6.05821 12.7507 5.80281 12.5624 5.61451C12.3741 5.42621 12.1187 5.32042 11.8524 5.32042C11.5861 5.32042 11.3307 5.42621 11.1424 5.61451L6.01237 10.7545C5.75567 11.0092 5.55193 11.3122 5.4129 11.646C5.27386 11.9799 5.20228 12.3379 5.20228 12.6995C5.20228 13.0611 5.27386 13.4192 5.4129 13.753C5.55193 14.0868 5.75567 14.3898 6.01237 14.6445C6.53674 15.144 7.23317 15.4226 7.95737 15.4226C8.68156 15.4226 9.37799 15.144 9.90237 14.6445L16.7924 7.74451C17.5872 6.89146 18.02 5.76318 17.9994 4.59737C17.9788 3.43157 17.5066 2.31926 16.6821 1.49478C15.8576 0.6703 14.7453 0.198028 13.5795 0.177459C12.4137 0.15689 11.2854 0.589629 10.4324 1.38451L2.43237 9.38451C1.35357 10.5793 0.777395 12.1444 0.8239 13.7535C0.870405 15.3626 1.536 16.8917 2.68201 18.0223C3.82801 19.1528 5.36604 19.7976 6.97565 19.8222C8.58526 19.8468 10.1423 19.2494 11.3224 18.1545L17.5124 11.9745C17.6056 11.8813 17.6796 11.7706 17.73 11.6488C17.7805 11.5269 17.8065 11.3964 17.8065 11.2645C17.8065 11.1326 17.7805 11.0021 17.73 10.8803C17.6796 10.7584 17.6056 10.6477 17.5124 10.5545C17.4191 10.4613 17.3084 10.3873 17.1866 10.3368C17.0648 10.2864 16.9342 10.2604 16.8024 10.2604C16.6705 10.2604 16.5399 10.2864 16.4181 10.3368C16.2963 10.3873 16.1856 10.4613 16.0924 10.5545V10.5745Z" fill="#8A898E"/>
+															</svg>
+														</label>
+													</div>
+													<button type="submit" class="form-chat__button">
+														<img src="@img/icons/send.svg" alt="image">
+													</button>
+												</form>
+											</div>
+										</div>
+                  </div>
+                  <div class="tabs-chat__body">
+                    Содержимое третьего таба
+                  </div>
+                  <div class="tabs-chat__body">
+                    Содержимое третьего таба
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

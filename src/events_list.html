@@ -6,31 +6,250 @@
 	<body>
 		<div class="wrapper">
 			<img src="@img/bgi.png" class="_bgi" alt="image">
-			<div class="header__menu menu">
-				<div class="menu__logo">
-					<img src="@img/logo.svg" alt="image">
+			<div class="menu__close"></div>
+			<div class="wrapper__menu">
+				<div class="menu">
+					<a href="#" class="menu__logo">
+						<img src="@img/logo.svg" alt="image">
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link_active">
+									<i class="_icon_menu_home"></i><span>Главная</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_profile"></i><span>Профиль</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
 				</div>
-				<button type="button" class="menu__icon icon-menu"><span></span></button>
-				<div class="menu__close"></div>
-				<nav class="menu__body">
-					<ul class="menu__list">
-						<li class="menu__item">
-							<a href="#" class="menu__link menu__link_active">
-								<i class="_icon_menu_home"></i><span>Главная</span>
-							</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__link">
-								<i class="_icon_menu_home"></i><span>Профиль</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
 			</div>
 			<main class="page page_events">
 				<div class="page__container">
-					@@include('html/_header.htm',{})
-					<section class="events"></section>
+					@@include('html/_header.htm',{
+						"one": "Главная",
+						"two": "Список мероприятий",
+						"title": "Мероприятия"
+					})
+					<section class="events">
+						<div class="events__container">
+							<div data-tabs class="tabs-events">
+								<div class="tabs-events__head">
+									<nav data-tabs-titles class="tabs-events__navigation">
+										<button type="button" class="tabs-events__title _tab-active">Предстоящие мероприятия</button>
+										<button type="button" class="tabs-events__title">Прошедшие мероприятия</button>
+									</nav>
+									<a href="#" class="tabs-events__add"><i class="_icon_events_plus"></i><span>Создать мероприятие</span></a>
+								</div>
+								<div data-tabs-body class="tabs-events__content">
+									<div  class="tabs-events__body">
+										<div class="tabs-events__table table-events">
+											<div class="table-events__row table-events__row_first">
+												<div class="table-events__item">ЛОГО</div>
+												<div class="table-events__item">НАИМЕНОВАНИЕ</div>
+												<div class="table-events__item">ДАТА ПРОВЕДЕНИЯ</div>
+												<div class="table-events__item"></div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_1.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Платформа Tanym: Приглашаем учителей к созданию уроков!</a>
+												<div class="table-events__item table-events__item_date">11/06/22 - 12/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													<a href="#" class="table-events__link table-events__link_edit _icon_events_edit"></a><a href="#" class="table-events__link table-events__link_del _icon_events_delete"></a>
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_2.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Конкурс для учителей «STEM-практика»</a>
+												<div class="table-events__item table-events__item_date">05/06/22 - 07/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													<a href="#" class="table-events__link table-events__link_edit _icon_events_edit"></a><a href="#" class="table-events__link table-events__link_del _icon_events_delete"></a>
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_3.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Летний детский образователь ный центр STEAM Camp</a>
+												<div class="table-events__item table-events__item_date">14/06/22 - 14/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													<a href="#" class="table-events__link table-events__link_edit _icon_events_edit"></a><a href="#" class="table-events__link table-events__link_del _icon_events_delete"></a>
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_4.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Открытие лаборатории в РФМШ</a>
+												<div class="table-events__item table-events__item_date">19/08/22 - 20/08/22</div>
+												<div class="table-events__item table-events__item_actions">
+													<a href="#" class="table-events__link table-events__link_edit _icon_events_edit"></a><a href="#" class="table-events__link table-events__link_del _icon_events_delete"></a>
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_5.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Makerspace is a constructivist and constructionist movement </a>
+												<div class="table-events__item table-events__item_date">01/03/22 - 04/03/22</div>
+												<div class="table-events__item table-events__item_actions">
+													<a href="#" class="table-events__link table-events__link_edit _icon_events_edit"></a><a href="#" class="table-events__link table-events__link_del _icon_events_delete"></a>
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_6.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Первый робот в мире - конференция</a>
+												<div class="table-events__item table-events__item_date">12/04/22 - 12/04/22</div>
+												<div class="table-events__item table-events__item_actions">
+													<a href="#" class="table-events__link table-events__link_edit _icon_events_edit"></a><a href="#" class="table-events__link table-events__link_del _icon_events_delete"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div  class="tabs-events__body">
+										<div class="tabs-events__table table-events">
+											<div class="table-events__row table-events__row_first">
+												<div class="table-events__item">ЛОГО</div>
+												<div class="table-events__item">НАИМЕНОВАНИЕ</div>
+												<div class="table-events__item">ДАТА ПРОВЕДЕНИЯ</div>
+												<div class="table-events__item"></div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_1.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Платформа Tanym: Приглашаем учителей к созданию уроков!</a>
+												<div class="table-events__item table-events__item_date">11/06/22 - 12/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_2.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Конкурс для учителей «STEM-практика»</a>
+												<div class="table-events__item table-events__item_date">05/06/22 - 07/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_3.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Летний детский образователь ный центр STEAM Camp</a>
+												<div class="table-events__item table-events__item_date">14/06/22 - 14/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_4.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Открытие лаборатории в РФМШ</a>
+												<div class="table-events__item table-events__item_date">19/08/22 - 20/08/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_5.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Makerspace is a constructivist and constructionist movement </a>
+												<div class="table-events__item table-events__item_date">01/03/22 - 04/03/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_6.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Первый робот в мире - конференция</a>
+												<div class="table-events__item table-events__item_date">12/04/22 - 12/04/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_1.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Платформа Tanym: Приглашаем учителей к созданию уроков!</a>
+												<div class="table-events__item table-events__item_date">11/06/22 - 12/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_2.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Конкурс для учителей «STEM-практика»</a>
+												<div class="table-events__item table-events__item_date">05/06/22 - 07/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_3.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Летний детский образователь ный центр STEAM Camp</a>
+												<div class="table-events__item table-events__item_date">14/06/22 - 14/06/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_4.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Открытие лаборатории в РФМШ</a>
+												<div class="table-events__item table-events__item_date">19/08/22 - 20/08/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_5.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Makerspace is a constructivist and constructionist movement </a>
+												<div class="table-events__item table-events__item_date">01/03/22 - 04/03/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+											<div class="table-events__row">
+												<div class="table-events__item table-events__item_logo">
+													<img src="@img/events/events_logo_6.svg" alt="image">
+												</div>
+												<a href="#" class="table-events__item table-events__item_name">Первый робот в мире - конференция</a>
+												<div class="table-events__item table-events__item_date">12/04/22 - 12/04/22</div>
+												<div class="table-events__item table-events__item_actions">
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 			</main>
 			@@include('html/_footer.htm',{})

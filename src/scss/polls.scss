@@ -1,0 +1,115 @@
+.polls {
+
+  &__container {
+    display: flex;
+    align-items: start;
+    @include adaptiveValue("gap", 200, 50, 1920, 767, 1);
+    padding: rem(25) rem(15);
+    @media (min-width:$tablet){
+      padding: rem(28) rem(70);
+    }
+    @media (max-width:$mobile){
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__row {
+    &>span {
+      display: inline-block;
+      margin-right: rem(4);
+    }
+    &_mb {
+      &:not(:last-child) {margin-bottom: rem(20);}
+    }
+
+    .rating {
+      &:not(:last-child) {margin-bottom: rem(20);}
+    
+      &__value {
+      }
+    
+      &__body {
+      }
+    
+      &__active {
+      }
+    
+      &__items {
+      }
+    
+      &__item {
+      }
+    
+      &__label {
+        font-size: rem(12);
+      }
+    }
+  }
+
+  &__thin {
+    font-size: rem(18);
+  }
+
+  &__bold {
+    font-size: rem(18);
+    font-weight: 700;
+  }
+
+  &__subbold {
+    font-weight: 700;
+    &:not(:last-child) {margin-bottom: rem(20);}
+  }
+
+  &__lines {
+  }
+
+  &__rating {
+  }
+}
+.lines-polls {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  max-width: rem(400);
+
+  &__item {
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(12);
+    &:not(:last-child) {margin-bottom: rem(10);}
+  }
+
+  &__title {
+  }
+
+  &__prc {
+  }
+
+  &__body {
+    border: rem(1) solid #E5E5E6;
+    border-radius: rem(8);
+    min-height: rem(26);
+    display: flex;
+    
+    span {
+      display: block;
+      background: #22C55E;
+      border-radius: rem(8);
+      transform-origin: left center;
+      transform: scaleX(0);
+      &._watcher-view._show {
+        transition: transform 1s ease 0s;
+        transform: scaleX(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Кабинет переводчика</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220701140340">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<picture><source srcset="img/bgi.webp" type="image/webp"><img src="img/bgi.png" class="_bgi" alt="image"></picture>
+		<div class="menu__close"></div>
+		<div class="wrapper__menu">
+			<div class="menu">
+				<a href="#" class="menu__logo">
+					<span>Меню</span>
+				</a>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_home"></i><span>Главная</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link menu__link_logout _button _button_black">
+								ВЫЙТИ
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="page page_translators">
+			<div class="page__container">
+				<header class="header">
+					<div class="header__container">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<div class="header__breadcumps breadcumps-header">
+							<ul class="breadcumps-header__list">
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Главная</a></li>
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link"> </a></li>
+							</ul>
+							<h1 class="breadcumps-header__title">Синхронный перевод</h1>
+						</div>
+						<div class="header__actions actions-header">
+							<div data-da=".menu__body, 767, 0" class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+							<a data-da=".menu__body, 480, 0" href="#" class="actions-header__user">
+								<i class="_icon_menu_profile"></i><span class="actions-header__name">Хасен Джакенов</span>
+							</a>
+						</div>
+					</div>
+				</header>
+				<section class="translators">
+					<div class="translators__container">
+						<div class="translators__head head-translators">
+							<div class="head-translators__row">
+								<span class="head-translators__thin">Мероприятие: </span>
+								<span class="head-translators__bold">Летний детский образовательный центр STEAM Camp</span>
+							</div>
+							<div class="head-translators__row">
+								<span class="head-translators__thin">Переводчик: </span>
+								<span class="head-translators__bold">Хасен Джакенов</span>
+							</div>
+						</div>
+						<div class="translators__body">
+							<div class="translators__actives actives-translators">
+								<form action="#" data-ajax method="post" class="actives-translators__session session-translators">
+									<div class="session-translators__head">
+										<div class="create-translators__label">Активная сессия</div>
+									</div>
+									<div class="session-translators__body">
+										<span class="session-translators__span">с</span>
+										<div class="session-translators__select">
+											<select>
+												<option value="1" selected>Русский</option>
+												<option value="2">Казахский</option>
+												<option value="3">Английский</option>
+												<option value="4">китайский</option>
+											</select>
+										</div>
+										<span class="session-translators__span">на</span>
+										<div class="session-translators__select">
+											<select>
+												<option value="1">Русский</option>
+												<option value="2" selected>Казахский</option>
+												<option value="3">Английский</option>
+												<option value="4">китайский</option>
+											</select>
+										</div>
+										<button type="submit" class="session-translators_button _button _button_blue">Переключить</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="translators__status status-translators">
+							<a href="#" class="status-translators__item">
+								<div class="status-translators__icon status-translators__icon_on">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M17 11C17 13.76 14.76 16 12 16C9.24 16 7 13.76 7 11H5C5 14.53 7.61 17.43 11 17.92V21H13V17.92C16.39 17.43 19 14.53 19 11H17Z" fill="black" />
+										<path d="M12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14ZM11 5C11 4.45 11.45 4 12 4C12.55 4 13 4.45 13 5V11C13 11.55 12.55 12 12 12C11.45 12 11 11.55 11 11V5Z" fill="black" />
+										<path d="M12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14Z" fill="black" />
+									</svg>
+								</div>
+								<div class="status-translators__label">ВЫ В ЭФИРЕ</div>
+							</a>
+							<a href="#" class="status-translators__item">
+								<div class="status-translators__icon status-translators__icon_off">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19 11H17.3C17.3 11.74 17.14 12.43 16.87 13.05L18.1 14.28C18.66 13.3 19 12.19 19 11ZM14.98 11.17C14.98 11.11 15 11.06 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V5.18L14.98 11.17ZM4.27 3L3 4.27L9.01 10.28V11C9.01 12.66 10.34 14 12 14C12.22 14 12.44 13.97 12.65 13.92L14.31 15.58C13.6 15.91 12.81 16.1 12 16.1C9.24 16.1 6.7 14 6.7 11H5C5 14.41 7.72 17.23 11 17.72V21H13V17.72C13.91 17.59 14.77 17.27 15.54 16.82L19.73 21L21 19.73L4.27 3Z" fill="#CCCCCC" />
+									</svg>
+								</div>
+								<div class="status-translators__label">МИКРОФОН ОТЛЮЧЕН</div>
+							</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<span>@ 2021, BEST EVENT LLC</span>
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/app.min.js?_v=20220701140340"></script>
+</body>
+
+</html>

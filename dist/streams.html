@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Потоки</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220701140340">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<picture><source srcset="img/bgi.webp" type="image/webp"><img src="img/bgi.png" class="_bgi" alt="image"></picture>
+		<div class="menu__close"></div>
+		<div class="wrapper__menu">
+			<div class="menu">
+				<a href="#" class="menu__logo">
+					<svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF" />
+					</svg>
+					<span>Новое мероприятие</span>
+				</a>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_register"></i><span>Регистрация</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link menu__link_active">
+								<i class="_icon_menu_streams"></i><span>Потоки</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_partners"></i><span>Партнеры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_participants"></i><span>Участники</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_polls"></i><span>Опросы</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_statistic"></i><span>Статистика</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="page page_events">
+			<div class="page__container">
+				<header class="header">
+					<div class="header__container">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<div class="header__breadcumps breadcumps-header">
+							<ul class="breadcumps-header__list">
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Главная</a></li>
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Потоки</a></li>
+							</ul>
+							<h1 class="breadcumps-header__title">Потоки</h1>
+						</div>
+						<div class="header__actions actions-header">
+							<div data-da=".menu__body, 767, 0" class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+							<a data-da=".menu__body, 480, 0" href="#" class="actions-header__user">
+								<i class="_icon_menu_profile"></i><span class="actions-header__name">Хасен Джакенов</span>
+							</a>
+						</div>
+					</div>
+				</header>
+				<section class="streams">
+					<div class="streams__container">
+						<div class="streams__main main-streams">
+							<div class="main-streams__head">
+								<div class="main-streams__title">Список потоков</div>
+								<div class="main-streams__controls controls-streams">
+									<div class="controls-streams__buttons">
+										<a href="#" class="controls-streams__prev">
+											<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M5.70679 0.293031C5.89426 0.480558 5.99957 0.734866 5.99957 1.00003C5.99957 1.26519 5.89426 1.5195 5.70679 1.70703L2.41379 5.00003L5.70679 8.29303C5.88894 8.48163 5.98974 8.73423 5.98746 8.99643C5.98518 9.25863 5.88001 9.50944 5.6946 9.69485C5.5092 9.88026 5.25838 9.98543 4.99619 9.9877C4.73399 9.98998 4.48139 9.88919 4.29279 9.70703L0.292787 5.70703C0.105316 5.5195 0 5.26519 0 5.00003C0 4.73487 0.105316 4.48056 0.292787 4.29303L4.29279 0.293031C4.48031 0.10556 4.73462 0.000244141 4.99979 0.000244141C5.26495 0.000244141 5.51926 0.10556 5.70679 0.293031Z" fill="#18181B" />
+											</svg>
+										</a>
+										<a href="#" class="controls-streams__double">Дублировать потоки с 26/02/2022</a>
+										<a href="#" class="controls-streams__next">
+											<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M0.292787 9.70704C0.105316 9.51951 0 9.26521 0 9.00004C0 8.73488 0.105316 8.48057 0.292787 8.29304L3.58579 5.00004L0.292787 1.70704C0.110629 1.51844 0.00983372 1.26584 0.0121121 1.00364C0.0143906 0.741443 0.11956 0.490631 0.304968 0.305223C0.490376 0.119815 0.741189 0.0146453 1.00339 0.0123669C1.26558 0.0100885 1.51818 0.110883 1.70679 0.293041L5.70679 4.29304C5.89426 4.48057 5.99957 4.73488 5.99957 5.00004C5.99957 5.26521 5.89426 5.51951 5.70679 5.70704L1.70679 9.70704C1.51926 9.89451 1.26495 9.99983 0.999786 9.99983C0.734622 9.99983 0.480314 9.89451 0.292787 9.70704Z" fill="#18181B" />
+											</svg>
+										</a>
+									</div>
+									<div class="controls-streams__date">Выбрана дата: 28 февраля 2022 года</div>
+								</div>
+							</div>
+							<div data-simplebar class="main-streams__body">
+								<div class="main-streams__timeline">
+									<span class="main-streams__time">0:00</span>
+									<span class="main-streams__time">1:00</span>
+									<span class="main-streams__time">2:00</span>
+									<span class="main-streams__time">3:00</span>
+									<span class="main-streams__time">4:00</span>
+									<span class="main-streams__time">5:00</span>
+									<span class="main-streams__time">6:00</span>
+									<span class="main-streams__time">7:00</span>
+									<span class="main-streams__time">8:00</span>
+									<span class="main-streams__time">9:00</span>
+									<span class="main-streams__time">10:00</span>
+									<span class="main-streams__time">11:00</span>
+									<span class="main-streams__time">12:00</span>
+									<span class="main-streams__time">13:00</span>
+									<span class="main-streams__time">14:00</span>
+									<span class="main-streams__time">15:00</span>
+									<span class="main-streams__time">16:00</span>
+									<span class="main-streams__time">17:00</span>
+									<span class="main-streams__time">18:00</span>
+									<span class="main-streams__time">19:00</span>
+									<span class="main-streams__time">20:00</span>
+									<span class="main-streams__time">21:00</span>
+									<span class="main-streams__time">22:00</span>
+									<span class="main-streams__time">23:00</span>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<div class="head-columnStreams__name">Глобализация в рамках реализации потенциала</div>
+										<div class="head-columnStreams__actions">
+											<div class="head-columnStreams__title">Поток 1</div>
+											<a href="#" data-popup="#addStreamsPopup" class="head-columnStreams__link head-columnStreams__link_edit _icon_events_edit"></a>
+											<a href="#" class="head-columnStreams__link head-columnStreams__link_del _icon_events_delete"></a>
+										</div>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__column column-streams">
+									<div class="column-streams__head head-columnStreams">
+										<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>
+									</div>
+									<div class="column-streams__body" style="height: 1300px;"></div>
+								</div>
+								<div class="main-streams__timeline">
+									<span class="main-streams__time">0:00</span>
+									<span class="main-streams__time">1:00</span>
+									<span class="main-streams__time">2:00</span>
+									<span class="main-streams__time">3:00</span>
+									<span class="main-streams__time">4:00</span>
+									<span class="main-streams__time">5:00</span>
+									<span class="main-streams__time">6:00</span>
+									<span class="main-streams__time">7:00</span>
+									<span class="main-streams__time">8:00</span>
+									<span class="main-streams__time">9:00</span>
+									<span class="main-streams__time">10:00</span>
+									<span class="main-streams__time">11:00</span>
+									<span class="main-streams__time">12:00</span>
+									<span class="main-streams__time">13:00</span>
+									<span class="main-streams__time">14:00</span>
+									<span class="main-streams__time">15:00</span>
+									<span class="main-streams__time">16:00</span>
+									<span class="main-streams__time">17:00</span>
+									<span class="main-streams__time">18:00</span>
+									<span class="main-streams__time">19:00</span>
+									<span class="main-streams__time">20:00</span>
+									<span class="main-streams__time">21:00</span>
+									<span class="main-streams__time">22:00</span>
+									<span class="main-streams__time">23:00</span>
+								</div>
+							</div>
+						</div>
+						<div class="streams__calendar">
+							<div id="calendar_aside" class="jalendar">
+							</div>
+						</div>
+					</div>
+					<script>
+						let streamsDate = new Date(2022, 05, 15);
+						let streamsSchedules = [{
+								id: '1',
+								calendarId: "Глобализация в рамках реализации потенциала",
+								title: 'Спикер: Алумов Аят',
+								category: 'time',
+								dueDateClass: '',
+								start: '2022-06-15T08:00:00',
+								end: '2022-06-15T09:00:00',
+								body: 'Роль STEM в общеобразовательной программе',
+								location: 'https://mau0hezzz.h1n.ru/demo/event'
+							},
+							{
+								id: '2',
+								calendarId: "Глобализация в рамках реализации потенциала",
+								title: 'Спикер: Халимова Алия',
+								category: 'time',
+								dueDateClass: '',
+								start: '2022-06-15T09:00:00',
+								end: '2022-06-15T10:00:00',
+								body: 'Роль STEM в общеобразовательной программе',
+								location: 'https://mau0hezzz.h1n.ru/demo/event'
+							},
+							{
+								id: '3',
+								calendarId: "Глобализация в рамках реализации потенциала",
+								title: 'Спикер: Асхат Казинович',
+								category: 'time',
+								dueDateClass: '',
+								start: '2022-06-15T07:00:00',
+								end: '2022-06-15T08:00:00',
+								body: 'Роль STEM в общеобразовательной программе',
+								location: 'https://mau0hezzz.h1n.ru/demo/event'
+							},
+						]
+						let calendarColors = [{
+								color: "#0369A1",
+								bgColor: "rgba(14, 165, 233, 0.1)",
+								dragBgColor: "rgba(14, 165, 233, 0.1)",
+								borderColor: "#0EA5E9;"
+							},
+							{
+								color: "#B45309",
+								bgColor: "rgba(245, 158, 11, 0.1)",
+								dragBgColor: "rgba(245, 158, 11, 0.1)",
+								borderColor: "#F59E0B;"
+							},
+							{
+								color: "#6D28D9",
+								bgColor: "rgba(139, 92, 246, 0.1)",
+								dragBgColor: "rgba(139, 92, 246, 0.1)",
+								borderColor: "#8B5CF6;"
+							},
+							{
+								color: "#FBBF24",
+								bgColor: "rgba(251, 190, 36, 0.1)",
+								dragBgColor: "rgba(251, 190, 36, 0.1)",
+								borderColor: "#FBBF24;"
+							},
+						]
+					</script>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<span>@ 2021, BEST EVENT LLC</span>
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<div id="addStreamsPopup" aria-hidden="true" class="popup addStreamsPopup">
+		<div class="popup__wrapper addStreamsPopup__wrapper">
+			<div class="popup__content addStreamsPopup__content">
+				<button data-close type="button" class="popup__close addStreamsPopup__close">
+					<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17.0018 17.0003L24.4294 24.4279M9.57422 24.4279L17.0018 17.0003L9.57422 24.4279ZM24.4294 9.57275L17.0004 17.0003L24.4294 9.57275ZM17.0004 17.0003L9.57422 9.57275L17.0004 17.0003Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="popup__text addStreamsPopup__text">
+					<div class="addStreamsPopup__head">
+						<div class="addStreamsPopup__title">Редактирование потока</div>
+					</div>
+					<form action="#" data-ajax method="post" class="addStreamsPopup__body">
+						<div class="addStreamsPopup__row">
+							<div class="addStreamsPopup__item">
+								<div class="addStreamsPopup__subtitle">Название потока</div>
+								<input type="text" data-required placeholder="Название потока" class="addStreamsPopup__input">
+							</div>
+						</div>
+						<div class="addStreamsPopup__row addStreamsPopup__row_options">
+							<div class="addStreamsPopup__item">
+								<div class="addStreamsPopup__subtitle">Очередность</div>
+								<select name="form[]" class="addStreamsPopup__priority">
+									<option value="1" selected>1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+								</select>
+							</div>
+							<div class="addStreamsPopup__item">
+								<div class="addStreamsPopup__subtitle">Показывать участникам?</div>
+								<select name="form[]" class="addStreamsPopup__show">
+									<option value="Да" selected>Да</option>
+									<option value="Нет">Нет</option>
+								</select>
+							</div>
+						</div>
+						<button type="submit" class="addStreamsPopup__submit _button">Сохранить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="addBroadcastPopup" aria-hidden="true" class="popup addBroadcastPopup">
+		<div class="popup__wrapper addStreamsPopup__wrapper">
+			<div class="popup__content addStreamsPopup__content">
+				<button data-close type="button" class="popup__close addStreamsPopup__close">
+					<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17.0018 17.0003L24.4294 24.4279M9.57422 24.4279L17.0018 17.0003L9.57422 24.4279ZM24.4294 9.57275L17.0004 17.0003L24.4294 9.57275ZM17.0004 17.0003L9.57422 9.57275L17.0004 17.0003Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="popup__text addStreamsPopup__text">
+					<div class="addStreamsPopup__head">
+						<div class="addStreamsPopup__title addBroadcastPopup__title">Редактирование трансляции в “<span> 1</span>”</div>
+					</div>
+					<form action="#" data-ajax method="post" class="addBroadcastPopup__body">
+						<div class="addBroadcastPopup__row">
+							<div class="addBroadcastPopup__item">
+								<span class="addBroadcastPopup__subtitle">Введите название трансляции (заголовок)</span>
+								<div class="addBroadcastPopup__inputs">
+									<input type="text" name="" id="" data-required placeholder="Введите название" class="addBroadcastPopup__input addBroadcastPopup__input_name _input">
+								</div>
+							</div>
+						</div>
+						<div class="addBroadcastPopup__row">
+							<div class="addBroadcastPopup__item">
+								<span class="addBroadcastPopup__subtitle">Выберите спикера (можно не выбирать если трансляция без спикера)</span>
+								<div class="addBroadcastPopup__inputs">
+									<select name="form[]" class="addBroadcastPopup__select">
+										<option selected value="Алумов Аят">Алумов Аят</option>
+										<option value="Халимова Алия">Халимова Алия</option>
+										<option value="Асхат Казинович">Асхат Казинович</option>
+										<option value="4">Пункт №4</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="addBroadcastPopup__row">
+							<div class="addBroadcastPopup__item">
+								<span class="addBroadcastPopup__subtitle">Загрузите материалы спикера на данную трансляцию (архив .zip)</span>
+								<div class="addBroadcastPopup__inputs">
+									<input type="file" name="" id="addBroadcastPopup__file" class="addBroadcastPopup__input addBroadcastPopup__input_file">
+									<label for="addBroadcastPopup__file" class="addBroadcastPopup__file">
+										<div class="addBroadcastPopup__preview">Выбрать файл</div>
+										<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M14.2649 2.60776C12.057 0.399951 8.46173 0.399951 6.25627 2.60776L0.139084 8.72026C0.0992405 8.76011 0.0781467 8.81401 0.0781467 8.87026C0.0781467 8.92651 0.0992405 8.98042 0.139084 9.02026L1.00393 9.88511C1.04346 9.92447 1.09697 9.94656 1.15276 9.94656C1.20854 9.94656 1.26205 9.92447 1.30158 9.88511L7.41877 3.77261C8.17814 3.01323 9.18829 2.59604 10.2617 2.59604C11.3352 2.59604 12.3453 3.01323 13.1024 3.77261C13.8617 4.53198 14.2789 5.54214 14.2789 6.61323C14.2789 7.68667 13.8617 8.69448 13.1024 9.45386L6.86798 15.6859L5.85783 16.696C4.9133 17.6406 3.37814 17.6406 2.43361 16.696C1.97658 16.239 1.7258 15.632 1.7258 14.9851C1.7258 14.3382 1.97658 13.7312 2.43361 13.2742L8.61876 7.09136C8.7758 6.93667 8.98204 6.84995 9.20236 6.84995H9.2047C9.42501 6.84995 9.62892 6.93667 9.78361 7.09136C9.94064 7.24839 10.025 7.45464 10.025 7.67495C10.025 7.89292 9.93829 8.09917 9.78361 8.25386L4.72814 13.3046C4.6883 13.3445 4.6672 13.3984 4.6672 13.4546C4.6672 13.5109 4.6883 13.5648 4.72814 13.6046L5.59299 14.4695C5.63252 14.5088 5.68603 14.5309 5.74181 14.5309C5.7976 14.5309 5.85111 14.5088 5.89064 14.4695L10.9438 9.41636C11.4102 8.94995 11.6656 8.3312 11.6656 7.67261C11.6656 7.01401 11.4078 6.39292 10.9438 5.92886C9.98048 4.96558 8.41486 4.96792 7.45158 5.92886L6.85158 6.5312L1.26877 12.1117C0.889859 12.4884 0.589502 12.9365 0.38512 13.4302C0.180737 13.9238 0.0763961 14.4532 0.0781467 14.9875C0.0781467 16.0726 0.502365 17.0921 1.26877 17.8585C2.0633 18.6507 3.10393 19.0468 4.14455 19.0468C5.18517 19.0468 6.2258 18.6507 7.01798 17.8585L14.2649 10.6164C15.3313 9.54761 15.9219 8.12495 15.9219 6.61323C15.9242 5.09917 15.3336 3.67651 14.2649 2.60776Z" fill="#CBD5E0" />
+										</svg>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="addBroadcastPopup__row">
+							<div class="addBroadcastPopup__item">
+								<span class="addBroadcastPopup__subtitle">Время начала и окончания трансляции</span>
+								<div class="addBroadcastPopup__inputs addBroadcastPopup__inputs_time">
+									<input type="text" name="" data-required data-inputmask="'mask': '99:99'" placeholder="19:00" id="" class="_input addBroadcastPopup__input addBroadcastPopup__input_time">
+
+									<svg class="item-addevents__datetime" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M2.05239 0.36644L9.75654 8.38905C10.0812 8.72676 10.0812 9.27236 9.75654 9.61095L2.05239 17.6336C1.58378 18.1221 0.821355 18.1221 0.351914 17.6336C-0.116694 17.145 -0.116694 16.352 0.351914 15.8634L6.94239 8.99956L0.351914 2.13745C-0.116694 1.64799 -0.116694 0.855024 0.351914 0.36644C0.821355 -0.122145 1.58378 -0.122145 2.05239 0.36644Z" fill="#CBD5E0" />
+									</svg>
+
+									<input type="text" name="" data-required data-inputmask="'mask': '99:99'" placeholder="22:00" id="" class="_input addBroadcastPopup__input addBroadcastPopup__input_time">
+								</div>
+							</div>
+						</div>
+						<div class="addBroadcastPopup__message">
+							<span class="addBroadcastPopup__subtitle">Введите краткую аннотацию трансляции (500 символов)</span>
+							<textarea maxlength="500" placeholder="Введите краткую аннотацию трансляции (500 символов)" class="addBroadcastPopup__textarea addBroadcastPopup__textarea_list"></textarea>
+						</div>
+						<div class="addBroadcastPopup__message">
+							<span class="addBroadcastPopup__subtitle">Код встраимаевой трансляции</span>
+							<textarea placeholder="Код встраимаевой трансляции" class="addBroadcastPopup__textarea addBroadcastPopup__textarea_code"></textarea>
+						</div>
+						<button type="submit" class="addBroadcastPopup__submit _button">Сохранить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js?_v=20220701140340"></script>
+	<!--jQuery-->
+	<script src="js/app.min.js?_v=20220701140340"></script>
+</body>
+
+</html>

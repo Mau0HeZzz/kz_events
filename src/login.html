@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Логин"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<main class="page page_login">
+        <div class="login">
+          <div class="login__container">
+            <form action="#" method="post" class="login__form">
+              <h1 class="login__title">Войти</h1>
+              <div class="login__row">
+                <div class="login__item">
+                  <div class="login__subtitle">Email</div>
+                  <input type="text" data-required data-inputmask="'alias':'email'" placeholder="Email" data-inputmask-clearincomplete="true" class="login__input">
+                </div>
+              </div>
+              <div class="login__row">
+                <div class="login__item">
+                  <div class="login__subtitle">Пароль</div>
+                  <input type="password" data-required placeholder="Пароль" class="login__input">
+                </div>
+              </div>
+              <div class="login__row">
+                <div class="login__item">
+                  <input type="checkbox" name="" id="login__checkbox" class="login__checkbox">
+                  <label for="login__checkbox" class="login__label">Запомнить меня</label>
+                </div>
+                <div class="login__item">
+                  <a href="#" class="login__forgot">Забыли пароль?</a>
+                </div>
+              </div>
+              <div class="login__row">
+                <div class="login__item"><button type="submit" class="login__submit _button">Войти</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+			</main>
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

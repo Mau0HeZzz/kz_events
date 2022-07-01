@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Создать клиента"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<div class="menu__close"></div>
+			<div class="wrapper__menu">
+				<div class="menu">
+					<a href="#" class="menu__logo">
+            <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF"/>
+            </svg>
+            <span>Новое мероприятие</span>
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_home"></i><span>Главная</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link_logout _button _button_black">
+                  ВЫЙТИ
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<main class="page page_translators">
+				<div class="page__container">
+					@@include('html/_header.htm',{
+						"one": "Создать мероприятие",
+						"two": "Клиент",
+						"title": "Создать клиента"
+					})
+          <section class="translators">
+            <div class="translators__container">
+              <form action="#" data-ajax method="post" class="translators__body">
+                <div class="translators__create create-translators">
+                  <div class="create-translators__item">
+                    <div class="create-translators__label">Клиент</div>
+                    <input type="text"   placeholder="Введите название/ФИО клиента" class="create-translators__input create-translators__input_big">
+                  </div>
+                  <div class="create-translators__item">
+                    <div class="create-translators__label">Логин</div>
+                    <input type="text"   placeholder="Введите логин" class="create-translators__input">
+                  </div>
+                  <div class="create-translators__item">
+                    <div class="create-translators__label">Пароль</div>
+                    <input type="password" placeholder="Введите пароль" class="create-translators__input">
+                  </div>
+                </div>
+                <div class="translators__create create-translators">
+                  <div class="create-translators__item">
+                    <div class="create-translators__label">Комментарий</div>
+                    <input type="text" placeholder="Введите комментарий" class="create-translators__input create-translators__input_big">
+                  </div>
+                </div>
+                <div class="translators__create create-translators">
+                  <button type="submit" class="create-translators__submit _button _button_blue">Сохранить</button>
+                  <a href="#" class="create-translators__submit _button _button_red">Забанить на платформе</a>
+                </div>
+              </form>
+            </div>
+          </section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

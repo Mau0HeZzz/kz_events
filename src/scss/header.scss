@@ -3,11 +3,18 @@
 //====================================================================================================
 
 .header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 42, 25, 1920, 375, 1);
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: rem(15);
+		@include adaptiveValue("padding-top", 0, 20);
+	}
 
 	&__breadcumps {
+		flex: 1 1 auto;
 	}
 
 	&__actions {
@@ -25,6 +32,7 @@
 		align-items: center;
 		line-height: 1.5;
 		gap: rem(8);
+		font-size: rem(12);
 	}
 
 	&__item {
@@ -42,7 +50,7 @@
 		transition: color 0.3s ease 0s;
 		@media (any-hover: hover){
 			&:hover{
-				color: $grayLight;
+				color: $grayMenu;
 			}
 		}
 	}
@@ -61,29 +69,71 @@
 		padding: rem(11);
 		background-color: #fff;
 		border-radius: rem(8);
-		flex: 0 0 rem(200);
 		display: flex;
 		gap: rem(11);
+		align-items: center;
+		@media (min-width:$mobile){
+			flex: 0 0 rem(200);
+		}
+		@media (max-width:$mobile){
+			box-shadow: 0px rem(5) rem(14) rgba(0, 0, 0, 0.05);
+			&:not(:last-child) {margin-bottom: rem(10);}
+		}
 	}
 
 	&__input {
 		flex: 0 0 calc(100% - rem(36));
+		max-width: calc(100% - rem(36));
+		&:focus {
+			border: none;
+			outline: none;
+		}
 	}
 
 	&__user {
 		display: flex;
 		align-items: center;
 		gap: rem(8);
+		transition: color 0.3s ease 0s;
+		@media (min-width:$mobileSmall){
+			color: #fff;
+		}
+		@media (max-width:$mobileSmall){
+			padding: rem(12) rem(15);
+			display: flex;
+			align-items: center;
+			border-radius: rem(8);
+			gap: rem(12);
+			transition: all 0.3s ease 0s;
+			span {
+				color: $blue;
+				font-size: rem(12);
+				font-weight: 700;
+				transition: all 0.3s ease 0s;
+			}
+			i {
+				padding: rem(7.5);
+				font-size: rem(15);
+				border-radius: rem(8);
+				transition: all 0.3s ease 0s;
+				color: $blue;
+			}
+		}
+		@media (any-hover: hover){
+			&:hover{
+				color: $grayMenu;
+			}
+		}
 	}
 
 	&__name {
 		font-size: rem(12);
 		font-weight: 700;
-		line-height: 1.4;
 	}
 }
 
 
+//========================================================================================================================================================
 
 //Burger
 .icon-menu {
@@ -104,7 +154,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: $mainColor;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;

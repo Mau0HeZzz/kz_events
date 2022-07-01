@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Результаты опроса"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<div class="menu__close"></div>
+			<div class="wrapper__menu">
+				<div class="menu">
+					<a href="#" class="menu__logo">
+            <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF"/>
+            </svg>
+            <span>Новое мероприятие</span>
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_register"></i><span>Регистрация</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_streams"></i><span>Потоки</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_partners"></i><span>Партнеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_participants"></i><span>Участники</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link_active">
+									<i class="_icon_menu_polls"></i><span>Опросы</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_statistic"></i><span>Статистика</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<main class="page page_polls">
+				<div class="page__container">
+					@@include('html/_header.htm',{
+						"one": "Главная",
+						"two": "Список опросов",
+						"title": "Результаты опроса"
+					})
+          <section class="polls">
+            <div class="polls__container">
+              <div class="polls__column">
+                <div class="polls__row">
+                  <span class="polls__thin">Опрос:</span>
+                  <span class="polls__bold">Как Вы считаете, нужно ли использовать  СТЭМ?</span>
+                </div>
+                <div class="polls__row polls__row_mb">
+                  <span class="polls__thin">Спикер:</span>
+                  <span class="polls__bold">Самиров Хамит</span>
+                </div>
+                <div class="polls__row">
+                  <div class="polls__subbold">Кто Вы?</div>
+                  <div class="polls__lines lines-polls">
+                    <div class="lines-polls__item">
+                      <div class="lines-polls__head">
+                        <div class="lines-polls__title">Дизайнер</div>
+                        <div class="lines-polls__prc">50% / 75 респондентов</div>
+                      </div>
+                      <div class="lines-polls__body"><span data-watch-once data-watch style="width: calc(50 * 1%);"></span></div>
+                    </div>
+                    <div class="lines-polls__item">
+                      <div class="lines-polls__head">
+                        <div class="lines-polls__title">Backend разработчик</div>
+                        <div class="lines-polls__prc">60% / 120 респондентов</div>
+                      </div>
+                      <div class="lines-polls__body"><span data-watch-once data-watch style="width: calc(60 * 1%);"></span></div>
+                    </div>
+                    <div class="lines-polls__item">
+                      <div class="lines-polls__head">
+                        <div class="lines-polls__title">HR менеджер</div>
+                        <div class="lines-polls__prc">30% / 23 респондента</div>
+                      </div>
+                      <div class="lines-polls__body"><span data-watch-once data-watch style="width: calc(30 * 1%);"></span></div>
+                    </div>
+                    <div class="lines-polls__item">
+                      <div class="lines-polls__head">
+                        <div class="lines-polls__title">Frontend разработчик</div>
+                        <div class="lines-polls__prc">25% / 12 респондентов</div>
+                      </div>
+                      <div class="lines-polls__body"><span data-watch-once data-watch style="width: calc(25 * 1%);"></span></div>
+                    </div>
+                    <div class="lines-polls__item">
+                      <div class="lines-polls__head">
+                        <div class="lines-polls__title">ios разработчик</div>
+                        <div class="lines-polls__prc">45% / 67 респондентов</div>
+                      </div>
+                      <div class="lines-polls__body"><span data-watch-once data-watch style="width: calc(45 * 1%);"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="polls__column">
+                <div class="polls__row">
+                  <span class="polls__thin">Поток:</span>
+                  <span class="polls__bold">Глобализация в рамках реализации потенциала</span>
+                </div>
+                <div class="polls__row polls__row_mb">
+                  <span class="polls__thin">Количество респондентов:</span>
+                  <span class="polls__bold">135</span>
+                </div>
+                <div class="polls__row polls__row_mb">
+                  <div class="polls__subbold">Насколько Вам понравилось выступление?</div>
+                  <div class="polls__rating">
+                    <div class="rating">
+                      <div class="rating__value">4.0</div>
+                      <div class="rating__body" data-content="★★★★★">
+                        <div class="rating__active" data-content="★★★★★"></div>
+                        <div class="rating__items">
+                          <input type="radio" class="rating__item" value="1" name="rating">
+                          <input type="radio" class="rating__item" value="2" name="rating">
+                          <input type="radio" class="rating__item" value="3" name="rating">
+                          <input type="radio" class="rating__item" value="4" name="rating">
+                          <input type="radio" class="rating__item" value="5" name="rating">
+                        </div>
+                      </div>
+                      <div class="rating__label">Средняя оценка</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="polls__row">
+                  <div class="polls__rating">
+                    <div class="rating">
+                      <div class="rating__value">2.0</div>
+                      <div class="rating__body" data-content="★★★★★">
+                        <div class="rating__active" data-content="★★★★★"></div>
+                        <div class="rating__items">
+                          <input type="radio" class="rating__item" value="1" name="rating">
+                          <input type="radio" class="rating__item" value="2" name="rating">
+                          <input type="radio" class="rating__item" value="3" name="rating">
+                          <input type="radio" class="rating__item" value="4" name="rating">
+                          <input type="radio" class="rating__item" value="5" name="rating">
+                        </div>
+                      </div>
+                      <div class="rating__label">45% / 345 респондентов</div>
+                    </div>
+                    <div class="rating">
+                      <div class="rating__value">5.0</div>
+                      <div class="rating__body" data-content="★★★★★">
+                        <div class="rating__active" data-content="★★★★★"></div>
+                        <div class="rating__items">
+                          <input type="radio" class="rating__item" value="1" name="rating">
+                          <input type="radio" class="rating__item" value="2" name="rating">
+                          <input type="radio" class="rating__item" value="3" name="rating">
+                          <input type="radio" class="rating__item" value="4" name="rating">
+                          <input type="radio" class="rating__item" value="5" name="rating">
+                        </div>
+                      </div>
+                      <div class="rating__label">65% /456 респондентов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

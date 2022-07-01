@@ -1,0 +1,457 @@
+.events {
+  @media (min-width:$tablet){
+    overflow: hidden;
+  }
+
+  &__container {
+    padding: 0;
+  }
+}
+.tabs-events {
+  padding: rem(12) 0;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: rem(16) rem(24);
+    border-bottom: rem(1) solid #E2E8F0;
+    gap: rem(15);
+  }
+
+  &__navigation {
+    display: flex;
+    @include adaptiveValue("gap", 60, 15, 1920, 376, 1);
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 18, 15, 1920, 376, 1);
+    color: $grayMenu;
+    transition: color 0.3s ease 0s;
+    &._tab-active {
+      color: $mainColor;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        color: $mainColor;
+      }
+    }
+  }
+
+  &__add {
+    color: $blue;
+    display: flex;
+    align-items: center;
+    gap: rem(17);
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        color: $grayMenu;
+      }
+    }
+    i {
+      font-size: rem(19);
+    }
+    span {
+      font-size: rem(18);
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+  }
+
+  &__body {
+    padding-bottom: rem(24);
+  }
+
+  &__table {
+  }
+}
+.table-events {
+  display: flex;
+  flex-direction: column;
+  padding: 0 rem(23);
+  gap: rem(12);
+
+  &__row {
+    padding: 0 rem(16);
+    display: grid;
+    gap: rem(15);
+    &:not(:last-child) {
+      border-bottom: rem(1) solid #E2E8F0;
+    }
+    min-height: rem(53);
+    font-weight: 700;
+    transition: all 0.3s ease 0s;
+    @media (min-width:$tablet){
+      grid-auto-flow: column;
+      grid-template-columns: minmax(rem(100), rem(250)) 1fr .5fr rem(80);
+    }
+    @media (max-width:$tablet){
+      padding: rem(12) 0;
+    }
+
+    &_first {
+      margin: 0 rem(-23);
+      padding: rem(17) rem(39) rem(10);
+      text-transform: uppercase;
+      color: $grayMenu;
+      &:not(:last-child) {margin-bottom: rem(16);}
+      min-height: rem(0);
+      font-size: rem(10);
+      @media (max-width:$tablet){
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    flex-grow: 0;
+    flex-shrink: 1;
+    text-overflow: ellipsis;
+
+    &_logo {
+      img {
+        max-width: rem(100);
+      }
+    }
+
+    &_name {
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover){
+        &:hover{
+          color: $grayMenu;
+        }
+      }
+    }
+
+    &_date {
+      color: $grayMenu;
+      white-space: nowrap;
+    }
+
+    &_actions {
+      display: flex;
+      align-items: center;
+      color: $grayMenu;
+      font-size: rem(18);
+      gap: rem(21);
+    }
+  }
+
+  &__link {
+    color: $grayMenu;
+    transition: color 0.3s ease 0s;
+
+    &_edit {
+      @media (any-hover: hover){
+        &:hover{
+          color: $green;
+        }
+      }
+    }
+
+    &_del {
+      @media (any-hover: hover){
+        &:hover{
+          color: $red;
+        }
+      }
+    }
+
+    &_result {
+      color: #3182CE;
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover){
+        &:hover{
+          color: $grayMenu;
+        }
+      }
+    }
+  }
+}
+
+//============================================================================================================================================
+
+.addevents {
+  padding-bottom: rem(40);
+  border-radius: rem(20);
+  box-shadow: 0px rem(5) rem(14) rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  @media (min-width:$tablet) and (min-height:em(861)){
+    min-height: calc(100vh - rem(200));
+  }
+  @media (min-width:$pc){
+    &_speakers {
+      padding-right: rem(200);
+    }
+    &_rooms {
+      padding-right: rem(54);
+    }
+  }
+
+  &__container {
+    padding-top: rem(28);
+    @media (min-width:$pc){
+      display: grid;
+      gap: rem(86);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .addevents_participants & {
+      @media (min-width:$pc){
+        display: grid;
+        gap: rem(56);
+        grid-template-columns: rem(125) repeat(2, 1fr);
+      }
+    }
+    &:not(:last-child) {margin-bottom: rem(20);}
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    @media (max-width:$pc){
+      .addevents_participants & {
+        &:not(:last-child) {margin-bottom: rem(25);}
+      }
+      form.addevents & {
+        &:not(:last-child) {margin-bottom: rem(20);}
+      }
+    }
+    
+  }
+
+  &__row {
+    display: flex;
+    @include adaptiveValue("gap", 32, 15);
+    &_editor {
+      flex: 1 1 auto;
+      .item-addevents__inputs  {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  &__item {
+  }
+}
+
+.addevents__body {
+  @extend .addevents__container;
+}
+
+.item-addevents {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(5);
+  flex: 1 1 auto;
+
+  &_small {
+    flex: 0 0 calc(50% - rem(7.5));
+  }
+
+  &__title {
+    padding-left: rem(5);
+
+    &_big {
+      font-weight: 500;
+      font-size: rem(16);
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    flex-wrap: wrap;
+    &_end {
+      justify-content: end;
+    }
+    .ck {
+      max-width: calc(100vw - rem(50))
+    }
+    .ck-content {
+      @include adaptiveValue("min-height", 323, 250, 1920, 376, 1);
+    }
+    .select {
+      flex: 1 1 auto;
+    }
+
+    &_file {
+      position: relative;
+      padding: rem(15);
+      border-radius: rem(8);
+      border: rem(1) solid #E2E8F0;
+      flex: 1 1 auto;
+      height: rem(50);
+      cursor: pointer;
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        opacity: 0;
+        padding: 0;
+      }
+      img,
+      picture {
+        height: 100%;
+      }
+      &::before{
+        content:attr(data-placeholder);
+        color: $grayMenu;
+      }
+    }
+    .item-addevents__link {
+      margin-top: rem(8);
+    }
+  }
+
+  &__preview {
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+    display: inline-flex;
+    gap: rem(5);
+    img,
+    picture {
+      max-height: rem(20);
+    }
+  }
+
+  &__input {
+    padding: rem(15);
+    border-radius: rem(8);
+    border: rem(1) solid #E2E8F0;
+    flex: 1 1 auto;
+    width: 100%;
+    height: rem(50);
+
+    &_date {
+      max-width: rem(136);
+    }
+
+    &_time {
+      max-width: rem(80);
+    }
+    &_small {
+      width: calc(50% - rem(5));
+      flex: 0 1 calc(50% - rem(5));
+    }
+    &_speakername {
+      text-transform: capitalize;
+    }
+  }
+
+  &__datetime {
+    margin: 0 rem(21);
+    @media (min-width:$mobile){
+      
+    }
+  }
+
+  &__editor {
+  }
+
+  &__reset {
+    background-color: #2D3748;
+    border: rem(1) solid #2D3748;
+    color: #fff;
+    transition: background-color 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: transparent;
+        color: #2D3748;
+      }
+    }
+  }
+
+  &__submit {
+    background-color: #3182CE;
+    border: rem(1) solid #3182CE;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: transparent;
+        color: #3182CE;
+      }
+    }
+  }
+
+  &__select {
+  }
+
+  &__link {
+    color: $blueLight;
+    font-weight: 500;
+    padding-left: rem(5);
+  }
+
+  &__textarea {
+    @extend .item-addevents__input;
+    resize: vertical;
+    min-height: rem(144);
+  }
+}
+
+//========================================================================================================================================================
+
+.user-addevents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(12);
+
+  &__avatar {
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    @media (min-width:$pc){
+      padding-bottom: 100%;
+      align-self: stretch;
+    }
+    @media (max-width:$pc){
+      width: rem(250);
+      height: rem(250);
+    }
+    img,
+    picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: rem(7);
+    font-weight: 700;
+    font-size: rem(10);
+    line-height: 1.4;
+    transition: all 0.3s ease 0s;
+    color: $red;
+    svg path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        color: $mainColor;
+        svg path {
+          fill: $mainColor;
+        }
+      }
+    }
+  }
+}

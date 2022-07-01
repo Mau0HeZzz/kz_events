@@ -8,7 +8,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-[class*="_icon-"] {
+[class*="_icon_"] {
 	&:before {
 		@extend %ic;
 		display: block;

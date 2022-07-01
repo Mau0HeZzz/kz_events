@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Переводчики</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220701140340">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<picture><source srcset="img/bgi.webp" type="image/webp"><img src="img/bgi.png" class="_bgi" alt="image"></picture>
+		<div class="menu__close"></div>
+		<div class="wrapper__menu">
+			<div class="menu">
+				<a href="#" class="menu__logo">
+					<svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF" />
+					</svg>
+					<span>Новое мероприятие</span>
+				</a>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_register"></i><span>Регистрация</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_streams"></i><span>Потоки</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_partners"></i><span>Партнеры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_participants"></i><span>Участники</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_polls"></i><span>Опросы</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_statistic"></i><span>Статистика</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link menu__link_active">
+								<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="page page_translators">
+			<div class="page__container">
+				<header class="header">
+					<div class="header__container">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<div class="header__breadcumps breadcumps-header">
+							<ul class="breadcumps-header__list">
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Создать мероприятие</a></li>
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Переводчики</a></li>
+							</ul>
+							<h1 class="breadcumps-header__title">Создать переводчика</h1>
+						</div>
+						<div class="header__actions actions-header">
+							<div data-da=".menu__body, 767, 0" class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+							<a data-da=".menu__body, 480, 0" href="#" class="actions-header__user">
+								<i class="_icon_menu_profile"></i><span class="actions-header__name">Хасен Джакенов</span>
+							</a>
+						</div>
+					</div>
+				</header>
+				<section class="translators">
+					<div class="translators__container">
+						<div class="translators__body">
+							<form action="#" data-ajax method="post" class="translators__create create-translators">
+								<div class="create-translators__item">
+									<div class="create-translators__label">ФИО переводчика</div>
+									<input type="text" placeholder="Введите ФИО переводчика" class="create-translators__input create-translators__input_big">
+								</div>
+								<div class="create-translators__item">
+									<div class="create-translators__label">Логин</div>
+									<input type="text" placeholder="Введите логин" class="create-translators__input">
+								</div>
+								<div class="create-translators__item">
+									<div class="create-translators__label">Пароль</div>
+									<input type="password" placeholder="Введите пароль" class="create-translators__input">
+								</div>
+								<button type="submit" class="create-translators__submit _button _button_blue">Сохранить</button>
+							</form>
+							<div class="translators__actives actives-translators">
+								<div data-languages class="actives-translators__languages languages-translators">
+									<div class="languages-translators__head">
+										<div class="create-translators__label">Языки перевода</div>
+									</div>
+									<div data-languages-body class="languages-translators__body">
+										<div class="languages-translators__item" data-languages-item>
+											<span class="languages-translators__name">Русский</span>
+											<button class="languages-translators__del _icon_events_delete" data-languages-del></button>
+										</div>
+										<div class="languages-translators__item" data-languages-item>
+											<span class="languages-translators__name">Казахский</span>
+											<button class="languages-translators__del _icon_events_delete" data-languages-del></button>
+										</div>
+										<div class="languages-translators__item" data-languages-item>
+											<span class="languages-translators__name">Английский</span>
+											<button class="languages-translators__del _icon_events_delete" data-languages-del></button>
+										</div>
+									</div>
+									<div class="languages-translators__add">
+										<input data-languages-name placeholder="Добавьте язык" type="text" class="languages-translators__input">
+										<a href="#" data-languages-add class="languages-translators__button">Добавить</a>
+									</div>
+								</div>
+								<form action="#" data-ajax method="post" class="actives-translators__session session-translators">
+									<div class="session-translators__head">
+										<div class="create-translators__label">Активная сессия</div>
+									</div>
+									<div class="session-translators__body">
+										<div class="session-translators__select">
+											<select>
+												<option value="1" selected>Поток 1</option>
+												<option value="2">Поток 2</option>
+												<option value="3">Поток 3</option>
+												<option value="4">Поток 4</option>
+											</select>
+										</div>
+										<span class="session-translators__span">с</span>
+										<div class="session-translators__select">
+											<select>
+												<option value="1" selected>Русский</option>
+												<option value="2">Казахский</option>
+												<option value="3">Английский</option>
+												<option value="4">китайский</option>
+											</select>
+										</div>
+										<span class="session-translators__span">на</span>
+										<div class="session-translators__select">
+											<select>
+												<option value="1">Русский</option>
+												<option value="2" selected>Казахский</option>
+												<option value="3">Английский</option>
+												<option value="4">китайский</option>
+											</select>
+										</div>
+										<button type="submit" class="session-translators_button _button _button_blue">Переключить</button>
+									</div>
+								</form>
+								<div class="actives-translators__record record-translators">
+									<div class="record-translators__head">
+										<div class="create-translators__label">Прослушать активную сессию</div>
+									</div>
+									<div class="record-translators__body">
+										<figure>
+											<figcaption>Хасен Джакенов (с “русский” на “казахский”)</figcaption>
+											<audio controls src="img/mama_ya_hochu_pikachu.mp3">Ваш браузер не поддерживает элемент <code>audio</code>.</audio>
+										</figure>
+									</div>
+								</div>
+							</div>
+							<div class="translators__table table-translators">
+
+								<div class="main-statistic__table table-statistic">
+									<div class="table-statistic__head">
+										<div class="statistic__title">Самые досматриваемые выступления (первые&nbsp;10)</div>
+									</div>
+									<div class="table-statistic__body" data-simplebar style="--colwidth: 90px; max-width: 634px;">
+										<div class="table-statistic__row table-statistic__row_first">
+											<div type="button" class="table-statistic__item">Поток</div>
+											<div type="button" class="table-statistic__item">Язык с</div>
+											<div type="button" class="table-statistic__item">Язык на</div>
+											<div type="button" class="table-statistic__item">Длительность</div>
+											<div type="button" class="table-statistic__item">Скачать</div>
+										</div>
+										<div class="table-statistic__row">
+											<div class="table-statistic__item">Поток 1</div>
+											<div class="table-statistic__item">Казахский</div>
+											<div class="table-statistic__item">Русский</div>
+											<div class="table-statistic__item">4м 45с</div>
+											<div class="table-statistic__item"><a href="#" class="table-translators__link">Скачать</a></div>
+										</div>
+										<div class="table-statistic__row">
+											<div class="table-statistic__item">Поток 2</div>
+											<div class="table-statistic__item">Русский</div>
+											<div class="table-statistic__item">Казахский</div>
+											<div class="table-statistic__item">1ч 34м 2с</div>
+											<div class="table-statistic__item"><a href="#" class="table-translators__link">Скачать</a></div>
+										</div>
+										<div class="table-statistic__row">
+											<div class="table-statistic__item">Поток 3</div>
+											<div class="table-statistic__item">Английский</div>
+											<div class="table-statistic__item">Русский</div>
+											<div class="table-statistic__item">56 с</div>
+											<div class="table-statistic__item"><a href="#" class="table-translators__link">Скачать</a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<span>@ 2021, BEST EVENT LLC</span>
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/app.min.js?_v=20220701140340"></script>
+</body>
+
+</html>

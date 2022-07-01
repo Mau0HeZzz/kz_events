@@ -39,7 +39,7 @@ flsFunctions.menuInit();
 Документация: https://template.fls.guru/template-docs/modul-spojlery.html
 Сниппет (HTML): spollers
 */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 
 /*
 Модуль работы с табами
@@ -60,7 +60,7 @@ flsFunctions.tabs();
 Документация: https://template.fls.guru/template-docs/funkcional-popup.html
 Сниппет (HTML): pl
 */
-// import './libs/popup.js'
+import './libs/popup.js'
 
 /*
 Модуль параллакса мышью
@@ -76,20 +76,20 @@ import * as flsForms from "./files/forms/forms.js";
 
 /* Работа с полями формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formFieldsInit({ viewPass: false });
+flsForms.formFieldsInit({ viewPass: false });
 
 /* Oтправка формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль формы "колличество" */
 // flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
-// flsForms.formRating();
+flsForms.formRating();
 
 /* Модуль работы с select. */
-// import './libs/select.js'
+import './libs/select.js'
 
 /* (В работе) Модуль работы с масками.*/
 /*
@@ -98,7 +98,7 @@ import * as flsForms from "./files/forms/forms.js";
 Документация плагина: https://github.com/RobinHerbots/inputmask
 Сниппет(HTML):
 */
-// import "./files/forms/inputmask.js";
+import "./files/forms/inputmask.js";
 
 /* Модуль работы с ползунком */
 /*
@@ -139,7 +139,7 @@ import * as flsForms from "./files/forms/forms.js";
 Документация плагина: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
 Сниппет(HTML): 
 */
-// import './files/scroll/simplebar.js';
+import './files/scroll/simplebar.js';
 
 // Ленивая (отложенная) загрузка картинок
 // Документация по работе в шаблоне: https://template.fls.guru/template-docs/modul-lenivaya-podgruzka-lazy-loading.html
@@ -150,7 +150,7 @@ import * as flsForms from "./files/forms/forms.js";
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 // Сниппет(HTML):
-// import './libs/watcher.js'
+import './libs/watcher.js'
 
 // Функции работы скроллом
 import * as flsScroll from "./files/scroll/scroll.js";
@@ -164,7 +164,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 // flsScroll.headerScroll();
 
 // Функционал липкого блока
-// flsScroll.stickyBlock();
+flsScroll.stickyBlock();
 
 // ========================================================================================================================================================================================================================================================
 // Галерея ========================================================================================================================================================================================================================================================
@@ -183,6 +183,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 /* Динамический адаптив */
 // Документация: https://template.fls.guru/template-docs/dinamicheskij-adaptiv.html
 import "./libs/dynamic_adapt.js";
+import "./libs/jalendar.min.js";
 
 /* Форматирование чисел */
 // import './libs/wNumb.min.js';

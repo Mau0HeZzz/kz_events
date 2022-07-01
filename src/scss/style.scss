@@ -21,6 +21,7 @@ $fontSize: rem(14); // где 14(px) - размер шрифта по умолч
 // Основные цвета
 $mainColor: #2D3748; // Цвет шрифта по умолчанию
 $blue: #3182CE;
+$blueLight: #2F80ED;
 $gray: #718096;
 $grayLight: #CBD5E0;
 $grayBlue: #556987;
@@ -77,6 +78,10 @@ body {
 	section {
 		border-radius: rem(20);
 		box-shadow: 0px rem(5) rem(14) rgba(0, 0, 0, 0.05);
+		background-color: #fff;
+		@media (min-width:$tablet) and (min-height:em(861)){
+			min-height: calc(100vh - rem(200));
+		}
 	}
 	// Прижимаем footer
 	> main {
@@ -100,7 +105,7 @@ body {
 	[class*="__container"] {
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
+			box-sizing: border-box;
 			margin: 0 0 0 auto;
 		}
 		@if ($containerPadding>0) {
@@ -134,6 +139,14 @@ body {
 	}
 }
 
+
+.page__container {
+	padding: 0;
+	@media (min-width:$tablet){
+		margin-left: rem(305) !important;
+	}
+}
+
 // Подключение базовых стилей, шаблонов (заготовок) и вспомогательных  классов
 // Для подключения/отключения конкретных стилей смотри base.scss
 @import "base";
@@ -146,4 +159,16 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
+@import './libs/jalendar';
+@import './libs/datepicker';
 @import "home";
+@import "events";
+@import "participants";
+@import "streams";
+@import "login";
+@import "regevent";
+@import "speakers";
+@import "polls";
+@import "chat";
+@import "statistic";
+@import "translators";

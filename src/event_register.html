@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Регистрация Мероприятия"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<div class="menu__close"></div>
+			<div class="wrapper__menu">
+				<div class="menu">
+					<a href="#" class="menu__logo">
+            <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF"/>
+            </svg>
+            <span>Новое мероприятие</span>
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link_active">
+									<i class="_icon_menu_register"></i><span>Регистрация</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_streams"></i><span>Потоки</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_partners"></i><span>Партнеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_participants"></i><span>Участники</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_polls"></i><span>Опросы</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_statistic"></i><span>Статистика</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<main class="page page_events">
+				<div class="page__container">
+					@@include('html/_header.htm',{
+						"one": "Создать мероприятие",
+						"two": "Регистрация",
+						"title": "Регистрация"
+					})
+          <section class="register-event">
+            <div class="register-event__container">
+              <div data-tabs class="register-event__tabs">
+                <nav data-tabs-titles class="register-event__navigation tabs__navigation">
+                  <button type="button" class="register-event__title _tab-active">Настройка полей</button>
+                  <button type="button" class="register-event__title">Настройка формы</button>
+                </nav>
+                <div data-tabs-body class="register-event__content tabs__content">
+                  <div class="register-event__body">
+                    <form action="#" method="post" data-ajax class="register-event__fields fields-event">
+                      <div class="fields-event__body">
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1" selected>Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_1" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_1" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_2" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_2" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="2" data-index="2" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>2</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1">Email</option>
+                                    <option data-type="phone" value="9" selected>Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_3" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_3" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_3" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_3" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1">Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2" selected>Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_5" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_5" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_6" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_6" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1">Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3" selected>Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_7" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_7" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_8" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_8" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1" >Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4" selected>Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_15" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_15" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_25" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_25" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1" >Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5" selected>Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_18" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_18" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_29" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_29" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1" >Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6" selected>Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_17" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_17" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_23" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_23" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1" >Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7" selected>Число</option>
+                                    <option data-type="password" value="8">Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_10" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_10" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_20" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_20" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                        <div class="fields-event__row row-event">
+                          <input type="hidden" value="1" data-index="1" hidden>
+                          <div data-event-inputs class="row-event__item">
+                            <div class="row-event__head">
+                              <div class="row-event__name">ПОЛЕ <span>1</span></div>
+                              <div class="row-event__actions">
+                                <button data-actions="double" class="row-event__button">Дублировать</button>
+                                <button data-actions="del" class="row-event__button">Удалить</button>
+                                <button data-actions="up" class="row-event__button">Вверх</button>
+                                <button data-actions="down" class="row-event__button">Вниз</button>
+                              </div>
+                            </div>
+                            <div class="row-event__body">
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Тип поля</div>
+                                  <select name="form[]" data-events-types data-required class="row-event__select">
+                                    <option data-type="email" value="1" >Email</option>
+                                    <option data-type="phone" value="9">Телефон</option>
+                                    <option data-type="text" value="2">Текст</option>
+                                    <option data-type="file" value="3">Файл</option>
+                                    <option data-type="select" value="4">Выпадающий список</option>
+                                    <option data-type="checkbox" value="5">Галочка</option>
+                                    <option data-type="date" value="6">Дата</option>
+                                    <option data-type="number" value="7">Число</option>
+                                    <option data-type="password" value="8" selected>Пароль</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Заголовок поля</div>
+                                  <input type="text" data-required data-event-title placeholder="Заголовок поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-tippyel class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <div class="row-event__subtitle">Подсказка значения поля</div>
+                                  <input type="text" data-required data-event-tippy placeholder="Подсказка значения поля" class="row-event__input">
+                                </div>
+                              </div>
+                              <div data-event-checkboxes class="row-event__line">
+                                <div class="row-event__subitem">
+                                  <input data-events-required checked type="checkbox" id="row-event__checkbox_14" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_14" class="row-event__label">Обязательно для заполнения</label>
+                                </div>
+                                <div class="row-event__subitem">
+                                  <input data-event-multiple type="checkbox" id="row-event__checkbox_26" class="row-event__checkbox">
+                                  <label for="row-event__checkbox_26" class="row-event__label">Множественный выбор</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div data-event-output class="row-event__item"></div>
+                        </div>
+                      </div>
+                      <button class="fields-event__add">ДОБАВИТЬ ПОЛЕ</button>
+                      <div class="fields-event__btns">
+                        <button type="submit" data-popup="#getEventJsPopup" class="fields-event__black _button">ПОЛУЧИТЬ JS КОД</button>
+                        <button type="submit" class="fields-event__blue _button">СОХРАНИТЬ</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="register-event__body">
+                    <form action="#" data-ajax method="post" class="register-event__settings settings-event">
+                      <div class="settings-event__row row-settingsEvent">
+                        <div class="row-settingsEvent__head">
+                          <div class="row-settingsEvent__title">ОБЩИЕ</div>
+                        </div>
+                        <div class="row-settingsEvent__body">
+                          <div class="row-settingsEvent__item item-settingsEvent">
+                            <div class="item-settingsEvent__title">Ширина формы</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="text" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" name="" class="item-settingsEvent__input">
+                              <div class="item-settingsEvent__boxes">
+                                <div class="item-settingsEvent__box">
+                                <input checked type="radio" name="item-settingsEvent__radio_1" id="item-settingsEvent__radio_1" class="item-settingsEvent__radio _bluebox">
+                                <label for="item-settingsEvent__radio_1" class="item-settingsEvent__label _bluelabel">px</label>
+                                </div>
+                                <div class="item-settingsEvent__box">
+                                <input type="radio" name="item-settingsEvent__radio_1" id="item-settingsEvent__radio_2" class="item-settingsEvent__radio _bluebox">
+                                <label for="item-settingsEvent__radio_2" class="item-settingsEvent__label _bluelabel">%</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row-settingsEvent__item item-settingsEvent">
+                            <div class="item-settingsEvent__title">Padding</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="text" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" name="" class="item-settingsEvent__input">
+                              <div class="item-settingsEvent__boxes">
+                                <div class="item-settingsEvent__box">
+                                <input checked type="radio" name="item-settingsEvent__radio_2" id="item-settingsEvent__radio_3" class="item-settingsEvent__radio _bluebox">
+                                <label for="item-settingsEvent__radio_3" class="item-settingsEvent__label _bluelabel">px</label>
+                                </div>
+                                <div class="item-settingsEvent__box">
+                                <input type="radio" name="item-settingsEvent__radio_2" id="item-settingsEvent__radio_4" class="item-settingsEvent__radio _bluebox">
+                                <label for="item-settingsEvent__radio_4" class="item-settingsEvent__label _bluelabel">%</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row-settingsEvent__item item-settingsEvent">
+                            <div class="item-settingsEvent__title">Margin</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="text" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" name="" class="item-settingsEvent__input">
+                              <div class="item-settingsEvent__boxes">
+                                <div class="item-settingsEvent__box">
+                                  <input checked type="radio" name="item-settingsEvent__radio_3" id="item-settingsEvent__radio_5" class="item-settingsEvent__radio _bluebox">
+                                  <label for="item-settingsEvent__radio_5" class="item-settingsEvent__label _bluelabel">px</label>
+                                </div>
+                                <div class="item-settingsEvent__box">
+                                  <input type="radio" name="item-settingsEvent__radio_3" id="item-settingsEvent__radio_6" class="item-settingsEvent__radio _bluebox">
+                                  <label for="item-settingsEvent__radio_6" class="item-settingsEvent__label _bluelabel">%</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="settings-event__row row-settingsEvent">
+                        <div class="row-settingsEvent__head">
+                          <div class="row-settingsEvent__title">ЦВЕТ</div>
+                        </div>
+                        <div class="row-settingsEvent__body ">
+                          <div class="row-settingsEvent__item item-settingsEvent item-settingsEvent_small">
+                            <div class="item-settingsEvent__title">Цвет модуля</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="color" name="" id="item-settingsEvent__input_color_1" class="item-settingsEvent__input item-settingsEvent__input_color">
+                              <input type="text" maxlength="7" name="" class="item-settingsEvent__input">
+                            </div>
+                          </div>
+                          <div class="row-settingsEvent__item item-settingsEvent item-settingsEvent_small">
+                            <div class="item-settingsEvent__title">Цвет текста</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="color" name="" id="item-settingsEvent__input_color_2" class="item-settingsEvent__input item-settingsEvent__input_color">
+                              <input type="text" maxlength="7" name="" class="item-settingsEvent__input">
+                            </div>
+                          </div>
+                          <div class="row-settingsEvent__item item-settingsEvent item-settingsEvent_small">
+                            <div class="item-settingsEvent__title">Цвет поля</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="color" name="" id="item-settingsEvent__input_color_3" class="item-settingsEvent__input item-settingsEvent__input_color">
+                              <input type="text" maxlength="7" name="" class="item-settingsEvent__input">
+                            </div>
+                          </div>
+                          <div class="row-settingsEvent__item item-settingsEvent item-settingsEvent_small">
+                            <div class="item-settingsEvent__title">Цвет обводки</div>
+                            <div class="item-settingsEvent__body">
+                              <input type="color" name="" id="item-settingsEvent__input_color_4" class="item-settingsEvent__input item-settingsEvent__input_color">
+                              <input type="text" maxlength="7" name="" class="item-settingsEvent__input">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="settings-event__row row-settingsEvent">
+                        <div class="row-settingsEvent__head">
+                          <div class="row-settingsEvent__title">ЗАКРЫТИЕ РЕГИСТРАЦИИ</div>
+                        </div>
+                        <div class="row-settingsEvent__body">
+                          <div class="row-settingsEvent__item item-settingsEvent">
+                            <div class="item-settingsEvent__title">Текст при закрытой регистрации</div>
+                            <div class="item-settingsEvent__body">
+                              <textarea name="" placeholder="Текст при закрытой регистрации" class="item-settingsEvent__textarea"></textarea>
+                            </div>
+                          </div>
+                          <div class="row-settingsEvent__item item-settingsEvent">
+                            <div class="item-settingsEvent__title">Дата/время начала и окончания мероприятия</div>
+                            <div class="item-settingsEvent__body">
+                              <div class="item-addevents__inputs">
+                                <input type="text" data-datepicker data-datepicker-position="tl" placeholder="01 - 03 - 2022" class="item-addevents__input item-addevents__input_date">
+                                <input type="text" data-inputmask="'mask': '99:99'" placeholder="19:00" class="item-addevents__input item-addevents__input_time">
+            
+                                <svg class="item-addevents__datetime" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.05239 0.36644L9.75654 8.38905C10.0812 8.72676 10.0812 9.27236 9.75654 9.61095L2.05239 17.6336C1.58378 18.1221 0.821355 18.1221 0.351914 17.6336C-0.116694 17.145 -0.116694 16.352 0.351914 15.8634L6.94239 8.99956L0.351914 2.13745C-0.116694 1.64799 -0.116694 0.855024 0.351914 0.36644C0.821355 -0.122145 1.58378 -0.122145 2.05239 0.36644Z" fill="#CBD5E0"/>
+                                </svg>
+            
+                                <input type="text" data-datepicker data-datepicker-position="tl" placeholder="03 - 03 - 2022" class="item-addevents__input item-addevents__input_date">
+                                <input type="text" data-inputmask="'mask': '99:99'" placeholder="22:00" class="item-addevents__input item-addevents__input_time">
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                      <button type="submit" class="row-settingsEvent__submit _button _button_blue">СОХРАНИТЬ</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup_event_getjs.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

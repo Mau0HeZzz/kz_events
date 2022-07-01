@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Создать клиента</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220701140340">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<picture><source srcset="img/bgi.webp" type="image/webp"><img src="img/bgi.png" class="_bgi" alt="image"></picture>
+		<div class="menu__close"></div>
+		<div class="wrapper__menu">
+			<div class="menu">
+				<a href="#" class="menu__logo">
+					<svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF" />
+					</svg>
+					<span>Новое мероприятие</span>
+				</a>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="_icon_menu_home"></i><span>Главная</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link menu__link_logout _button _button_black">
+								ВЫЙТИ
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<main class="page page_translators">
+			<div class="page__container">
+				<header class="header">
+					<div class="header__container">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<div class="header__breadcumps breadcumps-header">
+							<ul class="breadcumps-header__list">
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Создать мероприятие</a></li>
+								<li class="breadcumps-header__item"><a href="#" class="breadcumps-header__link">Клиент</a></li>
+							</ul>
+							<h1 class="breadcumps-header__title">Создать клиента</h1>
+						</div>
+						<div class="header__actions actions-header">
+							<div data-da=".menu__body, 767, 0" class="actions-header__search"><i class="_icon_search"></i><input type="text" class="actions-header__input" placeholder="Искать..."></div>
+							<a data-da=".menu__body, 480, 0" href="#" class="actions-header__user">
+								<i class="_icon_menu_profile"></i><span class="actions-header__name">Хасен Джакенов</span>
+							</a>
+						</div>
+					</div>
+				</header>
+				<section class="translators">
+					<div class="translators__container">
+						<form action="#" data-ajax method="post" class="translators__body">
+							<div class="translators__create create-translators">
+								<div class="create-translators__item">
+									<div class="create-translators__label">Клиент</div>
+									<input type="text" placeholder="Введите название/ФИО клиента" class="create-translators__input create-translators__input_big">
+								</div>
+								<div class="create-translators__item">
+									<div class="create-translators__label">Логин</div>
+									<input type="text" placeholder="Введите логин" class="create-translators__input">
+								</div>
+								<div class="create-translators__item">
+									<div class="create-translators__label">Пароль</div>
+									<input type="password" placeholder="Введите пароль" class="create-translators__input">
+								</div>
+							</div>
+							<div class="translators__create create-translators">
+								<div class="create-translators__item">
+									<div class="create-translators__label">Комментарий</div>
+									<input type="text" placeholder="Введите комментарий" class="create-translators__input create-translators__input_big">
+								</div>
+							</div>
+							<div class="translators__create create-translators">
+								<button type="submit" class="create-translators__submit _button _button_blue">Сохранить</button>
+								<a href="#" class="create-translators__submit _button _button_red">Забанить на платформе</a>
+							</div>
+						</form>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<span>@ 2021, BEST EVENT LLC</span>
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/app.min.js?_v=20220701140340"></script>
+</body>
+
+</html>

@@ -187,7 +187,7 @@ export function formSubmit(options = { validate: true }) {
 					alert("Ошибка");
 					form.classList.remove('_sending');
 				}
-			} else if (form.hasAttribute('data-dev')) {	// Если режим разработки
+			} else if (form.hasAttribute('data-ajax')) {	// Если режим разработки
 				e.preventDefault();
 				formSent(form);
 			}
@@ -271,7 +271,8 @@ export function formRating() {
 		}
 		// Изменяем ширину активных звезд
 		function setRatingActiveWidth(index = ratingValue.innerHTML) {
-			const ratingActiveWidth = index / 0.05;
+			let indexIndex = ratingActive.dataset.content.length;
+			const ratingActiveWidth = index / (0.01 * indexIndex);
 			ratingActive.style.width = `${ratingActiveWidth}%`;
 		}
 		// Возможность указать оценку 

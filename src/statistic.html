@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Статистика"
+	})
+	<body>
+		<div class="wrapper">
+			<img src="@img/bgi.png" class="_bgi" alt="image">
+			<div class="menu__close"></div>
+			<div class="wrapper__menu">
+				<div class="menu">
+					<a href="#" class="menu__logo">
+            <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53714 20.0827L0.292152 10.9458C-0.097384 10.5612 -0.097384 9.93981 0.292152 9.5542L9.53714 0.417333C10.0995 -0.139111 11.0144 -0.139111 11.5777 0.417333C12.14 0.973776 12.14 1.87687 11.5777 2.43332L3.66913 10.2505L11.5777 18.0657C12.14 18.6231 12.14 19.5262 11.5777 20.0827C11.0144 20.6391 10.0995 20.6391 9.53714 20.0827Z" fill="#007AFF"/>
+            </svg>
+            <span>Новое мероприятие</span>
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_details"></i><span>Детали мероприятия</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_register"></i><span>Регистрация</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_streams"></i><span>Потоки</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_speakers"></i><span>Спикеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_partners"></i><span>Партнеры</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_participants"></i><span>Участники</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_rooms"></i><span>Переговорные комнаты</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_chat"></i><span>Чат <span class="_red">(145)</span></span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_polls"></i><span>Опросы</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link_active">
+									<i class="_icon_menu_statistic"></i><span>Статистика</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">
+									<i class="_icon_menu_translate"></i><span>Синх. перевод</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<main class="page page_statistic">
+				<div class="page__container">
+					@@include('html/_header.htm',{
+						"one": "Создать мероприятие",
+						"two": "Статистика",
+						"title": "Статистика"
+					})
+          <section class="statistic">
+            <div class="statistic__container">
+              <div data-tabs class="tabs-statistic">
+                <nav data-tabs-titles class="tabs-statistic__navigation">
+                  <button type="button" class="tabs-statistic__title">Общие показатели</button>
+                  <button type="button" class="tabs-statistic__title">Потоки</button>
+                  <button type="button" class="tabs-statistic__title _tab-active">Спикеры</button>
+                  <button type="button" class="tabs-statistic__title">Опросы</button>
+                  <button type="button" class="tabs-statistic__title">Партнеры</button>
+                  <button type="button" class="tabs-statistic__title">Сертификаты</button>
+                </nav>
+                <div data-tabs-body class="tabs-statistic__content">
+                  <div class="tabs-statistic__body main-statistic">
+                    <div class="main-statistic__body">
+                      <div class="main-statistic__item">
+                        <div class="main-statistic__diagram diagram-statistic">
+                          <div class="diagram-statistic__head">
+                            <div data-spollers class="diagram-statistic__spollers spollers-statistic">
+                              <div class="spollers-statistic__item">
+                                <button type="button" data-spoller class="spollers-statistic__title statistic__title">Количество регистраций/фактических участников</button>
+                                <div class="spollers-statistic__body">Общее количесто всех зарегистрированных пользователей</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="diagram-statistic__body">
+                            <canvas data-diagram class="diagram-statistic__main"></canvas>
+                            <div class="diagram-statistic__labels labels-statistic">
+                              <div class="labels-statistic__head">
+                                <div class="labels-statistic__subtitle">Общее количество</div>
+                                <div class="labels-statistic__title">7,865</div>
+                              </div>
+                              <div class="labels-statistic__body">
+                                <div data-bg="#43B5F4" data-proportion="25" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Казахстан</span> (4 567)</div>
+                                </div>
+                                <div data-bg="#89CFF5" data-proportion="10" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Армения</span> (2 456)</div>
+                                </div>
+                                <div data-bg="#B4E2FB" data-proportion="35" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Россия</span> (478)</div>
+                                </div>
+                                <div data-bg="#D4EDFB" data-proportion="30" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>США</span> (941)</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-statistic__item">
+                        <div class="main-statistic__table table-statistic">
+                          <div class="table-statistic__head">
+                            <div class="statistic__title">Выбранная страна “Казахстан”</div>
+                          </div>
+                          <div class="table-statistic__body" style="--colwidth: 90px">
+                            <div class="table-statistic__row table-statistic__row_first">
+                              <div class="table-statistic__item">Город</div>
+                              <div class="table-statistic__item">Регистрации</div>
+                              <div class="table-statistic__item">Фактические
+                                участники</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Караганда</div>
+                              <div class="table-statistic__item">3 456</div>
+                              <div class="table-statistic__item">2 345</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Нур-Султан</div>
+                              <div class="table-statistic__item">2 345</div>
+                              <div class="table-statistic__item">1 234</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-statistic__item main-statistic__item_big">
+                        <div class="main-statistic__table table-statistic">
+                          <div class="table-statistic__head">
+                            <div class="statistic__title">ТОП-10 городов по количеству регистраций 
+                              и фактических участников</div>
+                          </div>
+                          <div class="table-statistic__body" style="--colwidth: 90px">
+                            <div class="table-statistic__row table-statistic__row_first">
+                              <div class="table-statistic__item">Город</div>
+                              <div class="table-statistic__item">Регистрации</div>
+                              <div class="table-statistic__item">Фактические
+                                участники</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Караганда</div>
+                              <div class="table-statistic__item">3 456</div>
+                              <div class="table-statistic__item">2 345</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Нур-Султан</div>
+                              <div class="table-statistic__item">2 345</div>
+                              <div class="table-statistic__item">1 234</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алматы</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">3 456</div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-statistic__item">
+                        <div class="main-statistic__quantity quantity-statistic">
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">22</div>
+                              <div class="quantity-statistic__label">спикера</div>
+                            </div>
+                          </div>
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">31</div>
+                              <div class="quantity-statistic__label">переводчик</div>
+                            </div>
+                          </div>
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">3</div>
+                              <div class="quantity-statistic__label">модератора</div>
+                            </div>
+                          </div>
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">567</div>
+                              <div class="quantity-statistic__label">часов полученного
+                                контента</div>
+                            </div>
+                          </div>
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">567</div>
+                              <div class="quantity-statistic__label">переходов по
+                                переговорным комнатам </div>
+                            </div>
+                          </div>
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">9871</div>
+                              <div class="quantity-statistic__label">сообщения личного чата</div>
+                            </div>
+                          </div>
+                          <div class="quantity-statistic__item">
+                            <div class="quantity-statistic__icon">
+                              <img src="@img/icons/statistic_quantity.svg" alt="image">
+                            </div>
+                            <div class="quantity-statistic__data">
+                              <div class="quantity-statistic__number">4587</div>
+                              <div class="quantity-statistic__label">сообщения общего чата</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-statistic__item">
+                        <div class="main-statistic__diagram diagram-statistic">
+                          <div class="diagram-statistic__head">
+                            <div class="diagram-statistic__spollers spollers-statistic">
+                              <div class="spollers-statistic__item">
+                                <div class="statistic__title">Род деятельности участников</div>
+                                <div class="spollers-statistic__body">Статистика по профессиям участников</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="diagram-statistic__body">
+                            <canvas data-diagram class="diagram-statistic__main"></canvas>
+                            <div class="diagram-statistic__labels labels-statistic">
+                              <div class="labels-statistic__body">
+                                <div data-bg="#43B5F4" data-proportion="25" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Учитель в школе</span></div>
+                                </div>
+                                <div data-bg="#89CFF5" data-proportion="10" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Учитель в колледже</span></div>
+                                </div>
+                                <div data-bg="#B4E2FB" data-proportion="35" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Преподаватель в вузе</span></div>
+                                </div>
+                                <div data-bg="#D4EDFB" data-proportion="30" data-diagram-item class="labels-statistic__item">
+                                  <div class="labels-statistic__square"></div>
+                                  <div class="labels-statistic__label"><span>Другое</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-statistic__item">
+                        <div class="main-statistic__bar bar-statistic">
+                          <div class="bar-statistic__head">
+                            <div class="statistic__title">Статистика по языкам</div>
+                            <div class="bar-statistic__subtitle">Наведите для появления цифр</div>
+                          </div>
+                          <div class="bar-statistic__body">
+                            <canvas data-bgs="#EDF9FF, #D4EDFB, #71CCFF" data-labels="Русский, Казахский, Английский" data-datasets="260, 200, 180" class="bar-statistic__bar"></canvas>
+                            <span class="bar-statistic__label">Кол. просмотров</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-statistic__item">
+                        <div class="main-statistic__bar bar-statistic">
+                          <div class="bar-statistic__head">
+                            <div class="statistic__title">Статистика по синхронному переводу</div>
+                            <div class="bar-statistic__subtitle">Наведите для появления цифр</div>
+                          </div>
+                          <div class="bar-statistic__body">
+                            <canvas data-bgs="#EDF9FF, #D4EDFB, #71CCFF" data-labels="Русский, Казахский, Английский" data-datasets="260, 200, 180" class="bar-statistic__bar"></canvas>
+                            <span class="bar-statistic__label">Кол. минут прослушивания</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs-statistic__body">
+                    <div class="streams-statistic">
+                      <div class="streams-statistic__body">
+                        <div class="streams-statistic__item">
+                          <div class="main-statistic__diagram diagram-statistic">
+                            <div class="diagram-statistic__head">
+                              <div data-spollers class="diagram-statistic__spollers spollers-statistic">
+                                <div class="spollers-statistic__item">
+                                  <button type="button" data-spoller class="spollers-statistic__title statistic__title">Количество просмотров каждого потока</button>
+                                  <div class="spollers-statistic__body">Количество зрителей</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="diagram-statistic__body">
+                              <canvas data-diagram class="diagram-statistic__main"></canvas>
+                              <div class="diagram-statistic__labels labels-statistic">
+                                <div class="labels-statistic__head">
+                                  <div class="labels-statistic__subtitle">Общее количество</div>
+                                  <div class="labels-statistic__title">7,865 зритель (-ей)</div>
+                                </div>
+                                <div class="labels-statistic__body">
+                                  <div data-bg="#43B5F4" data-proportion="25" data-diagram-item class="labels-statistic__item">
+                                    <div class="labels-statistic__square"></div>
+                                    <div class="labels-statistic__label">Поток 1 - <span>Глобализация в рамках реализации потенциала</span></div>
+                                  </div>
+                                  <div data-bg="#89CFF5" data-proportion="10" data-diagram-item class="labels-statistic__item">
+                                    <div class="labels-statistic__square"></div>
+                                    <div class="labels-statistic__label">Поток 2 - <span>Стэм образование для школ Казахстана</span></div>
+                                  </div>
+                                  <div data-bg="#B4E2FB" data-proportion="35" data-diagram-item class="labels-statistic__item">
+                                    <div class="labels-statistic__square"></div>
+                                    <div class="labels-statistic__label">Поток  3 - <span>Чтоб имя отображалось на диаграмме</span></div>
+                                  </div>
+                                  <div data-bg="#D4EDFB" data-proportion="30" data-diagram-item class="labels-statistic__item">
+                                    <div class="labels-statistic__square"></div>
+                                    <div class="labels-statistic__label">Поток 4 - <span>Нужно обернуть его в спан внутри этого блока</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="streams-statistic__item">
+                          <div class="main-statistic__table table-statistic">
+                            <div class="table-statistic__head">
+                              <div class="statistic__title">Зрители и человека-часы</div>
+                            </div>
+                            <div class="table-statistic__body" data-simplebar style="--colwidth: 130px">
+                              <div class="table-statistic__row table-statistic__row_first">
+                                <div class="table-statistic__item">Поток</div>
+                                <div class="table-statistic__item">Зрители</div>
+                                <div class="table-statistic__item">Человеко-часов</div>
+                                <div class="table-statistic__item">Часов на человека</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item">Поток 1</div>
+                                <div class="table-statistic__item">4 556</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">1,2</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item">Поток 2</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">0,9</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item">Поток 3</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">1 234</div>
+                                <div class="table-statistic__item">1,2</div>
+                              </div>
+                              <div class="table-statistic__row table-statistic__row_last">
+                                <div class="table-statistic__item">Итого</div>
+                                <div class="table-statistic__item">12 345</div>
+                                <div class="table-statistic__item">1 234</div>
+                                <div class="table-statistic__item">1,2</div>
+                              </div>
+                            </div>
+                          </div>
+  
+                        </div>
+                        <div class="streams-statistic__item streams-statistic__item_big">
+                          <div class="main-statistic__table table-statistic">
+                            <div class="table-statistic__head">
+                              <div class="statistic__title">Самые досматриваемые выступления (первые 10)</div>
+                            </div>
+                            <div class="table-statistic__body" data-simplebar style="--colwidth: 170px">
+                              <div class="table-statistic__row table-statistic__row_first">
+                                <div class="table-statistic__item">Поток</div>
+                                <div class="table-statistic__item">Спикер</div>
+                                <div class="table-statistic__item">Зрителей онлайн всего</div>
+                                <div class="table-statistic__item">Зрителей онлайн в&nbsp;первые&nbsp;50%&nbsp;времени</div>
+                                <div class="table-statistic__item">Зрителей онлайн во&nbsp;вторые&nbsp;50%&nbsp;времени</div>
+                                <div class="table-statistic__item">Коэффициент досматриваемости</div>
+                                <div class="table-statistic__item">Минут на человека</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item">Поток 1</div>
+                                <div class="table-statistic__item">Алумов Аят</div>
+                                <div class="table-statistic__item">4 556</div>
+                                <div class="table-statistic__item">4 556</div>
+                                <div class="table-statistic__item">4 556</div>
+                                <div class="table-statistic__item">2,45</div>
+                                <div class="table-statistic__item">14</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item">Поток 2</div>
+                                <div class="table-statistic__item">Иванов Иван</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">4,12</div>
+                                <div class="table-statistic__item">15</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item">Поток 3</div>
+                                <div class="table-statistic__item">Асет Икрам</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">1,4</div>
+                                <div class="table-statistic__item">20</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs-statistic__body">
+                    <div class="speakers-statistic">
+                      <div class="speakers-statistic__body">
+                        <div class="main-statistic__table table-statistic">
+                          <div class="table-statistic__head">
+                            <div class="statistic__title">Самые досматриваемые выступления (первые 10)</div>
+                          </div>
+                          <div class="table-statistic__body" data-simplebar style="--colwidth: 132px">
+                            <div class="table-statistic__row table-statistic__row_first">
+                              <button type="button" class="table-statistic__item">Спикер</button>
+                              <button type="button" class="table-statistic__item">Оценка выступления</button>
+                              <button type="button" class="table-statistic__item">Заданные вопросы</button>
+                              <button type="button" class="table-statistic__item">Просмотры спикера</button>
+                              <button type="button" class="table-statistic__item table-statistic__item_lon">Сообщений в чате во время выступления</button>
+                              <button type="button" class="table-statistic__item">Посещения профиля спикера</button>
+                              <button type="button" class="table-statistic__item">Скачивания материалов</button>
+                              <button type="button" class="table-statistic__item">Переходы на соц. сети</button>
+                              <button type="button" class="table-statistic__item">Добавления в мою программу</button>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Алумов Аят</div>
+                              <div class="table-statistic__item">4,8</div>
+                              <div class="table-statistic__item">345</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">4 556</div>
+                              <div class="table-statistic__item">123</div>
+                              <div class="table-statistic__item">123</div>
+                              <div class="table-statistic__item">123</div>
+                              <div class="table-statistic__item">14</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Иванов Иван</div>
+                              <div class="table-statistic__item">4,5</div>
+                              <div class="table-statistic__item">123</div>
+                              <div class="table-statistic__item">3 456</div>
+                              <div class="table-statistic__item">3 456</div>
+                              <div class="table-statistic__item">466</div>
+                              <div class="table-statistic__item">466</div>
+                              <div class="table-statistic__item">466</div>
+                              <div class="table-statistic__item">15</div>
+                            </div>
+                            <div class="table-statistic__row">
+                              <div class="table-statistic__item">Асет Икрам</div>
+                              <div class="table-statistic__item">2,3</div>
+                              <div class="table-statistic__item">9</div>
+                              <div class="table-statistic__item">124</div>
+                              <div class="table-statistic__item">2 345</div>
+                              <div class="table-statistic__item">234</div>
+                              <div class="table-statistic__item">345</div>
+                              <div class="table-statistic__item">345</div>
+                              <div class="table-statistic__item">20</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs-statistic__body">
+                    Опросы <br>
+                    <b><big>Отсутствует макет</big></b>
+                  </div>
+                  <div class="tabs-statistic__body">
+                    <div class="partners-statistic">
+                      <div class="partners-statistic__body">
+                        <div class="partners-statistic__item">
+                          <div class="main-statistic__quantity quantity-statistic">
+                            <div class="quantity-statistic__item">
+                              <div class="quantity-statistic__icon">
+                                <img src="@img/icons/statistic_quantity.svg" alt="image">
+                              </div>
+                              <div class="quantity-statistic__data">
+                                <div class="quantity-statistic__number">22</div>
+                                <div class="quantity-statistic__label">партнера</div>
+                              </div>
+                            </div>
+                            <div class="quantity-statistic__item">
+                              <div class="quantity-statistic__icon">
+                                <img src="@img/icons/statistic_quantity.svg" alt="image">
+                              </div>
+                              <div class="quantity-statistic__data">
+                                <div class="quantity-statistic__number">31</div>
+                                <div class="quantity-statistic__label">участник заполнивший 100% профиль</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="partners-statistic__item">
+                          <div class="main-statistic__table table-statistic">
+                            <div class="table-statistic__body"  data-simplebar  style="--colwidth: 110px; max-width: 953px;">
+                              <div class="table-statistic__row table-statistic__row_first">
+                                <div class="table-statistic__item table-statistic__item_big">Партнер</div>
+                                <div class="table-statistic__item">Количество посещений страницы партнера</div>
+                                <div class="table-statistic__item">Количество переходов на сайт</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item table-statistic__item_big">Министерство образования и науки РК</div>
+                                <div class="table-statistic__item">4 556</div>
+                                <div class="table-statistic__item">3 456</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item table-statistic__item_big">Chevron</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">2 345</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item table-statistic__item_big">Royal Dutch Shell</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">1 234</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item table-statistic__item_big">Республиканская физико-математическая школа</div>
+                                <div class="table-statistic__item">4 556</div>
+                                <div class="table-statistic__item">3 456</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item table-statistic__item_big">Сколковский институт науки и технологий</div>
+                                <div class="table-statistic__item">3 456</div>
+                                <div class="table-statistic__item">2 345</div>
+                              </div>
+                              <div class="table-statistic__row">
+                                <div class="table-statistic__item table-statistic__item_big">«Білім-Инновация» международный общественный фонд</div>
+                                <div class="table-statistic__item">2 345</div>
+                                <div class="table-statistic__item">1 234</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs-statistic__body">
+                    Сертификаты <br>
+                    <b><big>Отсутствует макет</big></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

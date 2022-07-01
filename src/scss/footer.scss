@@ -1,5 +1,7 @@
 //====================================================================================================
 .footer {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -7,5 +9,6 @@
   color: #A0AEC0;
   text-transform: uppercase;
   padding-top: rem(36);
+  @include adaptiveValue("padding-bottom", 0, 30, 1920, 375, 1);
 }
 //====================================================================================================
