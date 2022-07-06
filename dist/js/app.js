@@ -35956,14 +35956,17 @@
                 eventTippyElement.previousElementSibling.style = "";
                 eventOutput.innerHTML = `\n    <div class="addevents__item item-addevents">\n      <div class="item-addevents__title">${eventTitleInput.value}</div>\n      <div class="item-addevents__inputs item-addevents__inputs_file" data-placeholder="Выбрать файл">\n        <input type="file" data-file accept="${eventTippyInput.value}" data-maxsize="0" class="item-addevents__input">\n        <div class="item-addevents__preview">\n          <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n            <path d="M14.2649 2.60776C12.057 0.399951 8.46173 0.399951 6.25627 2.60776L0.139084 8.72026C0.0992405 8.76011 0.0781467 8.81401 0.0781467 8.87026C0.0781467 8.92651 0.0992405 8.98042 0.139084 9.02026L1.00393 9.88511C1.04346 9.92447 1.09697 9.94656 1.15276 9.94656C1.20854 9.94656 1.26205 9.92447 1.30158 9.88511L7.41877 3.77261C8.17814 3.01323 9.18829 2.59604 10.2617 2.59604C11.3352 2.59604 12.3453 3.01323 13.1024 3.77261C13.8617 4.53198 14.2789 5.54214 14.2789 6.61323C14.2789 7.68667 13.8617 8.69448 13.1024 9.45386L6.86798 15.6859L5.85783 16.696C4.9133 17.6406 3.37814 17.6406 2.43361 16.696C1.97658 16.239 1.7258 15.632 1.7258 14.9851C1.7258 14.3382 1.97658 13.7312 2.43361 13.2742L8.61876 7.09136C8.7758 6.93667 8.98204 6.84995 9.20236 6.84995H9.2047C9.42501 6.84995 9.62892 6.93667 9.78361 7.09136C9.94064 7.24839 10.025 7.45464 10.025 7.67495C10.025 7.89292 9.93829 8.09917 9.78361 8.25386L4.72814 13.3046C4.6883 13.3445 4.6672 13.3984 4.6672 13.4546C4.6672 13.5109 4.6883 13.5648 4.72814 13.6046L5.59299 14.4695C5.63252 14.5088 5.68603 14.5309 5.74181 14.5309C5.7976 14.5309 5.85111 14.5088 5.89064 14.4695L10.9438 9.41636C11.4102 8.94995 11.6656 8.3312 11.6656 7.67261C11.6656 7.01401 11.4078 6.39292 10.9438 5.92886C9.98048 4.96558 8.41486 4.96792 7.45158 5.92886L6.85158 6.5312L1.26877 12.1117C0.889859 12.4884 0.589502 12.9365 0.38512 13.4302C0.180737 13.9238 0.0763961 14.4532 0.0781467 14.9875C0.0781467 16.0726 0.502365 17.0921 1.26877 17.8585C2.0633 18.6507 3.10393 19.0468 4.14455 19.0468C5.18517 19.0468 6.2258 18.6507 7.01798 17.8585L14.2649 10.6164C15.3313 9.54761 15.9219 8.12495 15.9219 6.61323C15.9242 5.09917 15.3336 3.67651 14.2649 2.60776Z" fill="#CBD5E0"/>\n          </svg>\n        </div>\n      </div>\n    </div>\n    `;
                 picturePreviewRender();
+                eventConsts();
                 eventTippyInput.addEventListener("input", (() => {
-                    let acceptArr = eventTippyInput.value.replaceAll(", ", "||").replaceAll(",", "||").split("||");
+                    let acceptArr = eventTippyInput.value.replaceAll(".", "").replaceAll(", ", "||").replaceAll(",", "||").split("||");
                     let acceptStr = [];
                     acceptArr.forEach((e => {
                         e = "." + e;
                         acceptStr.push(e);
                     }));
                     acceptStr.join(", ");
+                    console.log(acceptStr);
+                    console.log(acceptArr);
                     eventOutput.querySelector("[data-file]").setAttribute("accept", acceptStr);
                 }));
                 eventTitleInput.addEventListener("input", (() => {
@@ -35985,7 +35988,7 @@
             } else if ("select" === value) {
                 eventTippyElement.previousElementSibling.style = "";
                 eventTippyElement.innerHTML = `\n    <div class="row-event__subitem">\n      <div class="row-event__subtitle">Варианты значения</div>\n      <textarea data-required data-event-tippy class="row-event__textarea" placeholder="Варианты значения">123\n321</textarea>\n    </div>\n    `;
-                if (!eventMultipleCheckbox) eventCheckboxesEl.insertAdjacentHTML("beforeend", `\n        <div class="row-event__subitem">\n          <input data-event-multiple type="checkbox" id="row-event__checkbox_2" class="row-event__checkbox">\n          <label for="row-event__checkbox_2" class="row-event__label">Множественный выбор</label>\n        </div>\n      `);
+                if (!eventMultipleCheckbox) eventCheckboxesEl.insertAdjacentHTML("beforeend", `\n        <div class="row-event__subitem">\n          <input data-event-multiple type="checkbox" id="row-event__checkbox_${Date.now()}" class="row-event__checkbox">\n          <label for="row-event__checkbox_${Date.now()}" class="row-event__label">Множественный выбор</label>\n        </div>\n      `);
                 eventTitleInput.addEventListener("input", (() => {
                     eventOutput.querySelector(".row-event__subtitle").innerHTML = eventTitleInput.value;
                 }));
@@ -36012,12 +36015,14 @@
                     eventOutput.querySelector(".row-event__subtitle").innerHTML = eventTitleInput.value;
                 }));
             } else if ("checkbox" === value) {
-                eventOutput.innerHTML = `\n    <div class="row-event__subitem">\n      <input data-events-required checked type="checkbox" value="${eventTippyInput.value}" id="row-event__checkbox_dynamic" class="row-event__checkbox">\n      <label for="row-event__checkbox_dynamic" class="row-event__label">${eventTippyInput.value}</label>\n    </div>\n    `;
+                console.log(Date.now());
+                eventOutput.innerHTML = `\n    <div class="row-event__subitem">\n      <input data-events-required checked type="checkbox" value="${eventTitleInput.value}" id="row-event__checkbox_${Date.now()}" class="row-event__checkbox">\n      <label for="row-event__checkbox_${Date.now()}" class="row-event__label">${eventTippyInput.value}</label>\n    </div>\n    `;
                 eventTippyElement.querySelector(".row-event__subtitle").innerHTML = "Текст рядом с галочкой";
                 eventTippyElement.previousElementSibling.style = "display: none;";
                 if (eventMultipleCheckbox) eventMultipleCheckbox.parentElement.remove();
                 eventTippyInput.addEventListener("input", (() => {
                     eventOutput.querySelector("label").innerHTML = eventTippyInput.value;
+                    eventOutput.querySelector("input").value = eventTippyInput.value;
                 }));
             } else if ("checkboxList" === value) {
                 eventTippyElement.previousElementSibling.style = "";

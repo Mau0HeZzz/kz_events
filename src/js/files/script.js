@@ -617,15 +617,18 @@ function eventRegRenders(value, eventRow) {
     </div>
     `;
     picturePreviewRender();
+    eventConsts();
     eventTippyInput.addEventListener('input', () => {
-      let acceptArr = eventTippyInput.value.replaceAll(', ', '||').replaceAll(',', '||').split('||');
+      let acceptArr = eventTippyInput.value.replaceAll('.', '').replaceAll(', ', '||').replaceAll(',', '||').split('||');
       let acceptStr = [];
       acceptArr.forEach(e => {
         e = '.' + e;
         acceptStr.push(e);
       })
       acceptStr.join(', ');
-      eventOutput.querySelector('[data-file]').setAttribute('accept', acceptStr)
+      console.log(acceptStr);
+      console.log(acceptArr);
+      eventOutput.querySelector('[data-file]').setAttribute('accept', acceptStr);
     });
     eventTitleInput.addEventListener('input', () => {
       eventOutput.querySelector('.item-addevents__title').innerHTML = eventTitleInput.value;
@@ -670,8 +673,8 @@ function eventRegRenders(value, eventRow) {
     if (!eventMultipleCheckbox) {
       eventCheckboxesEl.insertAdjacentHTML('beforeend', `
         <div class="row-event__subitem">
-          <input data-event-multiple type="checkbox" id="row-event__checkbox_2" class="row-event__checkbox">
-          <label for="row-event__checkbox_2" class="row-event__label">Множественный выбор</label>
+          <input data-event-multiple type="checkbox" id="row-event__checkbox_${Date.now()}" class="row-event__checkbox">
+          <label for="row-event__checkbox_${Date.now()}" class="row-event__label">Множественный выбор</label>
         </div>
       `)
     };
@@ -725,10 +728,11 @@ function eventRegRenders(value, eventRow) {
       eventOutput.querySelector('.row-event__subtitle').innerHTML = eventTitleInput.value;
     })
   } else if (value === 'checkbox') {
+    console.log(Date.now())
     eventOutput.innerHTML = `
     <div class="row-event__subitem">
-      <input data-events-required checked type="checkbox" value="${eventTippyInput.value}" id="row-event__checkbox_dynamic" class="row-event__checkbox">
-      <label for="row-event__checkbox_dynamic" class="row-event__label">${eventTippyInput.value}</label>
+      <input data-events-required checked type="checkbox" value="${eventTitleInput.value}" id="row-event__checkbox_${Date.now()}" class="row-event__checkbox">
+      <label for="row-event__checkbox_${Date.now()}" class="row-event__label">${eventTippyInput.value}</label>
     </div>
     `;
     eventTippyElement.querySelector('.row-event__subtitle').innerHTML = 'Текст рядом с галочкой';
@@ -738,6 +742,7 @@ function eventRegRenders(value, eventRow) {
     }
     eventTippyInput.addEventListener('input', () => {
       eventOutput.querySelector('label').innerHTML = eventTippyInput.value;
+      eventOutput.querySelector('input').value = eventTippyInput.value;
     })
   } else if (value === 'checkboxList') {
     eventTippyElement.previousElementSibling.style = '';
