@@ -314,7 +314,6 @@ function statisticActions(statisticSection) {
             }
           },
         });
-        console.log(pieChart)
       }
     }
   }
@@ -626,8 +625,6 @@ function eventRegRenders(value, eventRow) {
         acceptStr.push(e);
       })
       acceptStr.join(', ');
-      console.log(acceptStr);
-      console.log(acceptArr);
       eventOutput.querySelector('[data-file]').setAttribute('accept', acceptStr);
     });
     eventTitleInput.addEventListener('input', () => {
@@ -728,7 +725,6 @@ function eventRegRenders(value, eventRow) {
       eventOutput.querySelector('.row-event__subtitle').innerHTML = eventTitleInput.value;
     })
   } else if (value === 'checkbox') {
-    console.log(Date.now())
     eventOutput.innerHTML = `
     <div class="row-event__subitem">
       <input data-events-required checked type="checkbox" value="${eventTitleInput.value}" id="row-event__checkbox_${Date.now()}" class="row-event__checkbox">
@@ -1056,7 +1052,7 @@ function picturePreviewRender(pictureFileInputs  = document.querySelectorAll('[d
             }
           };
           reader.onerror = function (e) {
-            alert('Ошибка');
+            console.log('Ошибка');
           }
         }
       }
@@ -1069,11 +1065,17 @@ let indexElInParent = function (parent, element) {
 	const array = Array.prototype.slice.call(parent.children);
 	return Array.prototype.indexOf.call(array, element);
 };
+
+let streamsCalendars = [];
 function streamsActions() {
-  let schedulesid
-  if (streamsSchedules) {
-    schedulesid = streamsSchedules.length;
+  let schedulesid;
+  let streamsSchedulesHere;
+  if (!streamsSchedules) {
+    streamsSchedulesHere = [];
+  } else {
+    streamsSchedulesHere = streamsSchedules;
   }
+  schedulesid = streamsSchedulesHere.length;
   const calendarsMain = document.querySelectorAll('.column-streams');
   if (calendarsMain.length) {
     const newStreamAddBtn = document.querySelector('.addStreamsPopup__submit');
@@ -1097,7 +1099,7 @@ function streamsActions() {
                     <a href="#" class="head-columnStreams__link head-columnStreams__link_del _icon_events_delete"></a>
                   </div>
                   `;
-                  calendarFullInit(streamNameEl, newStreamName)
+                  calendarFullInit(streamNameEl.nextElementSibling, newStreamName)
                 }
               } else if (currentPopup.previousActiveElement.classList.contains('head-columnStreams__link_edit')) {
                 const streamNameEl = currentPopup.previousActiveElement.closest('.head-columnStreams');
@@ -1110,7 +1112,7 @@ function streamsActions() {
                   </div>
                 `;
                 streamNameEl.nextElementSibling.innerHTML = ``;
-                calendarFullInit(streamNameEl, newStreamName)
+                calendarFullInit(streamNameEl.nextElementSibling, newStreamName)
               }
             }
           }
@@ -1119,21 +1121,21 @@ function streamsActions() {
       })
     }
 
-
     calendarsMain.forEach(e => {
       let name = e.querySelector('.head-columnStreams__name');
       if (name) {
-        calendarFullInit(name.parentElement, name.textContent);
+        calendarFullInit(name.parentElement.nextElementSibling, name.textContent);
       }
     })
   }
   const calendarSide = document.querySelector('#calendar_aside');
   if (calendarSide) {
-    reInitJalendar(streamsSchedules, calendarSide);
+    reInitJalendar(streamsSchedulesHere, calendarSide);
   }
+
   
   function calendarFullInit(calendarEl, name) {
-    var calendar = new Calendar(calendarEl.nextElementSibling, {
+    var calendar = new Calendar(calendarEl, {
       defaultView: 'day',
       taskView: false,    // Can be also ['milestone', 'task']
       scheduleView: true,  // Can be also ['allday', 'time']
@@ -1147,24 +1149,27 @@ function streamsActions() {
           // displayLabel: 'GMT-08:00',
       }],
     });
+    calendarEl.insertAdjacentHTML('beforeend', `<div data-calendar-id="${name}" hidden></div>`)
     calendar.on({
       'clickSchedule': function (e) {
         let schedule = e.schedule;
       },
-      'beforeCreateSchedule': function (event) {
-        document.addEventListener('afterPopupOpen', (e) => {
-          const currentPopup = e.detail.popup.targetOpen.element;
-          const timeInputs = currentPopup.querySelectorAll('.addBroadcastPopup__input_time');
-          timeInputs[0].value = event.start._date.toLocaleDateString('ru-RU', {hour: 'numeric', minute: 'numeric'}).split(', ')[1];
-          timeInputs[1].value = event.end._date.toLocaleDateString('ru-RU', { hour: 'numeric', minute: 'numeric' }).split(', ')[1];
-        })
-        flsModules.popup.open('.addBroadcastPopup')
-        document.querySelector('.addBroadcastPopup__title span').innerHTML = calendar._layout.container.closest('.column-streams').querySelector('.head-columnStreams__title').textContent;
-      },
+      // 'beforeCreateSchedule': function (event) {
+      // },
       'beforeUpdateSchedule': function(e) {
           e.schedule.start = e.start;
           e.schedule.end = e.end;
-          calendar.updateSchedule(e.schedule.id, e.schedule.calendarId, e.schedule);
+        calendar.updateSchedule(e.schedule.id, e.schedule.calendarId, e.schedule);
+        streamsSchedulesHere.forEach(streamsSchedule => {
+          if (streamsSchedule.id === e.schedule.id) {
+            streamsSchedule.title = e.schedule.title;
+            streamsSchedule.start = e.schedule.start;
+            streamsSchedule.end = e.schedule.end;
+            streamsSchedule.body = e.schedule.body;
+            streamsSchedule.location = e.schedule.location;
+          }
+        })
+        console.log(streamsSchedulesHere)
       },
       'beforeDeleteSchedule': function(e) {
           calendar.deleteSchedule(e.schedule.id, e.schedule.calendarId);
@@ -1196,20 +1201,22 @@ function streamsActions() {
         `;
     }
     });
+    calendar._layout.id = name;
     calendar.setDate(streamsDate);
+    streamsScheduleAdd(calendar, name, calendarEl);
+    streamsCalendars.push(calendar);
     setTimeout(() => {
       calendarDelEditListener(calendar)
     }, 500);
-    streamsScheduleAdd(calendar);
-    calendarEl.querySelector('.head-columnStreams__link_del').addEventListener('click', (e) => {
+    calendarEl.parentElement.querySelector('.head-columnStreams__link_del').addEventListener('click', (e) => {
       e.preventDefault();
       calendar.destroy();
-      calendarEl.nextElementSibling.innerHTML = ``
-      calendarEl.innerHTML = `<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>`
+      calendarEl.innerHTML = ``
+      calendarEl.previousElementSibling.innerHTML = `<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>`
     })
     let calendarColorsNew = calendarColors[parseInt(Math.random() * 3)]
     calendar.setCalendarColor(null, calendarColorsNew);
-    streamsSchedules.forEach(e => {
+    streamsSchedulesHere.forEach(e => {
       if (e.calendarId === calendar._options.id) {
         Object.assign(e, calendarColorsNew)
         calendar.createSchedules([e]);
@@ -1224,7 +1231,12 @@ function streamsActions() {
         let calendarId = e.target.closest('[data-schedule-id]').dataset.calendarId;
         let scheduleId = e.target.closest('[data-schedule-id]').dataset.scheduleId;
         calendar.deleteSchedule(scheduleId, calendarId);
-      } else if (e.target.classList.contains('schedule__link_del') || e.target.closest('.schedule__link_edit')) {
+        for (let i = 0; i < streamsSchedulesHere.length; i++) {
+          if (streamsSchedulesHere[i].id === scheduleId) {
+            streamsSchedulesHere.splice(i, 1);
+          }
+        }
+      } else if (e.target.classList.contains('schedule__link_edit') || e.target.closest('.schedule__link_edit')) {
         e.preventDefault();
         let calendarId = e.target.closest('[data-schedule-id]').dataset.calendarId;
         let scheduleId = e.target.closest('[data-schedule-id]').dataset.scheduleId;
@@ -1246,13 +1258,37 @@ function streamsActions() {
             currentPopupCodeTextarea.value = schedule.location;
           }
         })
-        streamsScheduleAdd(calendar, scheduleId, calendarId);
+        streamsScheduleEdit(calendar, scheduleId, calendarId);
       }
     })
   }
+    let thisCalendarIdEl;
+    let eyeDi;
+    let thisCalendar;
 
-  function streamsScheduleAdd(calendar, editSheduleId, calendarId) {
-    document.querySelector('.addBroadcastPopup__submit').addEventListener('click', () => {
+  function streamsScheduleAdd(calendar, thisCalendarId, calendarEl) {
+    calendar.on('beforeCreateSchedule', (event) => {
+        document.addEventListener('afterPopupOpen', (e) => {
+          const currentPopup = e.detail.popup.targetOpen.element;
+          if (currentPopup.classList.contains('addBroadcastPopup')) {
+            const timeInputs = currentPopup.querySelectorAll('.addBroadcastPopup__input_time');
+            timeInputs[0].value = event.start._date.toLocaleDateString('ru-RU', {hour: 'numeric', minute: 'numeric'}).split(', ')[1];
+            timeInputs[1].value = event.end._date.toLocaleDateString('ru-RU', { hour: 'numeric', minute: 'numeric' }).split(', ')[1];
+          }
+        })
+        document.querySelector('.addBroadcastPopup__title span').innerHTML = calendar._layout.container.closest('.column-streams').querySelector('.head-columnStreams__title').textContent;
+      thisCalendarIdEl = document.querySelector('.tui-full-calendar-time-guide-creation').closest('.column-streams__body').querySelector('[data-calendar-id]');
+        eyeDi = thisCalendarIdEl.dataset.calendarId;
+        streamsCalendars.forEach(streamsCalendar => {
+          if (streamsCalendar._layout.id === thisCalendarIdEl.dataset.calendarId) {
+            thisCalendar = streamsCalendar;
+          }
+        })
+        document.querySelector('.tui-full-calendar-time-guide-creation').remove();
+      flsModules.popup.open('.addBroadcastPopup');
+    })
+
+    document.querySelector('.addBroadcastPopup__submit').addEventListener('click', (click) => {
       let name = document.querySelector('.addBroadcastPopup__input_name').value;
       if (name.trim() !== '') {
         const timeInputs = document.querySelectorAll('.addBroadcastPopup__input_time');
@@ -1261,12 +1297,59 @@ function streamsActions() {
         let end = calendar.getDateRangeEnd().setHours(parseInt(timeInputs[1].value.split(':')[0]), parseInt(timeInputs[1].value.split(':')[1]));
         let location = document.querySelector('.addBroadcastPopup__textarea_code').value;
         schedulesid++;
-        let schedule = {};
-
+            let schedule = {
+              id: `${schedulesid}`,
+              calendarId: thisCalendar._layout.id,
+              category: 'time',
+              title: title,
+              start: start,
+              end: end,
+              isAllDay: false,
+              color: calendar._calendarColor.null.color,
+              bgColor: calendar._calendarColor.null.bgColor,
+              dragBgColor: calendar._calendarColor.null.dragBgColor,
+              borderColor: calendar._calendarColor.null.borderColor,
+              location: location,
+              body: name,
+        };
+        thisCalendar.clear();
+        streamsSchedulesHere.push(schedule);
+        streamsSchedulesHere.forEach(e => {
+          if (e.calendarId === thisCalendar._options.id) {
+            thisCalendar.createSchedules([e]);
+          }
+        })
+        reInitJalendar([schedule]);
         document.addEventListener('beforePopupClose', (e) => {
           const currentPopup = e.detail.popup;
-          if (currentPopup.previousActiveElement.classList.contains('schedule__link_edit')) {
-            schedule = {
+          const currentPopupEl = currentPopup.targetOpen.element;
+          if (currentPopupEl.classList.contains('addBroadcastPopup')) {
+            const currentPopupNameInput = currentPopupEl.querySelector('.addBroadcastPopup__input_name');
+            const currentPopupTitleSelect = currentPopupEl.querySelector('.addBroadcastPopup__select');
+            const currentPopupStartInputs = currentPopupEl.querySelectorAll('.addBroadcastPopup__input_time');
+            const currentPopupCodeTextarea = currentPopupEl.querySelector('.addBroadcastPopup__textarea_code');
+            currentPopupNameInput.value = '';
+            // currentPopupTitleSelect.parentElement.querySelector('.select__value .select__content').innerHTML = schedule.title.replace('Спикер: ', '');
+            currentPopupStartInputs[0].value = '';
+            currentPopupStartInputs[1].value = '';
+            currentPopupCodeTextarea.value = '';
+          }
+        })
+        flsModules.popup.close('.addBroadcastPopup');
+      }
+    })
+  }
+  function streamsScheduleEdit(calendar, editSheduleId, calendarId) {
+    document.querySelector('.addBroadcastPopup__submit').addEventListener('click', (click) => {
+      let name = document.querySelector('.addBroadcastPopup__input_name').value;
+      if (name.trim() !== '') {
+        const timeInputs = document.querySelectorAll('.addBroadcastPopup__input_time');
+        let title = `Спикер: ${document.querySelector('.addBroadcastPopup__select').value}`;
+        let start = calendar.getDateRangeStart().setHours(parseInt(timeInputs[0].value.split(':')[0]), parseInt(timeInputs[0].value.split(':')[1]));
+        let end = calendar.getDateRangeEnd().setHours(parseInt(timeInputs[1].value.split(':')[0]), parseInt(timeInputs[1].value.split(':')[1]));
+        let location = document.querySelector('.addBroadcastPopup__textarea_code').value;
+        schedulesid++;
+            let schedule = {
               category: 'time',
               title: title,
               start: start,
@@ -1280,25 +1363,9 @@ function streamsActions() {
               body: name,
             };
             calendar.updateSchedule(editSheduleId, calendarId, schedule);
-            reInitJalendar([schedule]);
-          } else {
-            schedule = {
-              id: `${schedulesid}`,
-              category: 'time',
-              title: title,
-              start: start,
-              end: end,
-              isAllDay: false,
-              color: calendar._calendarColor.null.color,
-              bgColor: calendar._calendarColor.null.bgColor,
-              dragBgColor: calendar._calendarColor.null.dragBgColor,
-              borderColor: calendar._calendarColor.null.borderColor,
-              location: location,
-              body: name,
-            };
-            calendar.createSchedules([schedule]);
-            reInitJalendar([schedule]);
-          }
+          reInitJalendar([schedule]);
+        document.addEventListener('beforePopupClose', (e) => {
+          const currentPopup = e.detail.popup;
           const currentPopupEl = currentPopup.targetOpen.element;
           if (currentPopupEl.classList.contains('addBroadcastPopup')) {
             const currentPopupNameInput = currentPopupEl.querySelector('.addBroadcastPopup__input_name');

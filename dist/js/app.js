@@ -35714,7 +35714,7 @@
                         if (label) labels.push(label); else labels.push(" ");
                     }));
                     if (diagram) {
-                        let pieChart = new Chart(diagram, {
+                        new Chart(diagram, {
                             type: "pie",
                             data: {
                                 labels,
@@ -35734,7 +35734,6 @@
                                 }
                             }
                         });
-                        console.log(pieChart);
                     }
                 }
             }
@@ -35965,8 +35964,6 @@
                         acceptStr.push(e);
                     }));
                     acceptStr.join(", ");
-                    console.log(acceptStr);
-                    console.log(acceptArr);
                     eventOutput.querySelector("[data-file]").setAttribute("accept", acceptStr);
                 }));
                 eventTitleInput.addEventListener("input", (() => {
@@ -36015,7 +36012,6 @@
                     eventOutput.querySelector(".row-event__subtitle").innerHTML = eventTitleInput.value;
                 }));
             } else if ("checkbox" === value) {
-                console.log(Date.now());
                 eventOutput.innerHTML = `\n    <div class="row-event__subitem">\n      <input data-events-required checked type="checkbox" value="${eventTitleInput.value}" id="row-event__checkbox_${Date.now()}" class="row-event__checkbox">\n      <label for="row-event__checkbox_${Date.now()}" class="row-event__label">${eventTippyInput.value}</label>\n    </div>\n    `;
                 eventTippyElement.querySelector(".row-event__subtitle").innerHTML = "Текст рядом с галочкой";
                 eventTippyElement.previousElementSibling.style = "display: none;";
@@ -36213,7 +36209,7 @@
                                 } else el.closest(".item-addevents__inputs_file").setAttribute("data-placeholder", file.name);
                             };
                             reader.onerror = function(e) {
-                                alert("Ошибка");
+                                console.log("Ошибка");
                             };
                         }
                     }
@@ -36224,9 +36220,12 @@
             const array = Array.prototype.slice.call(parent.children);
             return Array.prototype.indexOf.call(array, element);
         };
+        let streamsCalendars = [];
         function streamsActions() {
             let schedulesid;
-            if (streamsSchedules) schedulesid = streamsSchedules.length;
+            let streamsSchedulesHere;
+            if (!streamsSchedules) streamsSchedulesHere = []; else streamsSchedulesHere = streamsSchedules;
+            schedulesid = streamsSchedulesHere.length;
             const calendarsMain = document.querySelectorAll(".column-streams");
             if (calendarsMain.length) {
                 const newStreamAddBtn = document.querySelector(".addStreamsPopup__submit");
@@ -36242,13 +36241,13 @@
                                     const streamNameEl = currentPopup.previousActiveElement.parentElement;
                                     if (streamNameEl) {
                                         streamNameEl.innerHTML = `\n                  <div class="head-columnStreams__name">${newStreamName}</div>\n                  <div class="head-columnStreams__actions">\n                    <div class="head-columnStreams__title">Поток ${newStreamPriority}</div>\n                    <a href="#" data-popup="#addStreamsPopup" class="head-columnStreams__link head-columnStreams__link_edit _icon_events_edit"></a>\n                    <a href="#" class="head-columnStreams__link head-columnStreams__link_del _icon_events_delete"></a>\n                  </div>\n                  `;
-                                        calendarFullInit(streamNameEl, newStreamName);
+                                        calendarFullInit(streamNameEl.nextElementSibling, newStreamName);
                                     }
                                 } else if (currentPopup.previousActiveElement.classList.contains("head-columnStreams__link_edit")) {
                                     const streamNameEl = currentPopup.previousActiveElement.closest(".head-columnStreams");
                                     streamNameEl.innerHTML = `\n                  <div class="head-columnStreams__name">${newStreamName}</div>\n                  <div class="head-columnStreams__actions">\n                    <div class="head-columnStreams__title">Поток ${newStreamPriority}</div>\n                    <a href="#" data-popup="#addStreamsPopup" class="head-columnStreams__link head-columnStreams__link_edit _icon_events_edit"></a>\n                    <a href="#" class="head-columnStreams__link head-columnStreams__link_del _icon_events_delete"></a>\n                  </div>\n                `;
                                     streamNameEl.nextElementSibling.innerHTML = ``;
-                                    calendarFullInit(streamNameEl, newStreamName);
+                                    calendarFullInit(streamNameEl.nextElementSibling, newStreamName);
                                 }
                             }
                         }
@@ -36257,13 +36256,13 @@
                 }));
                 calendarsMain.forEach((e => {
                     let name = e.querySelector(".head-columnStreams__name");
-                    if (name) calendarFullInit(name.parentElement, name.textContent);
+                    if (name) calendarFullInit(name.parentElement.nextElementSibling, name.textContent);
                 }));
             }
             const calendarSide = document.querySelector("#calendar_aside");
-            if (calendarSide) reInitJalendar(streamsSchedules, calendarSide);
+            if (calendarSide) reInitJalendar(streamsSchedulesHere, calendarSide);
             function calendarFullInit(calendarEl, name) {
-                var calendar = new tui_calendar(calendarEl.nextElementSibling, {
+                var calendar = new tui_calendar(calendarEl, {
                     defaultView: "day",
                     taskView: false,
                     scheduleView: true,
@@ -36276,30 +36275,25 @@
                         timezoneOffset: -820
                     } ]
                 });
+                calendarEl.insertAdjacentHTML("beforeend", `<div data-calendar-id="${name}" hidden></div>`);
                 calendar.on({
                     clickSchedule: function(e) {
                         e.schedule;
-                    },
-                    beforeCreateSchedule: function(event) {
-                        document.addEventListener("afterPopupOpen", (e => {
-                            const currentPopup = e.detail.popup.targetOpen.element;
-                            const timeInputs = currentPopup.querySelectorAll(".addBroadcastPopup__input_time");
-                            timeInputs[0].value = event.start._date.toLocaleDateString("ru-RU", {
-                                hour: "numeric",
-                                minute: "numeric"
-                            }).split(", ")[1];
-                            timeInputs[1].value = event.end._date.toLocaleDateString("ru-RU", {
-                                hour: "numeric",
-                                minute: "numeric"
-                            }).split(", ")[1];
-                        }));
-                        flsModules.popup.open(".addBroadcastPopup");
-                        document.querySelector(".addBroadcastPopup__title span").innerHTML = calendar._layout.container.closest(".column-streams").querySelector(".head-columnStreams__title").textContent;
                     },
                     beforeUpdateSchedule: function(e) {
                         e.schedule.start = e.start;
                         e.schedule.end = e.end;
                         calendar.updateSchedule(e.schedule.id, e.schedule.calendarId, e.schedule);
+                        streamsSchedulesHere.forEach((streamsSchedule => {
+                            if (streamsSchedule.id === e.schedule.id) {
+                                streamsSchedule.title = e.schedule.title;
+                                streamsSchedule.start = e.schedule.start;
+                                streamsSchedule.end = e.schedule.end;
+                                streamsSchedule.body = e.schedule.body;
+                                streamsSchedule.location = e.schedule.location;
+                            }
+                        }));
+                        console.log(streamsSchedulesHere);
                     },
                     beforeDeleteSchedule: function(e) {
                         calendar.deleteSchedule(e.schedule.id, e.schedule.calendarId);
@@ -36315,20 +36309,22 @@
                         }).split(", ")[1]}</div>\n          <a href="${schedule.location}" target="_blank" class="schedule__link">\n            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">\n              <rect width="12" height="12" rx="6" fill="${schedule.color}"/>\n              <path d="M2.7998 4.4001C2.7998 4.18792 2.88409 3.98444 3.03412 3.83441C3.18415 3.68438 3.38763 3.6001 3.5998 3.6001H5.9998C6.21198 3.6001 6.41546 3.68438 6.56549 3.83441C6.71552 3.98444 6.7998 4.18792 6.7998 4.4001V7.6001C6.7998 7.81227 6.71552 8.01575 6.56549 8.16578C6.41546 8.31581 6.21198 8.4001 5.9998 8.4001H3.5998C3.38763 8.4001 3.18415 8.31581 3.03412 8.16578C2.88409 8.01575 2.7998 7.81227 2.7998 7.6001V4.4001ZM7.821 4.8425C7.75457 4.87569 7.69869 4.92673 7.65963 4.98989C7.62056 5.05305 7.59984 5.12583 7.5998 5.2001V6.8001C7.59984 6.87436 7.62056 6.94715 7.65963 7.01031C7.69869 7.07347 7.75457 7.1245 7.821 7.1577L8.621 7.5577C8.68197 7.58816 8.74971 7.60255 8.8178 7.59948C8.88589 7.59641 8.95206 7.576 9.01005 7.54018C9.06803 7.50435 9.1159 7.45431 9.14911 7.39479C9.18232 7.33527 9.19977 7.26825 9.1998 7.2001V4.8001C9.19977 4.73194 9.18232 4.66492 9.14911 4.60541C9.1159 4.54589 9.06803 4.49584 9.01005 4.46002C8.95206 4.4242 8.88589 4.40378 8.8178 4.40072C8.74971 4.39765 8.68197 4.41203 8.621 4.4425L7.821 4.8425Z" fill="#E0F2FE"/>\n            </svg>\n          </a>\n        </div>\n        <div class="schedule__row">\n          <div class="schedule__title">${title}</div>\n        </div>\n        <div class="schedule__row">\n          <div class="schedule__actions">\n            <a href="#" data-popup="#addBroadcastPopup" class="schedule__link schedule__link_edit _icon_events_edit"></a>\n            <a href="#" class="schedule__link schedule__link_del _icon_events_delete"></a>\n          </div>\n        </div>\n        `;
                     }
                 });
+                calendar._layout.id = name;
                 calendar.setDate(streamsDate);
+                streamsScheduleAdd(calendar, name, calendarEl);
+                streamsCalendars.push(calendar);
                 setTimeout((() => {
                     calendarDelEditListener(calendar);
                 }), 500);
-                streamsScheduleAdd(calendar);
-                calendarEl.querySelector(".head-columnStreams__link_del").addEventListener("click", (e => {
+                calendarEl.parentElement.querySelector(".head-columnStreams__link_del").addEventListener("click", (e => {
                     e.preventDefault();
                     calendar.destroy();
-                    calendarEl.nextElementSibling.innerHTML = ``;
-                    calendarEl.innerHTML = `<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>`;
+                    calendarEl.innerHTML = ``;
+                    calendarEl.previousElementSibling.innerHTML = `<a href="#" class="column-streams__link" data-popup="#addStreamsPopup">Создать поток</a>`;
                 }));
                 let calendarColorsNew = calendarColors[parseInt(3 * Math.random())];
                 calendar.setCalendarColor(null, calendarColorsNew);
-                streamsSchedules.forEach((e => {
+                streamsSchedulesHere.forEach((e => {
                     if (e.calendarId === calendar._options.id) {
                         Object.assign(e, calendarColorsNew);
                         calendar.createSchedules([ e ]);
@@ -36342,7 +36338,8 @@
                         let calendarId = e.target.closest("[data-schedule-id]").dataset.calendarId;
                         let scheduleId = e.target.closest("[data-schedule-id]").dataset.scheduleId;
                         calendar.deleteSchedule(scheduleId, calendarId);
-                    } else if (e.target.classList.contains("schedule__link_del") || e.target.closest(".schedule__link_edit")) {
+                        for (let i = 0; i < streamsSchedulesHere.length; i++) if (streamsSchedulesHere[i].id === scheduleId) streamsSchedulesHere.splice(i, 1);
+                    } else if (e.target.classList.contains("schedule__link_edit") || e.target.closest(".schedule__link_edit")) {
                         e.preventDefault();
                         let calendarId = e.target.closest("[data-schedule-id]").dataset.calendarId;
                         let scheduleId = e.target.closest("[data-schedule-id]").dataset.scheduleId;
@@ -36369,12 +36366,39 @@
                                 currentPopupCodeTextarea.value = schedule.location;
                             }
                         }));
-                        streamsScheduleAdd(calendar, scheduleId, calendarId);
+                        streamsScheduleEdit(calendar, scheduleId, calendarId);
                     }
                 }));
             }
-            function streamsScheduleAdd(calendar, editSheduleId, calendarId) {
-                document.querySelector(".addBroadcastPopup__submit").addEventListener("click", (() => {
+            let thisCalendarIdEl;
+            let eyeDi;
+            let thisCalendar;
+            function streamsScheduleAdd(calendar, thisCalendarId, calendarEl) {
+                calendar.on("beforeCreateSchedule", (event => {
+                    document.addEventListener("afterPopupOpen", (e => {
+                        const currentPopup = e.detail.popup.targetOpen.element;
+                        if (currentPopup.classList.contains("addBroadcastPopup")) {
+                            const timeInputs = currentPopup.querySelectorAll(".addBroadcastPopup__input_time");
+                            timeInputs[0].value = event.start._date.toLocaleDateString("ru-RU", {
+                                hour: "numeric",
+                                minute: "numeric"
+                            }).split(", ")[1];
+                            timeInputs[1].value = event.end._date.toLocaleDateString("ru-RU", {
+                                hour: "numeric",
+                                minute: "numeric"
+                            }).split(", ")[1];
+                        }
+                    }));
+                    document.querySelector(".addBroadcastPopup__title span").innerHTML = calendar._layout.container.closest(".column-streams").querySelector(".head-columnStreams__title").textContent;
+                    thisCalendarIdEl = document.querySelector(".tui-full-calendar-time-guide-creation").closest(".column-streams__body").querySelector("[data-calendar-id]");
+                    eyeDi = thisCalendarIdEl.dataset.calendarId;
+                    streamsCalendars.forEach((streamsCalendar => {
+                        if (streamsCalendar._layout.id === thisCalendarIdEl.dataset.calendarId) thisCalendar = streamsCalendar;
+                    }));
+                    document.querySelector(".tui-full-calendar-time-guide-creation").remove();
+                    flsModules.popup.open(".addBroadcastPopup");
+                }));
+                document.querySelector(".addBroadcastPopup__submit").addEventListener("click", (click => {
                     let name = document.querySelector(".addBroadcastPopup__input_name").value;
                     if ("" !== name.trim()) {
                         const timeInputs = document.querySelectorAll(".addBroadcastPopup__input_time");
@@ -36383,43 +36407,72 @@
                         let end = calendar.getDateRangeEnd().setHours(parseInt(timeInputs[1].value.split(":")[0]), parseInt(timeInputs[1].value.split(":")[1]));
                         let location = document.querySelector(".addBroadcastPopup__textarea_code").value;
                         schedulesid++;
-                        let schedule = {};
+                        let schedule = {
+                            id: `${schedulesid}`,
+                            calendarId: thisCalendar._layout.id,
+                            category: "time",
+                            title,
+                            start,
+                            end,
+                            isAllDay: false,
+                            color: calendar._calendarColor.null.color,
+                            bgColor: calendar._calendarColor.null.bgColor,
+                            dragBgColor: calendar._calendarColor.null.dragBgColor,
+                            borderColor: calendar._calendarColor.null.borderColor,
+                            location,
+                            body: name
+                        };
+                        thisCalendar.clear();
+                        streamsSchedulesHere.push(schedule);
+                        streamsSchedulesHere.forEach((e => {
+                            if (e.calendarId === thisCalendar._options.id) thisCalendar.createSchedules([ e ]);
+                        }));
+                        reInitJalendar([ schedule ]);
                         document.addEventListener("beforePopupClose", (e => {
                             const currentPopup = e.detail.popup;
-                            if (currentPopup.previousActiveElement.classList.contains("schedule__link_edit")) {
-                                schedule = {
-                                    category: "time",
-                                    title,
-                                    start,
-                                    end,
-                                    isAllDay: false,
-                                    color: calendar._calendarColor.null.color,
-                                    bgColor: calendar._calendarColor.null.bgColor,
-                                    dragBgColor: calendar._calendarColor.null.dragBgColor,
-                                    borderColor: calendar._calendarColor.null.borderColor,
-                                    location,
-                                    body: name
-                                };
-                                calendar.updateSchedule(editSheduleId, calendarId, schedule);
-                                reInitJalendar([ schedule ]);
-                            } else {
-                                schedule = {
-                                    id: `${schedulesid}`,
-                                    category: "time",
-                                    title,
-                                    start,
-                                    end,
-                                    isAllDay: false,
-                                    color: calendar._calendarColor.null.color,
-                                    bgColor: calendar._calendarColor.null.bgColor,
-                                    dragBgColor: calendar._calendarColor.null.dragBgColor,
-                                    borderColor: calendar._calendarColor.null.borderColor,
-                                    location,
-                                    body: name
-                                };
-                                calendar.createSchedules([ schedule ]);
-                                reInitJalendar([ schedule ]);
+                            const currentPopupEl = currentPopup.targetOpen.element;
+                            if (currentPopupEl.classList.contains("addBroadcastPopup")) {
+                                const currentPopupNameInput = currentPopupEl.querySelector(".addBroadcastPopup__input_name");
+                                currentPopupEl.querySelector(".addBroadcastPopup__select");
+                                const currentPopupStartInputs = currentPopupEl.querySelectorAll(".addBroadcastPopup__input_time");
+                                const currentPopupCodeTextarea = currentPopupEl.querySelector(".addBroadcastPopup__textarea_code");
+                                currentPopupNameInput.value = "";
+                                currentPopupStartInputs[0].value = "";
+                                currentPopupStartInputs[1].value = "";
+                                currentPopupCodeTextarea.value = "";
                             }
+                        }));
+                        flsModules.popup.close(".addBroadcastPopup");
+                    }
+                }));
+            }
+            function streamsScheduleEdit(calendar, editSheduleId, calendarId) {
+                document.querySelector(".addBroadcastPopup__submit").addEventListener("click", (click => {
+                    let name = document.querySelector(".addBroadcastPopup__input_name").value;
+                    if ("" !== name.trim()) {
+                        const timeInputs = document.querySelectorAll(".addBroadcastPopup__input_time");
+                        let title = `Спикер: ${document.querySelector(".addBroadcastPopup__select").value}`;
+                        let start = calendar.getDateRangeStart().setHours(parseInt(timeInputs[0].value.split(":")[0]), parseInt(timeInputs[0].value.split(":")[1]));
+                        let end = calendar.getDateRangeEnd().setHours(parseInt(timeInputs[1].value.split(":")[0]), parseInt(timeInputs[1].value.split(":")[1]));
+                        let location = document.querySelector(".addBroadcastPopup__textarea_code").value;
+                        schedulesid++;
+                        let schedule = {
+                            category: "time",
+                            title,
+                            start,
+                            end,
+                            isAllDay: false,
+                            color: calendar._calendarColor.null.color,
+                            bgColor: calendar._calendarColor.null.bgColor,
+                            dragBgColor: calendar._calendarColor.null.dragBgColor,
+                            borderColor: calendar._calendarColor.null.borderColor,
+                            location,
+                            body: name
+                        };
+                        calendar.updateSchedule(editSheduleId, calendarId, schedule);
+                        reInitJalendar([ schedule ]);
+                        document.addEventListener("beforePopupClose", (e => {
+                            const currentPopup = e.detail.popup;
                             const currentPopupEl = currentPopup.targetOpen.element;
                             if (currentPopupEl.classList.contains("addBroadcastPopup")) {
                                 const currentPopupNameInput = currentPopupEl.querySelector(".addBroadcastPopup__input_name");
