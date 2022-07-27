@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       `);
       const eventRegSels = document.querySelectorAll('.row-event__select');
-      eventRegActions(eventRegSels);
+      eventRegActions(eventRegSels, false);
       SelectConstructorInit();
       eventHeadBtnsListener();
     })
@@ -478,26 +478,26 @@ function eventHeadBtnsListener() {
           _slideUp(eventItem.closest('.row-event'));
           setTimeout(() => {
             eventItem.closest('.row-event').remove();
-            eventRegActions();
+            eventRegActions(undefined, false);
             eventHeadBtnsListener();
           }, 600);
         } else if (type === 'double') {
           let clone = eventItem.closest('.row-event').cloneNode(true);
           eventBody.insertBefore(clone, eventItem.closest('.row-event'));
-          eventRegActions();
+          eventRegActions(undefined, false);
           eventHeadBtnsListener();
         } else if (type === 'up') {
           if (eventItems.length > 1) {
             if (eventItem.closest('.row-event').previousElementSibling) {
               eventBody.insertBefore(eventItem.closest('.row-event'), eventItem.closest('.row-event').previousElementSibling);
-              eventRegActions();
+              eventRegActions(undefined, false);
             }
           }
         } else if (type === 'down') {
           if (eventItems.length > 1) {
             if (eventItem.closest('.row-event').nextElementSibling) {
               eventBody.insertBefore(eventItem.closest('.row-event').nextElementSibling, eventItem.closest('.row-event'));
-              eventRegActions();
+              eventRegActions(undefined, false);
             }
           }
         }
@@ -509,12 +509,14 @@ function eventHeadBtnsListener() {
 
 }
 
-function eventRegActions(eventRegSels = document.querySelectorAll('.row-event__select')) {
+function eventRegActions(eventRegSels = document.querySelectorAll('.row-event__select'), _render = true) {
   eventRegSels.forEach(e => {
     if (e.hasAttribute('data-events-types')) {
       let value = e.querySelector('option[selected]').dataset.type;
       let eventRow = e.closest('.row-event');
-      eventRegRenders(value, eventRow);
+      if (_render === true) {
+        eventRegRenders(value, eventRow);
+      }
     }
   })
   document.addEventListener("selectCallback", function (e) {

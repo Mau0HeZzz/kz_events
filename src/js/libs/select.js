@@ -44,7 +44,7 @@ data-href-blank - откроет ссылку в новом окне
 попап на мобилке
 */
 
-export function SelectConstructorInit() {
+export const SelectConstructorInit = () => {
 	// Класс построения Select
 	class SelectConstructor {
 		constructor(props, data = null) {
@@ -128,42 +128,45 @@ export function SelectConstructorInit() {
 		}
 		// Функция инициализации конкретного селекта
 		selectInit(originalSelect, index) {
-			if (!originalSelect.parentElement.classList.contains('_select-active')) { 
-				const _this = this;
-				// Создаем оболочку
-				let selectItem = document.createElement("div");
-				selectItem.classList.add(this.selectClasses.classSelect);
-				// Выводим оболочку перед оригинальным селектом
-				originalSelect.parentNode.insertBefore(selectItem, originalSelect);
-				// Помещаем оригинальный селект в оболочку
-				selectItem.appendChild(originalSelect);
-				// Скрываем оригинальный селект
-				originalSelect.hidden = true;
-				// Присваиваем уникальный ID
-				index ? originalSelect.dataset.id = index : null;
-		
-				// Работа с плейсхолдером
-				if (this.getSelectPlaceholder(originalSelect)) {
-					// Запоминаем плейсхолдер
-					originalSelect.dataset.placeholder = this.getSelectPlaceholder(originalSelect).value;
-					// Если включен режим label
-					if (this.getSelectPlaceholder(originalSelect).label.show) {
-						const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement;
-						selectItemTitle.insertAdjacentHTML('afterbegin', `<span class="${this.selectClasses.classSelectLabel}">${this.getSelectPlaceholder(originalSelect).label.text ? this.getSelectPlaceholder(originalSelect).label.text : this.getSelectPlaceholder(originalSelect).value}</span>`);
-					}
-				}
-				// Конструктор основных элементов
-				selectItem.insertAdjacentHTML('beforeend', `<div class="${this.selectClasses.classSelectBody}"><div hidden class="${this.selectClasses.classSelectOptions}"></div></div>`);
-				// Запускаем конструктор псевдоселекта
-				this.selectBuild(originalSelect);
-		
-				// Запоминаем скорость
-				originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "150";
-				// Событие при изменении оригинального select
-				originalSelect.addEventListener('change', function (e) {
-					_this.selectChange(e);
-				});
-			}
+			if (originalSelect.parentElement.classList.contains('_select-active')) { 
+        let selectParent = originalSelect.parentElement;
+        selectParent.parentElement.insertBefore(originalSelect, selectParent.nextElementSibling);
+        selectParent.remove();
+      }
+      const _this = this;
+      // Создаем оболочку
+      let selectItem = document.createElement("div");
+      selectItem.classList.add(this.selectClasses.classSelect);
+      // Выводим оболочку перед оригинальным селектом
+      originalSelect.parentNode.insertBefore(selectItem, originalSelect);
+      // Помещаем оригинальный селект в оболочку
+      selectItem.appendChild(originalSelect);
+      // Скрываем оригинальный селект
+      originalSelect.hidden = true;
+      // Присваиваем уникальный ID
+      index ? originalSelect.dataset.id = index : null;
+  
+      // Работа с плейсхолдером
+      if (this.getSelectPlaceholder(originalSelect)) {
+        // Запоминаем плейсхолдер
+        originalSelect.dataset.placeholder = this.getSelectPlaceholder(originalSelect).value;
+        // Если включен режим label
+        if (this.getSelectPlaceholder(originalSelect).label.show) {
+          const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement;
+          selectItemTitle.insertAdjacentHTML('afterbegin', `<span class="${this.selectClasses.classSelectLabel}">${this.getSelectPlaceholder(originalSelect).label.text ? this.getSelectPlaceholder(originalSelect).label.text : this.getSelectPlaceholder(originalSelect).value}</span>`);
+        }
+      }
+      // Конструктор основных элементов
+      selectItem.insertAdjacentHTML('beforeend', `<div class="${this.selectClasses.classSelectBody}"><div hidden class="${this.selectClasses.classSelectOptions}"></div></div>`);
+      // Запускаем конструктор псевдоселекта
+      this.selectBuild(originalSelect);
+  
+      // Запоминаем скорость
+      originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "150";
+      // Событие при изменении оригинального select
+      originalSelect.addEventListener('change', function (e) {
+        _this.selectChange(e);
+      });
 		}
 		// Конструктор псевдоселекта
 		selectBuild(originalSelect) {
